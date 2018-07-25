@@ -1,0 +1,39 @@
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# READ THIS!!!! https://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command
+prompt_command() {
+  local EXIT_CODE=$?
+  if [[ $EXIT_CODE != 0 ]]; then RTN_COLOR=$P_RED; else RTN_COLOR=$P_GREEN; fi
+
+  # Parse Git branch name
+  P_GIT=$(parse_git_branch)
+
+  PS1="\n┌─(${P_USER}@${P_HOST})──(${P_DATE})──( ${P_GREEN}${P_CUR_DIR}${P_RESET} ${P_YELLOW}${P_GIT}${P_RESET} ) \n└─$ ${RTN_COLOR}>${P_RESET} "
+  history -a
+}
+
+## Prompt Config
+_bash_prompt_config() {
+  local USER_SYMBOL="\u"
+  local HOST_SYMBOL="\h"
+  local CUR_DIR_SYMBOL="\w"
+  local DATE_SYMBOL="\D{%F @ %T}"
+
+  # Expose the variables we need in prompt command
+  P_USER=${USER_SYMBOL}
+  P_HOST=${HOST_SYMBOL}
+  P_DATE=${DATE_SYMBOL}
+  P_CUR_DIR=${CUR_DIR_SYMBOL}
+  P_RED=$(escape_color ${RED})
+  P_GREEN=$(escape_color ${GREEN})
+  P_YELLOW=$(escape_color ${YELLOW})
+  P_RESET=$(escape_color ${RESET})
+}
+
+_bash_prompt_config
+unset _bash_prompt_config
+
+# Set custom command prompt
+export PROMPT_COMMAND=prompt_command

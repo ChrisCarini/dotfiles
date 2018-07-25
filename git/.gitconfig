@@ -1,0 +1,9 @@
+[user]
+	name = ChrisCarini
+	email = 6374067+ChrisCarini@users.noreply.github.com
+[core]
+    excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[alias]
+	l = log --graph --decorate --oneline --all

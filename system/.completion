@@ -1,0 +1,18 @@
+# Bash
+BREW_PREFIX=$(brew --prefix)
+BASH_COMPLETION_LOC="$BREW_PREFIX/etc/bash_completion"
+
+if is-executable brew && [ -f "$BASH_COMPLETION_LOC" ]; then
+  . "$BASH_COMPLETION_LOC"
+fi
+
+unset BREW_PREFIX BASH_COMPLETION_LOC
+
+
+# Dotfiles
+_dotfiles_completions() {
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
+}
+
+complete -o default -F _dotfiles_completions dotfiles

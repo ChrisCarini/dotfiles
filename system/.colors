@@ -1,0 +1,74 @@
+set_colors() {
+  if tput setaf >/dev/null 2>&1 ; then
+    _setaf () { tput setaf "$1" ; }
+    _setab () { tput setab "$1" ; }
+    RESET="$( { tput sgr0 || tput me ; } 2>/dev/null )"
+    BOLD="$( { tput bold || tput md ; } 2>/dev/null )"
+    UNDERLINE=`tput smul`
+    NO_UNDERLINE=`tput rmul`
+  else
+    # Fallback
+    _setaf () { echo "\033[0;$(($1+30))m" ; }
+    _setab () { echo "\033[$(($1+40))m" ; }
+    RESET="\033[m"
+    BOLD=""
+    UNDERLINE="\033[4"
+    NO_UNDERLINE="\033[0"
+  fi
+
+  # Normal colors
+  BLACK="$(_setaf 0)"
+  RED="$(_setaf 1)"
+  GREEN="$(_setaf 2)"
+  YELLOW="$(_setaf 3)"
+  BLUE="$(_setaf 4)"
+  VIOLET="$(_setaf 5)"
+  CYAN="$(_setaf 6)"
+  WHITE="$(_setaf 7)"
+
+  # Bright colors
+  BRIGHT_GREEN="$(_setaf 10)"
+  BRIGHT_YELLOW="$(_setaf 11)"
+  BRIGHT_BLUE="$(_setaf 12)"
+  BRIGHT_VIOLET="$(_setaf 13)"
+  BRIGHT_CYAN="$(_setaf 14)"
+  BRIGHT_WHITE="$(_setaf 15)"
+
+  # Bold colors
+  BLACK_BOLD="${BOLD}$(_setaf 0)"
+  RED_BOLD="${BOLD}$(_setaf 1)"
+  GREEN_BOLD="${BOLD}$(_setaf 2)"
+  YELLOW_BOLD="${BOLD}$(_setaf 3)"
+  BLUE_BOLD="${BOLD}$(_setaf 4)"
+  VIOLET_BOLD="${BOLD}$(_setaf 5)"
+  CYAN_BOLD="${BOLD}$(_setaf 6)"
+  WHITE_BOLD="${BOLD}$(_setaf 7)"
+
+  # Background colors
+  BACKGROUND_BLACK="$(_setab 0)"
+  BACKGROUND_RED="$(_setab 1)"
+  BACKGROUND_GREEN="$(_setab 2)"
+  BACKGROUND_YELLOW="$(_setab 3)"
+  BACKGROUND_BLUE="$(_setab 4)"
+  BACKGROUND_VIOLET="$(_setab 5)"
+  BACKGROUND_CYAN="$(_setab 6)"
+  BACKGROUND_WHITE="${RESET}"
+  BACKGROUND_DEFAULT="$(_setab 9)"
+}
+
+escape_color() {
+  local ESC_OPEN="\["
+  local ESC_CLOSE="\]"
+  echo "${ESC_OPEN}$1${ESC_CLOSE}"
+}
+
+unset_colors() {
+  unset RESET BOLD UNDERLINE NO_UNDERLINE
+  unset BLACK RED GREEN YELLOW BLUE VIOLET CYAN WHITE
+  unset BRIGHT_GREEN BRIGHT_YELLOW BRIGHT_BLUE BRIGHT_VIOLET BRIGHT_CYAN BRIGHT_WHITE
+  unset BLACK_BOLD RED_BOLD GREEN_BOLD YELLOW_BOLD BLUE_BOLD VIOLET_BOLD CYAN_BOLD WHITE_BOLD
+  unset BACKGROUND_BLACK BACKGROUND_RED BACKGROUND_GREEN BACKGROUND_YELLOW BACKGROUND_BLUE BACKGROUND_VIOLET BACKGROUND_CYAN BACKGROUND_WHITE BACKGROUND_DEFAULT
+}
+
+set_colors
+unset set_colors
