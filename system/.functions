@@ -16,6 +16,17 @@ smiley() {
     fi
 }
 
+# Got from SO -> https://serverfault.com/a/42382
+is_host_up() {
+	echo "Pinging $1 until host is up..."
+	ping_cancelled=false    # Keep track of whether the loop was cancelled, or succeeded
+	until ping -c1 "$1" &>/dev/null; do :; done &    # The "&" backgrounds it
+	trap "kill $!; ping_cancelled =true" SIGINT
+	wait $!          # Wait for the loop to exit, one way or another
+	trap - SIGINT    # Remove the trap, now we're done with it
+	echo "Done pinging, cancelled=$ping_cancelled" 
+}
+
 # Got from SO -> https://stackoverflow.com/a/29655125
 perf() {
   curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
