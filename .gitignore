@@ -4,3 +4,4 @@
 *.work
 *.priv
 .DS_Store
+work/*

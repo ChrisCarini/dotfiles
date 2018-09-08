@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Resolve DOTFILES_DIR (assuming ~/dotfiles on all distros)
+DOTFILES_DIR="$HOME/dotfiles"
 
 BIN_NAME=$(basename "$0")
 COMMAND_NAME=$1

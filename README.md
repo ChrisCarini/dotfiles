@@ -19,7 +19,7 @@ xcode-select --install
 ### Step 2 - Clone the dotfiles
 #### Clone with `Git` (_preferred_)
 ```bash
-git clone https://github.com/ChrisCarini/dotfiles.git ~/.dotfiles
+git clone https://github.com/ChrisCarini/dotfiles.git ~/dotfiles
 ```
 
 #### Download with `curl`
@@ -32,24 +32,23 @@ bash -c "`curl -fsSL https://raw.github.com/ChrisCarini/dotfiles/master/remote-i
 bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/ChrisCarini/dotfiles/master/remote-install.sh`"
 ```
 
-### Step 3 - Make any needed modifications / additions
-#### Is this a work machine?
-If so, you can create the below files which will be symlinked instead of the non-work versions:
-1. `.gitconfig.work`
-1. `.gitignore_global.work`
+### Step 3 - Clone work-specific dotfiles repository
+If you **already** have a work-specific repository ready, then you just need to run:
+```bash
+git clone <URL_TO_WORK_DOTFILES_GIT_REPO> work
+```
 
-**Additionally**, the `.bash_profile` is set to source the below files given they exist:
-1. `.path.work`
-1. `.env.work`
-1. `.alias.work`
-1. `.functions.work`
-1. `.banner.work`  (See [Banners](#banners) section for details)
-
-If this is being used on a work machine, add these files with the respective information if desired.
+**Otherwise**, run the below to create the respective work folder and initalize it with `git`.
+```bash
+mkdir ~/dotfiles/work/
+cd ~/dotfiles/work/
+git init
+source ~/dotfiles/bin/create_work_dotfiles.sh
+```
 
 ### Step 4 - Install!
 ```bash
-source ~/.dotfiles/install.sh
+source ~/dotfiles/install.sh
 ```
 
 ## Features
@@ -60,6 +59,24 @@ These dotfiles allow the following Mac OS specific dotfiles to be sourced after 
 1. `.alias.macos`
 1. `.functions.macos`
 
+### Work Specific dotfiles
+This repository allows the creation and use of work-specific dotfiles. Everything is contained under the `$DOTFILES_DIR/work/` directory (which is ignored by this repository). This allows for the two repositories to be maintained individually.
+
+Similar to the structure of this repository, we allow for the following folders:
+1. `$DOTFILES_DIR/work/README.md`
+1. `$DOTFILES_DIR/work/git`
+1. `$DOTFILES_DIR/work/system`
+
+To initalize the dotfiles that can be used in these directories, you can simply run:
+```bash
+source ~/dotfiles/bin/create_work_dotfiles.sh
+```
+
+#### Nuances
+The below files will be prefered over the ones contained within this repository.
+1. `$DOTFILES_DIR/work/git/.gitconfig`
+1. `$DOTFILES_DIR/work/git/.gitignore_global`
+
 ### Banners
 ##### How does the banner work?
 The banners file(s) need to set the variable `BANNER_OUTPUT`.
@@ -69,12 +86,13 @@ Upon sourcing all of the `.banner` files, this variable is printed via:
 printf "$BANNER_OUTPUT"
  ```
 ##### Banner dotfiles Sourcing Hierarchy
-1. `.banner`
-1. `.banner_*`
-1. `.banner.work`
+1. `$DOTFILES_DIR/system/.banner`
+1. `$DOTFILES_DIR/system/.banner_*`
+1. `$DOTFILES_DIR/work/system/.banner`
+1. `$DOTFILES_DIR/work/system/.banner`
  
 ##### Why did I chose to have the banner work this way?
-Very simply, because I wanted a different banner for my work environment than my personal. The current implementation allows a  
+Very simply, because I wanted a different banner for my work environment than my personal. The current implementation allows this in a fairly trivial manner.
 
 
 ### The `dotfiles` command

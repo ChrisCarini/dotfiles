@@ -24,7 +24,7 @@ if is-macos; then
 fi
 
 # Source the Work specific dotfiles
-for DOTFILE in "$DOTFILES_DIR"/system/.{path,env,alias,functions}.work; do
+for DOTFILE in "$DOTFILES_DIR"/work/system/.{path,env,alias,functions}; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -35,7 +35,7 @@ export PATH
 for BANNER_FILE in "$DOTFILES_DIR"/system/.{banner,banner_*}; do
     [ -f "$BANNER_FILE" ] && . "$BANNER_FILE"
 done
-for BANNER_FILE in "$DOTFILES_DIR"/system/.{banner*}.work; do
+for BANNER_FILE in "$DOTFILES_DIR"/work/system/.{banner,banner_*}; do
     [ -f "$BANNER_FILE" ] && . "$BANNER_FILE"
 done
 printf "$BANNER_OUTPUT"

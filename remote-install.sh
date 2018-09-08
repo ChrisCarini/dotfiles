@@ -10,6 +10,6 @@ if [ -z "$CMD" ]; then
   echo "No curl or wget available. Aborting."
 else
   echo "Downloading dotfiles"
-  mkdir -p "$HOME/.dotfiles" && \
-  eval "$CMD https://github.com/ChrisCarini/dotfiles/tarball/master | tar -xzv -C ~/.dotfiles --strip-components=1 --exclude='{.gitignore}'"
+  mkdir -p "$HOME/dotfiles" && \
+  eval "$CMD https://github.com/ChrisCarini/dotfiles/tarball/master | tar -xzv -C ~/dotfiles --strip-components=1 --exclude='{.gitignore}'"
 fi
