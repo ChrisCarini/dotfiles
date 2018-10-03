@@ -9,7 +9,7 @@ alias grep='grep --color=always --exclude-dir=".svn"'
 alias egrep='egrep --color=always'
 alias watch='watch --color'
 
-alias up="cd -P ..;ls"
+alias up="cd -L ..;ls"
 alias sl="ls"
 alias ll="ls -lash"
 alias nano="vi"
