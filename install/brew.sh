@@ -23,6 +23,7 @@ apps=(
   nano
   python
   ssh-copy-id
+  tree
   unar
   watch
   wget
