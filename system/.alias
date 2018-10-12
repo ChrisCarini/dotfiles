@@ -5,7 +5,7 @@
 # Show me color!
 alias less='less -r'
 alias tree='tree -C'
-alias grep='grep --color=always --exclude-dir=".svn"'
+alias grep='grep -n --color=always --exclude-dir=".svn"'
 alias egrep='egrep --color=always'
 alias watch='watch --color'
 
