@@ -18,6 +18,9 @@ apps=(
     flux
     google-chrome
     google-chrome-canary
+    intellij-idea
+    intellij-idea-ce
+    shiftit
     slack
     spotify
     sublime-text
