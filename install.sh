@@ -34,3 +34,11 @@ done
 ##
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/brew-cask.sh"
+
+
+##
+# If OSX, let's do the dock
+##
+if is-macos ; then
+    . "$DOTFILES_DIR/macos/dock.sh"
+fi

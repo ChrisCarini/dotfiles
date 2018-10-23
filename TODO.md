@@ -9,4 +9,3 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Make ~/tmp directory
 1) Invert OSX scroll
 1) Change background to Light Orb
-1) Actually run the `dock.sh` script on OSX...
