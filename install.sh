@@ -42,3 +42,11 @@ done
 if is-macos ; then
     . "$DOTFILES_DIR/macos/dock.sh"
 fi
+
+
+##
+# Create directories
+##
+mkdir ~/code
+mkdir ~/tmp
+mkdir ~/GitHub

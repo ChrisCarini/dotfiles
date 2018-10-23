@@ -5,7 +5,5 @@ Below, you will thing a list of things I would like this repository to do / acco
 
 ## To-Do
 1) Set OSX terminal to automatically close upon exit
-1) Make ~/code directory
-1) Make ~/tmp directory
 1) Invert OSX scroll
 1) Change background to Light Orb
