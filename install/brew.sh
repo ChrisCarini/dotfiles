@@ -9,6 +9,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Docs: https://docs.brew.sh/Analytics.html
 brew analytics off
 
+# We need to chown the Cellar directory otherwise brew will complain a lot during the installs below.
+sudo chown -R $(whoami) /usr/local/Cellar
+
 brew update
 brew upgrade
 

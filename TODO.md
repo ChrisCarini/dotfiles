@@ -4,7 +4,6 @@ Below, you will thing a list of things I would like this repository to do / acco
 
 
 ## To-Do
-1) Automatically create and chown the dir /usr/local/Cellar (per the error that keeps poping up with the install script: `sudo chown -R $(whoami) /usr/local/Cellar`)
 1) Set OSX terminal to automatically close upon exit
 1) Make ~/code directory
 1) Make ~/tmp directory
