@@ -20,6 +20,7 @@ apps=(
     google-chrome-canary
     intellij-idea
     intellij-idea-ce
+    iterm2
     shiftit
     slack
     spotify
