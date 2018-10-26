@@ -14,6 +14,7 @@ apps=(
     atom
     arduino
     burp-suite
+    filezilla
     firefox
     flux
     google-chrome
