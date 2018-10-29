@@ -7,6 +7,13 @@ prepend-path() {
   [ -d $1 ] && PATH="$1:$PATH"
 }
 
+sync-fork() {
+    git fetch upstream
+    git checkout master
+    git merge upstream/master
+}
+
+
 smiley() {
     if [ "$?" -eq 0 ];
     then
