@@ -11,3 +11,6 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Set O365 (outlook) "mark as read after x seconds" automagically
 1) Set O365 to show BCC by default
 1) Install YubiSwitch
+1) Bootstrap work code / projects via checkouts
+1) Install work userscripts to Chrome + Tampermonkey
+1) See if git-config includes conditional includes is useful (https://git-scm.com/docs/git-config#_includes) - from https://stackoverflow.com/a/43884702
