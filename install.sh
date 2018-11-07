@@ -37,10 +37,11 @@ done
 
 
 ##
-# If OSX, let's do the dock
+# If OSX, let's do the dock + settings
 ##
 if is-macos ; then
     . "$DOTFILES_DIR/macos/dock.sh"
+    . "$DOTFILES_DIR/macos/settings.sh"
 fi
 
 
@@ -50,3 +51,15 @@ fi
 mkdir ~/code
 mkdir ~/tmp
 mkdir ~/GitHub
+
+
+##
+# Checkout source code
+##
+. "$DOTFILES_DIR/install/code.sh"
+# Run work code bootstrap, should it exist
+if [ -f "$DOTFILES_DIR/work/install/code.sh" ] ; then
+. "$DOTFILES_DIR/work/install/code.sh"
+else
+    echo "No work/install/code.sh exists; not bootstraping work code!"
+fi
