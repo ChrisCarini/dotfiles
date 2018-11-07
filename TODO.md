@@ -7,3 +7,7 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Change background to Light Orb
 1) Install work IJ
 1) Automatically install IJ plugins (maybe not possible?)
+1) Script SSH keygen + upload to servers
+1) Set O365 (outlook) "mark as read after x seconds" automagically
+1) Set O365 to show BCC by default
+1) Install YubiSwitch
