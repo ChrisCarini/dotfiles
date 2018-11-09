@@ -23,6 +23,7 @@ apps=(
   git-extras
   imagemagick
   jq
+  mysql
   nano
   python
   ssh-copy-id
