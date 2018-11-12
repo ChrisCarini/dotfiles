@@ -36,6 +36,8 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  HH:mm:ss
 # Change the Time Format to use 24-hour time (System Preferences > Language & Region > Time Format)
 defaults write -g AppleICUForce24HourTime -bool true
 
+# OSX Mojave - Turn off the ScreenShot preview in the lower right corner
+defaults write com.apple.screencapture show-thumbnail -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
