@@ -51,6 +51,9 @@ fi
 mkdir ~/code
 mkdir ~/tmp
 mkdir ~/GitHub
+mkdir ~/Desktop/~DELETE\ THIS\ STUFF
+mkdir ~/Desktop/Archive
+mkdir ~/Desktop/Screen\ Shots\ To\ Save
 
 
 ##
