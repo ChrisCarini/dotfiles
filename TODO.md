@@ -14,3 +14,6 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Bootstrap work code / projects via checkouts
 1) Install work userscripts to Chrome + Tampermonkey
 1) See if git-config includes conditional includes is useful (https://git-scm.com/docs/git-config#_includes) - from https://stackoverflow.com/a/43884702
+1) Automatically install TamperMonkey for Chrome
+1) Automatically register user-scripts with Chrome
+1) Automatically setup the `.ssh/config` file as desired.
