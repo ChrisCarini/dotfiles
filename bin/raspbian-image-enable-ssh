@@ -45,14 +45,14 @@ if [[ -z "$1" ]]; then
   unzip raspbian_lite_latest.zip
 
   # Did we get what we were expecting?
-  if [[ `ls -1 *-raspbian-jessie-lite.img | wc -l` -ne 1 ]]; then
-    echo "Can't find \"*-raspbian-jessie-lite.img\" in raspbian_lite_latest"
+  if [[ `ls -1 *-raspbian-*-lite.img | wc -l` -ne 1 ]]; then
+    echo "Can't find \"*-raspbian-*-lite.img\" in raspbian_lite_latest"
     exit
   fi
   rm raspbian_lite_latest.zip
 
-  # If run with sudo , change ownership to real user
-  FILEPATH=`ls -1 *-raspbian-jessie-lite.img`
+  # If run with sudo, change ownership to real user
+  FILEPATH=`ls -1 *-raspbian-*-lite.img`
   CALLER=`who am i | awk '{print $1}'`
   if [ "$CALLER" != "root" ]; then
     chown $CALLER.`groups $CALLER | awk '{print $1}'` "$FILEPATH" 2>/dev/null
@@ -67,14 +67,28 @@ else
 fi
 
 # Find the first, DOS partition and mount it
-BOOTSTART=`fdisk -l "$FILEPATH" | sed -nr "s/^\S+1\s+([0-9]+).*  c W95 FAT32 \(LBA\)$/\1/p"`
+if is-macos ; then
+    # I have no idea why, but getting the equivilant `sed` command / str to work seemed not-possible - I'm sure it is
+    # but I'd have to spend more time on it, and I don't want to right now...
+    # We don't even seem to need this when mounting the image...
+    BOOTSTART=`fdisk "$FILEPATH"  | grep Win95 | awk -F' ' '{print $11}'`
+else
+    BOOTSTART=`fdisk -l "$FILEPATH" | sed -nr "s/^\S+1\s+([0-9]+).*  c W95 FAT32 \(LBA\)$/\1/p"`
+fi
+
 if [[ -z "$BOOTSTART" ]]; then
   echo "Can't find FAT32 first partition in image \"$FILEPATH\""
   exit
 fi
-losetup /dev/loop0 "$FILEPATH" -o $((BOOTSTART*512))
+
 mkdir rpi-boot
-mount /dev/loop0 rpi-boot
+
+if is-macos ; then
+    hdiutil attach -mountpoint rpi-boot "$FILEPATH"
+else
+    losetup /dev/loop0 "$FILEPATH" -o $((BOOTSTART*512))
+    mount /dev/loop0 rpi-boot
+fi
 
 # Make the change
 if [[ -e "rpi-boot/ssh" ]]; then
@@ -85,9 +99,13 @@ else
 fi
 
 # Unmount and clear up
-umount rpi-boot
+if is-macos ; then
+    hdiutil detach rpi-boot
+else
+    umount rpi-boot
+    losetup -d /dev/loop0
+fi
 rmdir rpi-boot
-losetup -d /dev/loop0
 
 # Back out of second working dir if we did a download
 if [[ -z "$1" ]]; then
