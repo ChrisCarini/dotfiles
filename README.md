@@ -19,7 +19,7 @@ xcode-select --install
 ### Step 2 - Clone the dotfiles
 #### Clone with `Git` (_preferred_)
 ```bash
-git clone https://github.com/ChrisCarini/dotfiles.git ~/dotfiles
+git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
 ```
 
 #### Download with `curl`
