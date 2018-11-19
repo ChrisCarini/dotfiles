@@ -27,6 +27,7 @@ apps=(
     slack
     spotify
     sublime-text
+    tunnelblick
     virtualbox
     visual-studio-code
     vlc
