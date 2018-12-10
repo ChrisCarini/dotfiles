@@ -23,6 +23,8 @@ apps=(
   git-extras
   imagemagick
   jq
+  libcouchbase
+  mosh
   mysql
   nano
   python
