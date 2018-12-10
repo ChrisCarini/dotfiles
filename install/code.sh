@@ -15,6 +15,7 @@ repos=(
     ChrisCarini/environment-variable-settings-summary-intellij-plugin
     ChrisCarini/intellij-notification-sample
     ChrisCarini/intellij-code-exfiltration
+    ChrisCarini/jetbrains-ide-release-dates
     ChrisCarini/sample-python-profile-flask
     ChrisCarini/sample-intellij-plugin
     ChrisCarini/intellij-community
