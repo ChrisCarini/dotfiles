@@ -19,6 +19,8 @@ apps=(
   bash-completion
   brew-cask-completion
   coreutils
+  docker
+  docker-compose
   git
   git-extras
   imagemagick
@@ -27,6 +29,7 @@ apps=(
   mosh
   mysql
   nano
+  packer
   python
   ssh-copy-id
   tree

@@ -15,6 +15,7 @@ apps=(
     arduino
     burp-suite
     Caffeine
+    docker
     filezilla
     firefox
     flux
