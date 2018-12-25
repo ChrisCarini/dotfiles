@@ -22,11 +22,11 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
-    [ -f "$DOTFILE" ] && ln -sfv "$DOTFILE" ~
+    [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 # Override and .gitconfig / .gitignore_global with work specific configs
 for DOTFILE in "$DOTFILES_DIR"/work/git/.{gitconfig,gitignore_global}; do
-    [ -f "$DOTFILE" ] && ln -sfv "$DOTFILE" ~/"$ORIG_FILE_NAME"
+    [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
 ##
@@ -61,7 +61,7 @@ mkdir ~/Desktop/Screen\ Shots\ To\ Save
 ##
 . "$DOTFILES_DIR/install/code.sh"
 # Run work code bootstrap, should it exist
-if [ -f "$DOTFILES_DIR/work/install/code.sh" ] ; then
+if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]] ; then
 . "$DOTFILES_DIR/work/install/code.sh"
 else
     echo "No work/install/code.sh exists; not bootstraping work code!"

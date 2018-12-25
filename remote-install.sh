@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-if [ -x "`command -v curl`" ]; then
+if [[ -x "`command -v curl`" ]]; then
   CMD="curl -#L"
-elif [ -x "`command -v wget`" ]; then
+elif [[ -x "`command -v wget`" ]]; then
   CMD="wget --no-check-certificate -O -"
 fi
 
-if [ -z "$CMD" ]; then
+if [[ -z "$CMD" ]]; then
   echo "No curl or wget available. Aborting."
 else
   echo "Downloading dotfiles"

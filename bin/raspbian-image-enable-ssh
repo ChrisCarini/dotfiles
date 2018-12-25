@@ -14,7 +14,7 @@ if [[ "$1" == "-h" || "$1" == "/?" || "$1" == "--help" ]]; then
 fi
 
 # Need to be root - we'll be mounting loopback device
-if [ "$(id -u)" != 0 ]; then
+if [[ "$(id -u)" != 0 ]]; then
   echo "You must be root to run this. Try:"
   echo "  sudo `basename $0` $*"
   echo "or"
