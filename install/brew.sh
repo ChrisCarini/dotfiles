@@ -36,3 +36,15 @@ apps=(
 )
 
 brew install "${apps[@]}"
+
+
+##
+# Special stuff for MySQL + Python
+# To prevent the below error:
+#       fatal error: 'my_config.h' file not found
+#
+# See: https://stackoverflow.com/questions/12218229/my-config-h-file-not-found-when-intall-mysql-python-on-osx-10-8
+#  for details.
+brew unlink mysql
+brew install mysql-connector-c
+brew link --overwrite mysql
