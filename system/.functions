@@ -2,7 +2,11 @@
 #  Additional Bash Functions
 ##
 
-# Add to path
+# Add to end of path
+append-path() {
+  [ -d $1 ] && PATH="$PATH:$1"
+}
+# Add to beginning of path
 prepend-path() {
   [ -d $1 ] && PATH="$1:$PATH"
 }
