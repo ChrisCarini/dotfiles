@@ -22,6 +22,7 @@ apps=(
   coreutils
   docker
   docker-compose
+  gcc
   git
   git-extras
   imagemagick
