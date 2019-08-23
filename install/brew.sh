@@ -22,6 +22,7 @@ apps=(
   coreutils
   docker
   docker-compose
+  dockutil
   gcc
   git
   git-extras
