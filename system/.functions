@@ -88,3 +88,8 @@ smtp-server() {
 manpdf() {
   man -t "$1" | open -f -a /Applications/Preview.app/
 }
+
+# `lq` is an alias to convert LDIF results to a JSON blob, it's real hacky: (Thank you Luke Y! ;) )
+lq () {
+    awk '!/^#/' | jq -Rs '[split("\n\n")[] | select(length >0) | [split("\n")[] | {attribute: split(": ")[0], value: (split(": ")[1:] | join(": "))}] | [group_by(.attribute)[] | { key: .[0].attribute, value: [.[].value]}] | from_entries]'
+}
