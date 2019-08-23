@@ -9,6 +9,7 @@ alias grep='grep -n --color=always --exclude-dir=".svn"'
 alias egrep='egrep --color=always'
 alias watch='watch --color'
 
+alias bc="bc -l"  # Uses standard math library; allows fractions to yield decimals
 alias up="cd -L ..;ls"
 alias sl="ls"
 alias ll="ls -lash"
