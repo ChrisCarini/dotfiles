@@ -212,7 +212,7 @@ for app in "Activity Monitor" \
 	"Google Chrome" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal"
+	"Terminal" \
 	; do
 	killall "${app}" &> /dev/null
 done
