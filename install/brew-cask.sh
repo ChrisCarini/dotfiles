@@ -25,6 +25,8 @@ apps=(
     intellij-idea
     intellij-idea-ce
     iterm2
+    kitematic
+    mysqlworkbench
     shiftit
     slack
     spotify
