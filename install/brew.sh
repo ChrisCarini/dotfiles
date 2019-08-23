@@ -31,7 +31,6 @@ apps=(
   mysql
   nano
   packer
-  python
   ssh-copy-id
   tree
   unar
