@@ -18,4 +18,6 @@ alias nanonano="/usr/bin/nano"
 alias pp="python -m json.tool"
 alias gitlogvis="git log --graph --decorate --oneline"
 
+alias please="sudo"
+
 alias dingdingding="tput bel;sleep 0.5;tput bel;sleep 0.5;tput bel"
