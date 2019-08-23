@@ -74,6 +74,12 @@ extract() {
   fi
 }
 
+# Start a local SMTP server for testing in python
+smtp-server() {
+  echo "SMTP Server created on 'localhost:1025' - [Ctrl] + [C] to exit."
+  python -m smtpd -n -c DebuggingServer localhost:1025
+}
+
 # Open man page as PDF
 manpdf() {
   man -t "$1" | open -f -a /Applications/Preview.app/
