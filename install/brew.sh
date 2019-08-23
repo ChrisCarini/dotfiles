@@ -25,6 +25,7 @@ apps=(
   gcc
   git
   git-extras
+  hyperfine
   imagemagick
   jq
   libcouchbase
