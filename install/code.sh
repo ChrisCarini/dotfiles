@@ -16,9 +16,12 @@ repos=(
     ChrisCarini/intellij-notification-sample
     ChrisCarini/intellij-code-exfiltration
     ChrisCarini/jetbrains-ide-release-dates
+    ChrisCarini/jetbrains-auto-power-saver
+    ChrisCarini/iris-jetbrains-plugin
     ChrisCarini/sample-python-profile-flask
     ChrisCarini/sample-intellij-plugin
     ChrisCarini/intellij-community
+    ChrisCarini/skypi
 )
 
 for REPO in "${repos[@]}"; do
