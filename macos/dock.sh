@@ -14,16 +14,28 @@ dockutil --no-restart --add "/System/Library/CoreServices/Finder.app"
 dockutil --no-restart --add "/Applications/Microsoft Outlook.app"
 # Chrome
 dockutil --no-restart --add "/Applications/Google Chrome.app"
+
 # Term
-dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
+if is-macos-catalina ; then
+  dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
+else
+  dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
+fi
+
 # iTerm
 dockutil --no-restart --add "/Applications/iTerm.app"
 # IJ
 dockutil --no-restart --add "/Applications/IntelliJ IDEA CE.app"
 # Slack
 dockutil --no-restart --add "/Applications/Slack.app"
+
 # Activity Monitor
-dockutil --no-restart --add "/Applications/Utilities/Activity Monitor.app"
+if is-macos-catalina ; then
+  dockutil --no-restart --add "/System/Applications/Utilities/Activity Monitor.app"
+else
+  dockutil --no-restart --add "/Applications/Utilities/Activity Monitor.app"
+fi
+
 # Teams
 dockutil --no-restart --add "/Applications/Microsoft Teams.app"
 # OneNote
