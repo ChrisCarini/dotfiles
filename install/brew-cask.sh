@@ -12,7 +12,7 @@ brew tap caskroom/versions
 
 # Install packages
 apps=(
-    atom
+#    atom
     arduino
     burp-suite
     Caffeine
