@@ -9,6 +9,12 @@ These are primarily used on Mac OS systems, but might be able to be used on Linu
 
 ## Installation
 Below are the 4 simple steps for installation.
+### Step 0 - Copy over SSH keys
+```bash
+HOSTNAME=my_old_laptop.hostname.com
+scp $HOSTNAME:~/.ssh/* ~/.ssh/
+```
+
 ### Step 1 - Update Software and Install XCode
 On a fresh installation of macOS:
 ```bash
@@ -35,7 +41,7 @@ bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/Chr
 ### Step 3 - Clone work-specific dotfiles repository
 If you **already** have a work-specific repository ready, then you just need to run:
 ```bash
-git clone <URL_TO_WORK_DOTFILES_GIT_REPO> work
+git clone <URL_TO_WORK_DOTFILES_GIT_REPO> ~/dotfiles/work
 ```
 
 **Otherwise**, run the below to create the respective work folder and initalize it with `git`.
