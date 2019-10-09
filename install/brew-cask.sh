@@ -17,24 +17,24 @@ apps=(
     burp-suite
     Caffeine
     docker
-    filezilla
+#    filezilla
     firefox
     flux
     google-chrome
-    google-chrome-canary
+#    google-chrome-canary
     intellij-idea
     intellij-idea-ce
     iterm2
     kitematic
-    mysqlworkbench
+#    mysqlworkbench
     shiftit
     slack
-    spotify
-    sublime-text
+#    spotify
+#    sublime-text
     tunnelblick
-    virtualbox
-    visual-studio-code
-    vlc
+#    virtualbox
+#    visual-studio-code
+#    vlc
 )
 
 for APPLICATION in "${apps[@]}"; do
