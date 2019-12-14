@@ -4,7 +4,7 @@ if ! is-macos -o ! is-executable ruby -o ! is-executable curl -o ! is-executable
   return
 fi
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 
 # Turn off `brew` analytics
 # Docs: https://docs.brew.sh/Analytics.html
@@ -42,7 +42,6 @@ apps=(
 )
 
 brew install "${apps[@]}"
-
 
 ##
 # Special stuff for MySQL + Python
