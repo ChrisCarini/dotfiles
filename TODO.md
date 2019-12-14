@@ -19,3 +19,7 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Automatically register user-scripts with Chrome
 1) Automatically setup the `.ssh/config` file as desired.
 1) Add bit about installing isort -> `shiv isort -c isort -o ~/bin/isort` or `python3 -m pip install --user isort` also works if you have `~/.local/bin` in your path (From Loren)
+1) Add desired folders to finder favorites
+1) Prevent multiple sudo prompts
+1) Killing the dock kills the remainder of the script
+1) Change shell to bash instead of zsh
