@@ -35,16 +35,6 @@ done
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/brew-cask.sh"
 
-
-##
-# If OSX, let's do the dock + settings
-##
-if is-macos ; then
-    . "$DOTFILES_DIR/macos/dock.sh"
-    . "$DOTFILES_DIR/macos/settings.sh"
-fi
-
-
 ##
 # Create directories
 ##
@@ -55,7 +45,6 @@ mkdir ~/Desktop/~DELETE\ THIS\ STUFF
 mkdir ~/Desktop/Archive
 mkdir ~/Desktop/Screen\ Shots\ To\ Save
 
-
 ##
 # Checkout source code
 ##
@@ -65,4 +54,14 @@ if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]] ; then
 . "$DOTFILES_DIR/work/install/code.sh"
 else
     echo "No work/install/code.sh exists; not bootstraping work code!"
+fi
+
+##
+# If OSX, let's do the dock + settings
+##
+if is-macos ; then
+    . "$DOTFILES_DIR/macos/settings.sh"
+    # Run dock.sh last, as the final step kills all items launched from the dock, including the terminal the install.sh
+    #  script is running from.
+    . "$DOTFILES_DIR/macos/dock.sh"
 fi

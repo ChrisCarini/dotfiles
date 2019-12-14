@@ -204,6 +204,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Kill affected applications                                                  #
 ###############################################################################
 
+# Don't kill the terminal, as that'd kill the script we're running from. ;)
 for app in "Activity Monitor" \
 	"cfprefsd" \
 	"Dock" \
@@ -212,7 +213,6 @@ for app in "Activity Monitor" \
 	"Google Chrome" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
 	; do
 	killall "${app}" &> /dev/null
 done
