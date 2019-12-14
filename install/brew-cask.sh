@@ -13,10 +13,10 @@ brew tap caskroom/versions
 # Install packages
 apps=(
 #    atom
-    arduino
-    burp-suite
-    Caffeine
-    docker
+#    arduino
+#    burp-suite
+#    Caffeine
+#    docker
 #    filezilla
     firefox
     flux
@@ -25,7 +25,7 @@ apps=(
     intellij-idea
     intellij-idea-ce
     iterm2
-    kitematic
+#    kitematic
 #    mysqlworkbench
     shiftit
     slack
