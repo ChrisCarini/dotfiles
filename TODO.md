@@ -22,4 +22,3 @@ Below, you will thing a list of things I would like this repository to do / acco
 1) Add desired folders to finder favorites
 1) Prevent multiple sudo prompts
 1) Killing the dock kills the remainder of the script
-1) Change shell to bash instead of zsh

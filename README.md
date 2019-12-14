@@ -9,8 +9,10 @@ These are primarily used on Mac OS systems, but might be able to be used on Linu
 
 ## Installation
 Below are the 4 simple steps for installation.
-### Step 0 - Copy over SSH keys
+### Step 0 - Change the default shell & copy over SSH keys
 ```bash
+chsh -s /bin/bash && bash
+
 HOSTNAME=my_old_laptop.hostname.com
 scp $HOSTNAME:~/.ssh/* ~/.ssh/
 ```
@@ -18,8 +20,7 @@ scp $HOSTNAME:~/.ssh/* ~/.ssh/
 ### Step 1 - Update Software and Install XCode
 On a fresh installation of macOS:
 ```bash
-sudo softwareupdate -i -a
-xcode-select --install
+sudo softwareupdate -i -a && xcode-select --install
 ```
 
 ### Step 2 - Clone the dotfiles
