@@ -83,6 +83,32 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
+# Finder: show Hard Drive on desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+
+# Finder: Add desired folders to Finder Favorites
+if ! [ -x "$(command -v mysides)" ]; then
+  echo "mysides not installed - trying to install via 'brew cask install mysides'..."
+  brew cask install mysides
+fi
+if [ -x "$(command -v mysides)" ]; then
+  echo "'mysides' is installed."
+
+  echo "Removing all existing folders from favorites menu..."
+  mysides list | awk -F"->" '{print $1}' | xargs -I {} mysides remove "{}"
+
+  echo "Adding folders to Finder favotires menu..."
+
+  mysides add "Applications" file:///Applications/
+  mysides add "Desktop" file:///Users/$USER/Desktop/
+  mysides add "Documents" file:///Users/$USER/Documents/
+  mysides add "Downloads" file:///Users/$USER/Downloads/
+  mysides add "$USER" file:///Users/$USER/
+  mysides add "Archive" file:///Users/$USER/Desktop/Archive/
+  mysides add "tmp" file:///Users/$USER/tmp/
+  mysides add "code" file:///Users/$USER/code
+  mysides add "~DELETE THIS STUFF" file:///Users/$USER/Desktop/~DELETE%20THIS%20STUFF/
+fi
 
 
 ###############################################################################

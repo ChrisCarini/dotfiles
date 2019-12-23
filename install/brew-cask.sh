@@ -27,6 +27,7 @@ apps=(
     iterm2
 #    kitematic
 #    mysqlworkbench
+    mysides  # Needed to be able to manipulate Finder favorites - See https://github.com/mosen/mysides
     shiftit
     slack
 #    spotify
