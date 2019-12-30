@@ -26,11 +26,7 @@ fi
 ##
 # Source the Work specific dotfiles
 ##
-for DOTFILE in "$DOTFILES_DIR"/work/runcom/.{bash_profile}; do
-    [ -f "$DOTFILE" ] && . "$DOTFILE"
-done
-
-for DOTFILE in "$DOTFILES_DIR"/work/system/.{path,env,alias,functions}; do
+for DOTFILE in "$DOTFILES_DIR"/work/runcom/.bash_profile "$DOTFILES_DIR"/work/system/.{path,env,alias,functions}; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
