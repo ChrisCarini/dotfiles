@@ -26,6 +26,7 @@ apps=(
   gcc
   git
   git-extras
+  gpg
   hyperfine
   imagemagick
   jq

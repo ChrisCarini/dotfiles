@@ -22,6 +22,7 @@ apps=(
     flux
     google-chrome
 #    google-chrome-canary
+    gpg-suite
     intellij-idea
     intellij-idea-ce
     iterm2
