@@ -8,5 +8,3 @@
 [alias]
 	l = log --graph --decorate --oneline --all
 	lgo = log
-[commit]
-	gpgsign = true
