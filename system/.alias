@@ -18,6 +18,9 @@ alias nanonano="/usr/bin/nano"
 alias pp="python -m json.tool"
 alias gitlogvis="git log --graph --decorate --oneline"
 
+# Neat work around for when `tree` is not installed.
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+
 alias please="sudo"
 
 alias line-to-comma="sed -e :a -e '\$!N;s/\\n/,/g;ta'"
