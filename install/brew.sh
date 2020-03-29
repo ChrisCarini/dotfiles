@@ -33,6 +33,7 @@ apps=(
   libcouchbase
   mosh
   mysql
+#  mysql@5.7  # needed for work
   nano
   packer
   ssh-copy-id
