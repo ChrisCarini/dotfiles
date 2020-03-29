@@ -40,3 +40,9 @@ echo "stderr" >&2
 
 $ ./std_streams.sh 2> >(while read line; do echo -e "$(tput setaf 1)$line$(tput sgr0)" >&2; done)
 ```
+
+#### Write `stdout` and `stderr` output to different files
+```
+command > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+``` 
+(**Source:** https://stackoverflow.com/a/692407)
