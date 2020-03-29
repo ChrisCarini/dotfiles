@@ -26,3 +26,17 @@ SELECT table_schema "DB Name",
 FROM information_schema.tables
 GROUP BY table_schema;
 ```
+
+#### Color stderr output red
+https://serverfault.com/questions/59262/bash-print-stderr-in-red-color
+```bash
+command 2> >(while read line; do echo -e "$(tput setaf 1)$line$(tput sgr0)" >&2; done)
+```
+Example:
+```shell script
+$ cat std_streams.sh 
+echo "stdout"
+echo "stderr" >&2
+
+$ ./std_streams.sh 2> >(while read line; do echo -e "$(tput setaf 1)$line$(tput sgr0)" >&2; done)
+```
