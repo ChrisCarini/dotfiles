@@ -5,6 +5,48 @@
 	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
+# When true, rebase branches on top of the fetched branch, instead of merging the
+# default branch from the default remote when "git pull" is run.
+# See "branch.<name>.rebase" for setting this on a per-branch basis.
+#
+# See https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase
+[pull]
+    rebase = true
+
+# When set to true, automatically create a temporary stash entry before the operation
+# begins, and apply it after the operation ends. This means that you can run rebase on
+# a dirty worktree. However, use with care: the final stash application after a
+# successful rebase might result in non-trivial conflicts. This option can be overridden
+# by the --no-autostash and --autostash options of git-rebase[1]. Defaults to false.
+#
+# See https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt-rebaseautoStash
+[rebase]
+    autoStash = true
+
+[branch]
+    # Automatic `git config branch.BRANCHNAME.rebase true` on new branches/repos
+    # Changes default `git pull` to `git pull --rebase`
+    autosetuprebase = always
+
+# If you set the configuration setting status.submodulesummary,
+# Git will also show you a short summary of changes to your submodules.
+#
+# See https://git-scm.com/book/en/v2/Git-Tools-Submodules for more details.
+[status]
+        submodulesummary = true
+
+# If you want to automate this process, you can add the --recurse-submodules flag
+# to the git pull command (since Git 2.14). This will make Git run git submodule
+# update right after the pull, putting the submodules in the correct state.
+# Moreover, if you want to make Git always pull with --recurse-submodules, you can
+# set the configuration option submodule.recurse to true (this works for git pull
+# since Git 2.15). This option will make Git use the --recurse-submodules flag for
+# all commands that support it (except clone).
+#
+# See https://git-scm.com/book/en/v2/Git-Tools-Submodules for more details.
+[submodule]
+        recurse = true
+
 [alias]
 	l = log --graph --decorate --oneline --all
 	lgo = log
