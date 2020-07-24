@@ -50,3 +50,8 @@
 [alias]
 	l = log --graph --decorate --oneline --all
 	lgo = log
+	# Work alias' for CRT
+    crtc = "!open \"https://go/crtc%20$(basename -s .git $(git config remote.origin.url))\""
+    crtcm = "!open \"https://crt.prod.linkedin.com/#/commits?products=%5B%22$(basename -s .git $(git config remote.origin.url))%22%5D&users=%5B%22$USER%22%5D\""
+    crtd = "!open \"http://go/crtd%20$(basename -s .git $(git config remote.origin.url))\""
+    crte = "!open \"http://go/crte%20$(basename -s .git $(git config remote.origin.url))\""
