@@ -11,12 +11,26 @@ prepend-path() {
   [ -d $1 ] && PATH="$1:$PATH"
 }
 
-sync-fork() {
-    git fetch upstream
-    git checkout master
-    git merge upstream/master
+##
+# Git / SCM Related
+##
+git-config-repo-github() {
+	git config user.name "Chris Carini"
+	git config user.email "6374067+ChrisCarini@users.noreply.github.com"
+	git config commit.gpgsign true
+	git config user.signingkey 35B77157B719125C
+	git config -l | cat
 }
 
+git-sync-fork() {
+  git fetch upstream
+  git checkout master
+  git merge upstream/master
+}
+
+##
+# Misc
+##
 
 smiley() {
     if [ "$?" -eq 0 ];
@@ -42,21 +56,6 @@ is_host_up() {
 perf() {
   curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
 }
-
-git-config-repo-github() {
-	git config user.name "Chris Carini"
-	git config user.email "6374067+ChrisCarini@users.noreply.github.com"
-	git config commit.gpgsign true
-	git config user.signingkey 35B77157B719125C
-	git config -l | cat
-}
-
-git-sync-fork() {
-  git fetch upstream
-  git checkout master
-  git merge upstream/master
-}
-
 
 genpasswd() {
    local l=$1
