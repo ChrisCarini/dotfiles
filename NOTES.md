@@ -46,3 +46,9 @@ $ ./std_streams.sh 2> >(while read line; do echo -e "$(tput setaf 1)$line$(tput 
 command > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
 ``` 
 (**Source:** https://stackoverflow.com/a/692407)
+
+
+#### Quickly test if you can connect to a particular host/port combo
+```shell script
+hostname ; date ; nc -v -i 1 -w 3 doesnotexist.chriscarini.com 8443 ; date"
+```
