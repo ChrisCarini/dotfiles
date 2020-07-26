@@ -1,6 +1,8 @@
-[user]
-	name = ChrisCarini
-	email = 6374067+ChrisCarini@users.noreply.github.com
+; The [user] block is commented out, as this is set in the included files at the bottom.
+; [user]
+; 	name = ChrisCarini
+; 	email = 6374067+ChrisCarini@users.noreply.github.com
+
 [core]
 	excludesfile = ~/.gitignore_global
 [push]
@@ -57,5 +59,12 @@
 # Include any work git configuration
 #
 # See https://git-scm.com/docs/git-config#_includes
-[include]
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/dotfiles/git/.gitconfig_github
+[includeIf "gitdir:~/GitHub/"]
+	path = ~/dotfiles/git/.gitconfig_github
+
+[includeIf "gitdir:~/dotfiles/work/"]
+	path = ~/dotfiles/work/git/.gitconfig
+[includeIf "gitdir:~/code/"]
 	path = ~/dotfiles/work/git/.gitconfig
