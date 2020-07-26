@@ -33,7 +33,7 @@
 #
 # See https://git-scm.com/book/en/v2/Git-Tools-Submodules for more details.
 [status]
-        submodulesummary = true
+    submodulesummary = true
 
 # If you want to automate this process, you can add the --recurse-submodules flag
 # to the git pull command (since Git 2.14). This will make Git run git submodule
@@ -45,13 +45,17 @@
 #
 # See https://git-scm.com/book/en/v2/Git-Tools-Submodules for more details.
 [submodule]
-        recurse = true
+    recurse = true
 
 [alias]
 	l = log --graph --decorate --oneline --all
 	lgo = log
-	# Work alias' for CRT
-    crtc = "!open \"https://go/crtc%20$(basename -s .git $(git config remote.origin.url))\""
-    crtcm = "!open \"https://crt.prod.linkedin.com/#/commits?products=%5B%22$(basename -s .git $(git config remote.origin.url))%22%5D&users=%5B%22$USER%22%5D\""
-    crtd = "!open \"http://go/crtd%20$(basename -s .git $(git config remote.origin.url))\""
-    crte = "!open \"http://go/crte%20$(basename -s .git $(git config remote.origin.url))\""
+
+[color]
+	ui = auto
+
+# Include any work git configuration
+#
+# See https://git-scm.com/docs/git-config#_includes
+[include]
+	path = ~/dotfiles/work/git/.gitconfig
