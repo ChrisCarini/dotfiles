@@ -35,12 +35,5 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) See if git-config includes conditional includes is useful (https://git-scm.com/docs/git-config#_includes) - from https://stackoverflow.com/a/43884702
 1) Automatically setup the `.ssh/config` file as desired.
 1) Add bit about installing isort -> `shiv isort -c isort -o ~/bin/isort` or `python3 -m pip install --user isort` also works if you have `~/.local/bin` in your path (From Loren)
-1) Add the below to `.gitconfig`
-    ```
-    [alias]
-        crtc = "!open \"https://crt.prod.linkedin.com/#/commits?products=%5B%22$(basename -s .git $(git config remote.origin.url))%22%5D\""
-        crtcm = "!open \"https://crt.prod.linkedin.com/#/commits?products=%5B%22$(basename -s .git $(git config remote.origin.url))%22%5D&users=%5B%22$USER%22%5D\""
-    ```
 1) Add `brew tap buo/cask-upgrade` -> https://github.com/buo/homebrew-cask-upgrade
 1) 2020-05 - `Homebrew` installation says `This script will install: ...` - auto-accept that prompt.
-1) 2020-05 - Automatically run `chsh -s /bin/bash` to switch to using bash
