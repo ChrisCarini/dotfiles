@@ -44,4 +44,3 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) Add `brew tap buo/cask-upgrade` -> https://github.com/buo/homebrew-cask-upgrade
 1) 2020-05 - `Homebrew` installation says `This script will install: ...` - auto-accept that prompt.
 1) 2020-05 - Automatically run `chsh -s /bin/bash` to switch to using bash
-1) 2020-05 - Automatically add `export BASH_SILENCE_DEPRECATION_WARNING=1` to silence the `zsh` suggestion in bash - ref: https://apple.stackexchange.com/a/371998

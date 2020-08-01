@@ -220,6 +220,12 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 
 ###############################################################################
+# Misc OSX Customizations                                                     #
+###############################################################################
+# Silence the `zsh` suggestion in bash on OSX - ref: https://apple.stackexchange.com/a/371998
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
