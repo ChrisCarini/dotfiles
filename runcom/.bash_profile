@@ -47,3 +47,4 @@ unset unset_colors
 
 # Clean up
 unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
+export PATH="/usr/local/bin:$PATH"
