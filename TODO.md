@@ -31,7 +31,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) Outlook / O365 Customizations
     1) Set O365 (outlook) "mark as read after x seconds" automagically
     1) Set O365 to show BCC by default
-1) Bootstrap work code / projects via checkouts
 1) See if git-config includes conditional includes is useful (https://git-scm.com/docs/git-config#_includes) - from https://stackoverflow.com/a/43884702
 1) Automatically setup the `.ssh/config` file as desired.
 1) Add bit about installing isort -> `shiv isort -c isort -o ~/bin/isort` or `python3 -m pip install --user isort` also works if you have `~/.local/bin` in your path (From Loren)
