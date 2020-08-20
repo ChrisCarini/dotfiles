@@ -5,7 +5,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
 
 
 ## To-Do
-1) Change background to Light Orb
 1) IntelliJ Customizations
     1) Install work IJ
     1) Automatically install IJ plugins (maybe not possible?)
@@ -35,4 +34,3 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) Automatically setup the `.ssh/config` file as desired.
 1) Add bit about installing isort -> `shiv isort -c isort -o ~/bin/isort` or `python3 -m pip install --user isort` also works if you have `~/.local/bin` in your path (From Loren)
 1) Add `brew tap buo/cask-upgrade` -> https://github.com/buo/homebrew-cask-upgrade
-1) 2020-05 - `Homebrew` installation says `This script will install: ...` - auto-accept that prompt.
