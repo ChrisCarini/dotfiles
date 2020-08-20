@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+##
+# Make utilities available
+#
+# Needed because we make use of is-macos-catalina within this script.
+##
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ..  && pwd )"
+PATH="$DOTFILES_DIR/bin:$PATH"
 
 ##
 # Remove all Dock Icons
