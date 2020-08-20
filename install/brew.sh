@@ -5,7 +5,8 @@ if ! is-macos -o ! is-executable ruby -o ! is-executable curl -o ! is-executable
 fi
 
 # Install Brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Note: We pipe echo, because brew installation will prompt the user to hit the [enter] key.
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Turn off `brew` analytics
 # Docs: https://docs.brew.sh/Analytics.html
