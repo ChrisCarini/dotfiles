@@ -7,7 +7,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 
 ##
-# Elevate privilates to sudo so we can avoid prompts throughout the installation.
+# Elevate privileges to sudo so we can avoid prompts throughout the installation.
 ##
 # Ask for the administrator password upfront
 echo "Prompting for sudo password upfront..."
