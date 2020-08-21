@@ -11,7 +11,7 @@ DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 ##
 # Ask for the administrator password upfront
 echo "Prompting for sudo password upfront..."
-sudo -v
+sudo --validate
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -32,10 +32,6 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
-    [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
-done
-# Override and .gitconfig / .gitignore_global with work specific configs
-for DOTFILE in "$DOTFILES_DIR"/work/git/.{gitconfig,gitignore_global}; do
     [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
