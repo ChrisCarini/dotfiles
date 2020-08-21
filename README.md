@@ -9,12 +9,9 @@ These are primarily used on Mac OS systems, but might be able to be used on Linu
 
 ## Installation
 Below are the 4 simple steps for installation.
-### Step 1 - Change the default shell & copy over SSH keys
+### Step 1 - Change the default shell
 ```bash
 chsh -s /bin/bash && bash
-
-HOSTNAME=my_old_laptop.hostname.com
-ssh -r $HOSTNAME:~/.ssh ~/
 ```
 
 ### Step 2 - Clone the dotfiles

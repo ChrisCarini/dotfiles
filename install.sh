@@ -47,16 +47,36 @@ trap reset_sudoers EXIT
 
 echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a /etc/sudoers >/dev/null
 
-##
+##########################
 # Make utilities available
-##
+##########################
 PATH="$DOTFILES_DIR/bin:$PATH"
 
-if is-macos; then
-  title "Preventing system from sleeping for duration of installation"
-  /usr/bin/caffeinate -dimu -w $$ &
+###################################
+title "Gather all inputs from user"
+###################################
+read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME
 
+if is-macos; then
+  ####################################################################
+  title "Preventing system from sleeping for duration of installation"
+  ####################################################################
+  /usr/bin/caffeinate -dimu -w $$ &
+fi
+
+########################################################
+title "Copy ~/.ssh directory over from previous machine"
+########################################################
+if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+  echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
+else
+  ssh -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+fi
+
+if is-macos; then
+  ##############################################
   title "Updating Software and Installing XCode"
+  ##############################################
   sudo softwareupdate -i -a && xcode-select --install
 fi
 
@@ -112,7 +132,7 @@ if is-macos ; then
     chsh -s /bin/bash
 
     sudo . "$DOTFILES_DIR/macos/settings.sh"
-    # Run dock.sh last, as the final step kills all items launched from the dock, including the terminal the install.sh
-    #  script is running from.
+    # Run dock.sh last, as the final step kills all items launched from the dock,
+    # including the terminal the install.sh script is running from.
     . "$DOTFILES_DIR/macos/dock.sh"
 fi
