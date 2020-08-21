@@ -40,6 +40,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 if is-macos; then
+  title "Preventing system from sleeping for duration of installation"
+  /usr/bin/caffeinate -dimu -w $$ &
+
   title "Updating Software and Installing XCode"
   sudo softwareupdate -i -a && xcode-select --install
 fi
