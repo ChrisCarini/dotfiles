@@ -1,10 +1,28 @@
 #!/usr/bin/env bash
-##
+####################################################
 # Get current dir (so run this script from anywhere)
-##
+####################################################
 export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
+
+#################
+# Banner Function
+#################
+function section() {
+  local s=("$@") b w
+  for l in "${s[@]}"; do
+    ((w < ${#l})) && {
+      b="$l"
+      w="${#l}"
+    }
+  done
+  echo "####${b//?/#}####"
+  for l in "${s[@]}"; do
+    printf '#   %*s%s   #\n' "-$w" "$l"
+  done
+  echo "####${b//?/#}####"
+}
 
 ##
 # Elevate privileges to sudo so we can avoid prompts throughout the installation.
@@ -26,24 +44,27 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 ##
 # if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; fi
 
-##
-# Bunch of symlinks
-##
+#############################
+title "Symlink core dotfiles"
+#############################
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
     [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
-##
-# Package managers & packages
-##
-. "$DOTFILES_DIR/install/brew.sh"
-. "$DOTFILES_DIR/install/brew-cask.sh"
+###########################################
+title "Install package managers & packages"
+###########################################
+if is-macos; then
+  title "Installing brew"
+  . "$DOTFILES_DIR/install/brew.sh"
+  . "$DOTFILES_DIR/install/brew-cask.sh"
+fi
 
-##
-# Create directories
-##
+##########################
+title "Create directories"
+##########################
 mkdir ~/code
 mkdir ~/tmp
 mkdir ~/GitHub
@@ -51,9 +72,9 @@ mkdir ~/Desktop/~DELETE\ THIS\ STUFF
 mkdir ~/Desktop/Archive
 mkdir ~/Desktop/Screen\ Shots\ To\ Save
 
-##
-# Checkout source code
-##
+############################
+title "Checkout source code"
+############################
 . "$DOTFILES_DIR/install/code.sh"
 # Run work code bootstrap, should it exist
 if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]] ; then
