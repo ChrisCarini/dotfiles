@@ -52,6 +52,16 @@ echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a /etc/sudoers >/dev/n
 ##########################
 PATH="$DOTFILES_DIR/bin:$PATH"
 
+########################################
+title "Ensure shell is set to /bin/bash"
+########################################
+if [[ "$SHELL" != "/bin/bash" ]]; then
+  echo "Default shell for $USER is $SHELL and NOT /bin/bash, changing to /bin/bash..."
+  sudo chsh -s /bin/bash $USER
+else
+  echo "Default shell for $USER is $SHELL, proceeding..."
+fi
+
 ###################################
 title "Gather all inputs from user"
 ###################################

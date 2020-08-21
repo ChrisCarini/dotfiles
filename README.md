@@ -7,13 +7,8 @@ These are primarily used on Mac OS systems, but might be able to be used on Linu
 ## Package overview
 
 ## Installation
-Below are the 3 simple steps for installation.
-### Step 1 - Change the default shell
-```bash
-chsh -s /bin/bash && bash
-```
-
-### Step 2 - Clone the dotfiles
+Below are the 2 simple steps for installation.
+### Step 1 - Clone the dotfiles
 #### Clone with `Git` (_preferred_)
 ```bash
 git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
@@ -29,7 +24,7 @@ bash -c "`curl -fsSL https://raw.github.com/ChrisCarini/dotfiles/master/remote-i
 bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/ChrisCarini/dotfiles/master/remote-install.sh`"
 ```
 
-### Step 3 - Install!
+### Step 2 - Install!
 ```bash
 source ~/dotfiles/install.sh
 ```
