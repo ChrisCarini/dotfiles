@@ -24,15 +24,28 @@ function section() {
   echo "####${b//?/#}####"
 }
 
-##
-# Elevate privileges to sudo so we can avoid prompts throughout the installation.
-##
-# Ask for the administrator password upfront
-echo "Prompting for sudo password upfront..."
-sudo --validate
+#########################################################################
+section "Elevate privileges to avoid prompts throughout the installation"
+#########################################################################
+# Ask for the administrator password upfront, and add $USER to /etc/sudoers for the duration of the script.
+#
+# Note: The previous method of creating a background loop to persist the sudo timestamp
+#       won't work because `brew` explicitly invalidates the sudo timestamp. Adding the
+#       user to the sudoers file is the most reliable way I've found.
+echo "Prompting for sudo password..."
+sudo --validate || exit 1
 
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# Add $USER to /etc/sudoers for duration of script
+USER_SUDOER="${USER} ALL=(ALL) NOPASSWD: ALL"
+
+reset_sudoers() {
+  echo -b 'Resetting /etc/sudoers ...'
+  /usr/bin/sudo -E -- /usr/bin/sed -i '' "/^${USER_SUDOER}/d" /etc/sudoers
+}
+
+trap reset_sudoers EXIT
+
+echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a /etc/sudoers >/dev/null
 
 ##
 # Make utilities available
