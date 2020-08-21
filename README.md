@@ -1,33 +1,13 @@
 # Chris' dotfiles
 
+## Installation
+<h1 align="center">🖥<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🐶&nbsp;💻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+<p align="center">💲&nbsp;<code>curl -sL git.io/.bash | sh</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+## Description
 These are my dotfiles. Use at your own risk.
 
 These are primarily used on Mac OS systems, but might be able to be used on Linux as well.
-
-## Package overview
-
-## Installation
-Below are the 2 simple steps for installation.
-### Step 1 - Clone the dotfiles
-#### Clone with `Git` (_preferred_)
-```bash
-git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
-```
-
-#### Download with `curl`
-```bash
-bash -c "`curl -fsSL https://raw.github.com/ChrisCarini/dotfiles/master/remote-install.sh`"
-```
-
-#### Download with `wget`
-```bash
-bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/ChrisCarini/dotfiles/master/remote-install.sh`"
-```
-
-### Step 2 - Install!
-```bash
-source ~/dotfiles/install.sh
-```
 
 ## Features
 ### Mac OS Specifics
@@ -97,6 +77,8 @@ Commands:
 
 ## Credits
 
-I borrowed (and tweaked) a fair bit from [Lars Kappert's dotfiles](https://github.com/webpro/dotfiles).
+I borrowed (and tweaked) a fair bit from:
+* [Lars Kappert's dotfiles](https://github.com/webpro/dotfiles)
+* [Markus Reiter's dotfiles](https://github.com/reitermarkus/dotfiles)
 
 Additionally, the [dotfiles community](https://dotfiles.github.io) happens to have a **TON** of great examples of other peoples `dotfiles`.
