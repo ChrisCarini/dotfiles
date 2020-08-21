@@ -56,6 +56,7 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 title "Gather all inputs from user"
 ###################################
 read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME
+read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL
 
 if is-macos; then
   ####################################################################
@@ -71,6 +72,15 @@ if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
   echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
 else
   ssh -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+fi
+
+##############################
+title "Checkout work dotfiles"
+##############################
+if [ -z $WORK_DOTFILES_REPO_URL ]; then
+  echo "WARNING: No work dotfiles repo url set; skipping cloning work dotfiles directory."
+else
+  git clone $WORK_DOTFILES_REPO_URL ~/dotfiles/work
 fi
 
 if is-macos; then

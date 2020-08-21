@@ -6,9 +6,8 @@ These are primarily used on Mac OS systems, but might be able to be used on Linu
 
 ## Package overview
 
-
 ## Installation
-Below are the 4 simple steps for installation.
+Below are the 3 simple steps for installation.
 ### Step 1 - Change the default shell
 ```bash
 chsh -s /bin/bash && bash
@@ -30,21 +29,7 @@ bash -c "`curl -fsSL https://raw.github.com/ChrisCarini/dotfiles/master/remote-i
 bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/ChrisCarini/dotfiles/master/remote-install.sh`"
 ```
 
-### Step 3 - Clone work-specific dotfiles repository
-If you **already** have a work-specific repository ready, then you just need to run:
-```bash
-git clone <URL_TO_WORK_DOTFILES_GIT_REPO> ~/dotfiles/work
-```
-
-**Otherwise**, run the below to create the respective work folder and initalize it with `git`.
-```bash
-mkdir ~/dotfiles/work/
-cd ~/dotfiles/work/
-git init
-source ~/dotfiles/bin/create_work_dotfiles.sh
-```
-
-### Step 4 - Install!
+### Step 3 - Install!
 ```bash
 source ~/dotfiles/install.sh
 ```
@@ -65,7 +50,8 @@ Similar to the structure of this repository, we allow for the following folders:
 1. `$DOTFILES_DIR/work/git`
 1. `$DOTFILES_DIR/work/system`
 
-To initalize the dotfiles that can be used in these directories, you can simply run:
+#### Work `dotfiles` Initialization
+To initialize the dotfiles that can be used in these directories, you can simply run:
 ```bash
 source ~/dotfiles/bin/create_work_dotfiles.sh
 ```
