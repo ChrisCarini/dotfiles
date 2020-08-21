@@ -14,7 +14,7 @@ Below are the 4 simple steps for installation.
 chsh -s /bin/bash && bash
 
 HOSTNAME=my_old_laptop.hostname.com
-scp $HOSTNAME:~/.ssh/* ~/.ssh/
+ssh -r $HOSTNAME:~/.ssh ~/
 ```
 
 ### Step 2 - Clone the dotfiles
