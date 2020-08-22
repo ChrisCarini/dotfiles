@@ -5,6 +5,18 @@ function echo_ri() {
 }
 
 function clone_git_repo() {
+  read -p "Enter previous machine hostname (for SSH keys): " PREVIOUS_HOSTNAME
+  if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+    echo_ri "[ERROR]: No hostname set. We need to copy the GitHub SSH key from previous host in order to proceed. Exiting."
+    exit 1
+  else
+    echo_ri "Copying SSH keys from old host..."
+    scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+  fi
+
+  echo_ri "Adding GitHub SSH key to SSH Agent..."
+  ssh-add $(find ~/.ssh -not -name "*.pub" -type f -name "*GitHub*")
+
   echo_ri "Cloning dotfiles repo..."
   git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
 }

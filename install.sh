@@ -81,7 +81,7 @@ title "Copy ~/.ssh directory over from previous machine"
 if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
   echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
 else
-  ssh -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+  scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
 fi
 
 ##############################
