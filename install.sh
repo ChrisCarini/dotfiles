@@ -9,7 +9,7 @@ DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 #################
 # Banner Function
 #################
-function section() {
+function title() {
   local s=("$@") b w
   for l in "${s[@]}"; do
     ((w < ${#l})) && {
@@ -24,9 +24,9 @@ function section() {
   echo "####${b//?/#}####"
 }
 
-#########################################################################
-section "Elevate privileges to avoid prompts throughout the installation"
-#########################################################################
+#######################################################################
+title "Elevate privileges to avoid prompts throughout the installation"
+#######################################################################
 # Ask for the administrator password upfront, and add $USER to /etc/sudoers for the duration of the script.
 #
 # Note: The previous method of creating a background loop to persist the sudo timestamp
