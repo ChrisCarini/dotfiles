@@ -65,7 +65,11 @@ fi
 ###################################
 title "Gather all inputs from user"
 ###################################
-read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME
+if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+  read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME
+else
+  echo "Previous machine hostname already set to: $PREVIOUS_HOSTNAME"
+fi
 read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL
 
 if is-macos; then
