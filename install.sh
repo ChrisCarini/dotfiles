@@ -162,9 +162,6 @@ fi
 # If OSX, let's do the dock + settings
 ##
 if is-macos ; then
-    # Change the default shell on OSX back to bash.
-    chsh -s /bin/bash
-
     sudo . "$DOTFILES_DIR/macos/settings.sh"
     # Run dock.sh last, as the final step kills all items launched from the dock,
     # including the terminal the install.sh script is running from.
