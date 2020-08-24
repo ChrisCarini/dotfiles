@@ -66,11 +66,13 @@ fi
 title "Gather all inputs from user"
 ###################################
 if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
-  read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME
+  # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
+  read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME </dev/tty
 else
   echo "Previous machine hostname already set to: $PREVIOUS_HOSTNAME"
 fi
-read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL
+# We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
+read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL </dev/tty
 
 if is-macos; then
   ####################################################################
