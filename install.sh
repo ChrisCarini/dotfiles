@@ -82,10 +82,16 @@ fi
 ########################################################
 title "Copy ~/.ssh directory over from previous machine"
 ########################################################
-if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
-  echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
+# If ~/.ssh exists and is not empty, assume we copied over the SSH directory earlier.
+if [[ -d ~/.ssh ]] && [[ -n "$(ls -A ~/.ssh)" ]]; then
+  echo "[INFO] ~/.ssh directory already exists and has contents, assuming it was copied earlier."
 else
-  scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+  echo "[INFO] Nothing exists in ~/.ssh directory. Copying from $PREVIOUS_HOSTNAME..."
+  if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+    echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
+  else
+    scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+  fi
 fi
 
 ##############################
