@@ -23,6 +23,9 @@ dockutil --no-restart --add "/Applications/Microsoft Outlook.app"
 # Chrome
 dockutil --no-restart --add "/Applications/Google Chrome.app"
 
+# LI IDEA
+dockutil --no-restart --add "$(ls -trd /Applications/LI\ IntelliJ\ IDEA\ 20* | head -n1)"
+
 # Term
 if is-macos-catalina ; then
   dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
