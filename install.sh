@@ -17,6 +17,7 @@ function title() {
       w="${#l}"
     }
   done
+  echo # Give an extra newline before printing a new title.
   echo "####${b//?/#}####"
   for l in "${s[@]}"; do
     printf '#   %*s%s   #\n' "-$w" "$l"
