@@ -127,6 +127,16 @@ if is-macos; then
   . "$DOTFILES_DIR/install/brew-cask.sh"
 fi
 
+# Install work applications, should any exist
+if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]] ; then
+  ###########################################
+  title "Install work applications"
+  ###########################################
+  . "$DOTFILES_DIR/work/install/apps.sh"
+else
+    echo "No work/install/apps.sh exists; not bootstraping work applications!"
+fi
+
 ##########################
 title "Create directories"
 ##########################
