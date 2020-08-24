@@ -3,11 +3,11 @@
 ##
 
 # Add to end of path
-append-path() {
+append_path() {
   [ -d $1 ] && PATH="$PATH:$1"
 }
 # Add to beginning of path
-prepend-path() {
+prepend_path() {
   [ -d $1 ] && PATH="$1:$PATH"
 }
 
