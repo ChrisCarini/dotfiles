@@ -7,6 +7,9 @@ function echo_ri() {
 function clone_git_repo() {
   # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
   read -p "Enter previous machine hostname (for SSH keys): " PREVIOUS_HOSTNAME </dev/tty
+  # Export the prev hostname so that it can be used/'seen' in install.sh invocation below.
+  export PREVIOUS_HOSTNAME
+
   if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
     echo_ri "[ERROR]: No hostname set. We need to copy the GitHub SSH key from previous host in order to proceed. Exiting."
     exit 1
