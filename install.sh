@@ -3,7 +3,7 @@
 # Get current dir (so run this script from anywhere)
 ####################################################
 export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 
 #################
@@ -80,6 +80,7 @@ if is-macos; then
   title "Preventing system from sleeping for duration of installation"
   ####################################################################
   /usr/bin/caffeinate -dimu -w $$ &
+  echo "Display, System, & Disk will remain awake for duration of this process (PID: $$)."
 fi
 
 ########################################################
@@ -124,26 +125,25 @@ title "Symlink core dotfiles"
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
-    [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
+  [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
-###########################################
-title "Install package managers & packages"
-###########################################
 if is-macos; then
-  title "Installing brew"
-  . "$DOTFILES_DIR/install/brew.sh"
-  . "$DOTFILES_DIR/install/brew-cask.sh"
+  ############################################
+  title "Installing brew, packages, and casks"
+  ############################################
+  "$DOTFILES_DIR/install/brew.sh"
+  "$DOTFILES_DIR/install/brew-cask.sh"
 fi
 
 # Install work applications, should any exist
-if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]] ; then
+if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
   ###########################################
   title "Install work applications"
   ###########################################
-  . "$DOTFILES_DIR/work/install/apps.sh"
+  "$DOTFILES_DIR/work/install/apps.sh"
 else
-    echo "No work/install/apps.sh exists; not bootstraping work applications!"
+  echo "No work/install/apps.sh exists; not bootstraping work applications!"
 fi
 
 ##########################
@@ -159,20 +159,20 @@ mkdir ~/Desktop/Screen\ Shots\ To\ Save
 ############################
 title "Checkout source code"
 ############################
-. "$DOTFILES_DIR/install/code.sh"
+"$DOTFILES_DIR/install/code.sh"
 # Run work code bootstrap, should it exist
-if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]] ; then
-. "$DOTFILES_DIR/work/install/code.sh"
+if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]]; then
+  "$DOTFILES_DIR/work/install/code.sh"
 else
-    echo "No work/install/code.sh exists; not bootstraping work code!"
+  echo "No work/install/code.sh exists; not bootstraping work code!"
 fi
 
 ##
 # If OSX, let's do the dock + settings
 ##
-if is-macos ; then
-    sudo . "$DOTFILES_DIR/macos/settings.sh"
-    # Run dock.sh last, as the final step kills all items launched from the dock,
-    # including the terminal the install.sh script is running from.
-    . "$DOTFILES_DIR/macos/dock.sh"
+if is-macos; then
+  sudo "$DOTFILES_DIR/macos/settings.sh"
+  # Run dock.sh last, as the final step kills all items launched from the dock,
+  # including the terminal the install.sh script is running from.
+  "$DOTFILES_DIR/macos/dock.sh"
 fi
