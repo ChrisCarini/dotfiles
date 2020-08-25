@@ -8,7 +8,7 @@ fi
 # Docs: https://docs.brew.sh/Analytics.html
 brew analytics off
 
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 # Install packages
 apps=(
