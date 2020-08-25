@@ -63,7 +63,7 @@ else
 fi
 
 echo_ri "Invoking installation script..."
-. ~/dotfiles/install.sh
+~/dotfiles/install.sh
 
 echo_ri "Installation Complete."
 exit 0
