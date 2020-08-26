@@ -133,8 +133,10 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 header "-" "Finder: Add desired folders to Finder Favorites"
 # ----------------------------------------------------------
 if ! [ -x "$(command -v mysides)" ]; then
-  echo "mysides not installed - trying to install via 'brew cask install mysides'..."
-  brew cask install mysides
+  echo "'mysides' not installed - executing 'brew cask install mysides' as $(logname) ..."
+  # Note: We run this as `su $(logname)` because the settings.sh file is run as sudo (for all the other commands)
+  #       and brew will complain and not run if being run with elevated privs.
+  su $(logname) -c 'brew cask install mysides'
 fi
 if [ -x "$(command -v mysides)" ]; then
   echo "'mysides' is installed."
@@ -153,6 +155,15 @@ if [ -x "$(command -v mysides)" ]; then
   mysides add "tmp" file:///Users/$USER/tmp/
   mysides add "code" file:///Users/$USER/code
   mysides add "~DELETE THIS STUFF" file:///Users/$USER/Desktop/~DELETE%20THIS%20STUFF/
+else
+  echo "###################"
+  echo "##    WARNING    ##"
+  echo "###################"
+  echo "##"
+  echo "## mysides still is not installed. Nothing added to side bar."
+  echo "##"
+  echo "##    You can manually install mysides via:"
+  echo "##        $ brew cask install mysides"
 fi
 
 # ===========================================
