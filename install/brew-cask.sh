@@ -29,6 +29,7 @@ apps=(
 #    kitematic
 #    mysqlworkbench
     mysides  # Needed to be able to manipulate Finder favorites - See https://github.com/mosen/mysides
+    OmniDiskSweeper  # https://www.omnigroup.com/more
     shiftit
     slack
 #    spotify
