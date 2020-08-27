@@ -6,6 +6,16 @@ export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 
+##########################
+# Make utilities available
+##########################
+PATH="$DOTFILES_DIR/bin:$PATH"
+
+#################################################################
+# For adding $USER to /etc/sudoers for duration of install script
+#################################################################
+USER_SUDOER="${USER} ALL=(ALL) NOPASSWD: ALL"
+
 #################
 # Banner Function
 #################
@@ -25,6 +35,38 @@ function title() {
   echo "####${b//?/#}####"
 }
 
+#############################
+# Setup the cleanup functions
+#############################
+# Below, we will add the user to the sudoers file - this will revert that upon exit
+function reset_sudoers() {
+  echo 'Resetting /etc/sudoers ...'
+  /usr/bin/sudo -E -- /usr/bin/sed -i '' "/^${USER_SUDOER}/d" /etc/sudoers
+}
+
+# The main method for script finalization
+function finalize_script() {
+  reset_sudoers
+
+  echo "#####################################"
+  echo "##                                 ##"
+  echo "##  SCRIPT COMPLETED SUCCESSFULLY  ##"
+  echo "##                                 ##"
+  echo "#####################################"
+  echo
+  echo "Logging the user out in 30 seconds for settings to take effect."
+  for i in {01..30}; do
+    sleep 1
+    printf "\r $i of 30 seconds until logout..."
+  done
+
+  # Forcefully log out the user.
+  launchctl bootout gui/$(id -u $USER)
+}
+
+# Trap the `EXIT` signal and run our cleanup scripts
+trap finalize_script EXIT
+
 #######################################################################
 title "Elevate privileges to avoid prompts throughout the installation"
 #######################################################################
@@ -36,22 +78,7 @@ title "Elevate privileges to avoid prompts throughout the installation"
 echo "Prompting for sudo password..."
 sudo --validate || exit 1
 
-# Add $USER to /etc/sudoers for duration of script
-USER_SUDOER="${USER} ALL=(ALL) NOPASSWD: ALL"
-
-reset_sudoers() {
-  echo -b 'Resetting /etc/sudoers ...'
-  /usr/bin/sudo -E -- /usr/bin/sed -i '' "/^${USER_SUDOER}/d" /etc/sudoers
-}
-
-trap reset_sudoers EXIT
-
 echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a /etc/sudoers >/dev/null
-
-##########################
-# Make utilities available
-##########################
-PATH="$DOTFILES_DIR/bin:$PATH"
 
 ########################################
 title "Ensure shell is set to /bin/bash"
