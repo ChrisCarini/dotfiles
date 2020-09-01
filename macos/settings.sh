@@ -2,12 +2,10 @@
 
 # ~/.macos — https://mths.be/macos
 
-function header() {
-  length=$((${#2} + 2))
-  s=$(printf "%-${length}s" "$1")
-  barz="${s// /$1}"
-  printf '\n%s\n> %s\n%s\n' "$barz" "$2" "$barz"
-}
+##########################
+# Make utilities available
+##########################
+PATH="$DOTFILES_DIR/bin:$PATH"
 
 # ---------------------------------------------------
 header "-" "Close any open System Preferences panes." # Prevents them from overriding settings we’re about to change"

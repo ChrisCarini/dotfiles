@@ -16,25 +16,6 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 #################################################################
 USER_SUDOER="${USER} ALL=(ALL) NOPASSWD: ALL"
 
-#################
-# Banner Function
-#################
-function title() {
-  local s=("$@") b w
-  for l in "${s[@]}"; do
-    ((w < ${#l})) && {
-      b="$l"
-      w="${#l}"
-    }
-  done
-  echo # Give an extra newline before printing a new title.
-  echo "####${b//?/#}####"
-  for l in "${s[@]}"; do
-    printf '#   %*s%s   #\n' "-$w" "$l"
-  done
-  echo "####${b//?/#}####"
-}
-
 #############################
 # Setup the cleanup functions
 #############################

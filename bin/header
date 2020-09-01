@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Prints a header like so:
+#   =================
+#   > Header Function
+#   =================
+#
+# When called like:
+#
+#   $ header "=" "Header Function"
+function header() {
+  length=$((${#2} + 2))
+  s=$(printf "%-${length}s" "$1")
+  barz="${s// /$1}"
+  printf '\n%s\n> %s\n%s\n' "$barz" "$2" "$barz"
+}
+
+header "$1" "$2"
