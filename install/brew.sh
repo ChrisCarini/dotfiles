@@ -24,6 +24,9 @@ apps=(
   coreutils
   docker
   docker-compose
+  docker-completion
+  docker-compose-completion
+  docker-machine-completion
   dockutil
   gcc
   git

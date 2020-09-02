@@ -16,7 +16,7 @@ apps=(
 #    arduino
 #    burp-suite
 #    Caffeine
-#    docker
+    docker  # This installs the OSX Docker Desktop Application
 #    filezilla
     firefox
     flux

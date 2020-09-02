@@ -54,4 +54,7 @@ EOF
   # Open ShiftIt for the first time - needed to allow system permissions to control machine
   open_if_app_exists "ShiftIt.app"
 
+  # Open Docker for the first time - needed to allow system privileged access
+  open_if_app_exists "Docker.app"
+
 fi
