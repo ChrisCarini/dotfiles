@@ -29,13 +29,18 @@ function reset_sudoers() {
 function finalize_script() {
   reset_sudoers
 
+  # Set the post-install.sh flag since we've completed successfully.
+  POST_INSTALL_FLAG_FILE=~/dotfiles/.post-install.sh.flag
+  touch "$POST_INSTALL_FLAG_FILE"
+
   echo "#####################################"
   echo "##                                 ##"
   echo "##  SCRIPT COMPLETED SUCCESSFULLY  ##"
   echo "##                                 ##"
   echo "#####################################"
   echo
-  echo "Logging the user out in 30 seconds for settings to take effect."
+  echo "Logging the user out in 30 seconds to allow for the setting changes to take effect."
+  echo
   for i in {01..30}; do
     sleep 1
     printf "\r $i of 30 seconds until logout..."

@@ -42,6 +42,10 @@ for BANNER_FILE in "$DOTFILES_DIR"/work/system/.{banner,banner_*}; do
 done
 printf "$BANNER_OUTPUT"
 
+# If the post-install script flag is set, run post-install.sh
+POST_INSTALL_FLAG_FILE=~/dotfiles/.post-install.sh.flag
+[ -f "$POST_INSTALL_FLAG_FILE" ] && ~/dotfiles/post-install.sh
+
 unset_colors
 unset unset_colors
 
