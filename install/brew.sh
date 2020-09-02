@@ -24,9 +24,9 @@ apps=(
   coreutils
   docker
   docker-compose
-  docker-completion
-  docker-compose-completion
-  docker-machine-completion
+  #  docker-completion          # This causes failure due to completion already being installed.
+  #  docker-compose-completion  # This causes failure due to completion already being installed.
+  #  docker-machine-completion  # This causes failure due to completion already being installed.
   dockutil
   gcc
   git
@@ -38,7 +38,7 @@ apps=(
   libcouchbase
   mosh
   mysql
-#  mysql@5.7  # needed for work
+  #  mysql@5.7  # needed for work
   nano
   packer
   ssh-copy-id
@@ -48,7 +48,11 @@ apps=(
   wget
 )
 
-brew install "${apps[@]}"
+for APPLICATION in "${apps[@]}"; do
+  # TODO: Check if the application is installed with `brew cask`
+  echo "Installing $APPLICATION}..."
+  brew install "$APPLICATION"
+done
 
 ##
 # Special stuff for MySQL + Python
