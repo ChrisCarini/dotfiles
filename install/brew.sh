@@ -48,10 +48,25 @@ apps=(
   wget
 )
 
+function is_in_list() {
+  if [[ $2 =~ (^|[[:space:]])$1($|[[:space:]]) ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Get the list of currently installed brew applications
+INSTALLED_BREW_APPS=$(brew list)
+
 for APPLICATION in "${apps[@]}"; do
-  # TODO: Check if the application is installed with `brew cask`
-  echo "Installing $APPLICATION}..."
-  brew install "$APPLICATION"
+  # Check if the application is already installed
+  if is_in_list "$APPLICATION" "$INSTALLED_BREW_APPS"; then
+    echo "The package [$APPLICATION] is installed. Skipping."
+  else
+    echo "The package [$APPLICATION] is NOT installed. Installing $APPLICATION ..."
+    brew install "$APPLICATION"
+  fi
 done
 
 ##
