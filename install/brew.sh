@@ -40,8 +40,10 @@ apps=(
   mysql
   #  mysql@5.7  # needed for work
   nano
+  nmap
   packer
   ssh-copy-id
+  telnet
   tree
   unar
   watch
