@@ -57,4 +57,8 @@ EOF
   # Open Docker for the first time - needed to allow system privileged access
   open_if_app_exists "Docker.app"
 
+  # Install XQuartz; this may require a password prompt, so we delay this until after the user is present.
+  header "-" "Installing XQuartz"
+  brew cask install xquartz
+
 fi
