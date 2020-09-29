@@ -61,6 +61,8 @@ title "Elevate privileges to avoid prompts throughout the installation"
 # Note: The previous method of creating a background loop to persist the sudo timestamp
 #       won't work because `brew` explicitly invalidates the sudo timestamp. Adding the
 #       user to the sudoers file is the most reliable way I've found.
+#
+#       See https://gist.github.com/cowboy/3118588#gistcomment-2016660 for others report of this.
 echo "Prompting for sudo password..."
 sudo --validate || exit 1
 
