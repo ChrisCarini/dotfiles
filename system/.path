@@ -11,9 +11,13 @@ append_path "/sbin"
 append_path "/usr/sbin"
 append_path "/usr/local/sbin"
 
-# Remove duplicates (preserving prepended items)
-# Source: http://unix.stackexchange.com/a/40755
-PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
+# # Remove duplicates (preserving prepended items)
+# # Source: http://unix.stackexchange.com/a/40755
+# PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
+
+# remove duplicates in PATH:
+PATH=$(echo ${PATH} | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+PATH="${PATH%:}"    # remove trailing colon
 
 # Wrap up
 export PATH
