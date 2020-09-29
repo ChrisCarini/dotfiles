@@ -1,5 +1,13 @@
 # Notes
 
+## OSX Plist
+- https://medium.com/@marksiu/what-is-plistbuddy-76cb4f0c262d
+
+## Resources
+- [Text processing in the shell](https://blog.balthazar-rouberol.com/text-processing-in-the-shell)
+- [jq tutorial](https://mosermichael.github.io/jq-illustrated/dir/content.html)
+
+
 ## Tricks
 
 #### Diff `JSON` Blobs
