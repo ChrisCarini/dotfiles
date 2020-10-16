@@ -11,17 +11,48 @@ BASE_CODE_PATH=~/GitHub
 cd ${BASE_CODE_PATH}
 
 repos=(
-    ChrisCarini/logshipper-intellij-plugin
+# a
+# b
+# c
+# d
+# e
     ChrisCarini/environment-variable-settings-summary-intellij-plugin
-    ChrisCarini/intellij-notification-sample
+# f
+# g
+    ChrisCarini/google-apps-scripts
+# h
+# i
     ChrisCarini/intellij-code-exfiltration
-    ChrisCarini/jetbrains-ide-release-dates
-    ChrisCarini/jetbrains-auto-power-saver
-    ChrisCarini/iris-jetbrains-plugin
-    ChrisCarini/sample-python-profile-flask
-    ChrisCarini/sample-intellij-plugin
     ChrisCarini/intellij-community
+    ChrisCarini/intellij-notification-sample
+    ChrisCarini/intellij-platform-plugin-verifier-action
+    ChrisCarini/iris-jetbrains-plugin
+# j
+    ChrisCarini/jetbrains-auto-power-saver
+    ChrisCarini/jetbrains-ide-release-dates
+    ChrisCarini/jetbrains.chriscarini.com
+# k
+# l
+    ChrisCarini/logshipper-intellij-plugin
+# m
+# n
+# o
+    ChrisCarini/organizedPhotos
+# p
+# q
+# r
+# s
+    ChrisCarini/sample-intellij-plugin
+    ChrisCarini/sample-python-profile-flask
+    ChrisCarini/speedtest-to-gsheet
     ChrisCarini/skypi
+# t
+# u
+# v
+# w
+# x
+# y
+# z
 )
 
 for REPO in "${repos[@]}"; do
