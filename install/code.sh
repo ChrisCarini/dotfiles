@@ -56,10 +56,15 @@ repos=(
 )
 
 for REPO in "${repos[@]}"; do
-    # Check if the application is installed with `brew cask`
+    CODE_REPO_PATH="${BASE_CODE_PATH}/$(echo ${REPO} | cut -d'/' -f2)"
+    # Check if the directory already exists
+    if [ -d "$CODE_REPO_PATH" ]; then
+        echo "$CODE_REPO_PATH already exists, skipping..."
+        continue
+    fi
     echo "Cloning ${REPO}..."
     git clone git@github.com:${REPO}.git
-    cd ${BASE_CODE_PATH}/$(echo ${REPO} | cut -d'/' -f2)
+    cd "$CODE_REPO_PATH"
     git-config-repo-github
     cd ${BASE_CODE_PATH}
     echo "[Done] Cloning ${REPO}."
