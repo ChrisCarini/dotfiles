@@ -53,7 +53,8 @@ for APPLICATION in "${apps[@]}"; do
         else
             # Application is not installed, let's install it with `brew cask`
             # Note: The application *may* already be installed still; I'm unsure of a good way to identify this any further
-            brew install --cask $APPLICATION
+            # Call brew with the envvar to disable auto-update.
+            HOMEBREW_NO_AUTO_UPDATE=1 brew install --cask $APPLICATION
         fi
     else
         echo "$APPLICATION *is* installed, skipping..."

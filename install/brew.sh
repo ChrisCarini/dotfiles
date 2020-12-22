@@ -67,7 +67,8 @@ for APPLICATION in "${apps[@]}"; do
     echo "The package [$APPLICATION] is installed. Skipping."
   else
     echo "The package [$APPLICATION] is NOT installed. Installing $APPLICATION ..."
-    brew install "$APPLICATION"
+    # Call brew with the envvar to disable auto-update.
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install "$APPLICATION"
   fi
 done
 
