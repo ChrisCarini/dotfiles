@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
+# 19 = Catalina
 if [[ "$OSTYPE" =~ ^darwin19 ]]; then
+  exit 0
+# 20 = Big Sur
+elif [[ "$OSTYPE" =~ ^darwin20 ]]; then
   exit 0
 else
   exit 1
