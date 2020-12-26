@@ -48,6 +48,7 @@ repos=(
     ChrisCarini/skypi
 # t
 # u
+    ChrisCarini/upptime
 # v
 # w
 # x
