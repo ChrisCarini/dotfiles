@@ -5,6 +5,8 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	# See https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf
+	autocrlf = input
 [push]
 	default = simple
 # When true, rebase branches on top of the fetched branch, instead of merging the
