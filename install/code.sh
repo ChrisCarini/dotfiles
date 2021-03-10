@@ -14,6 +14,7 @@ repos=(
 # a
 # b
 # c
+    ChrisCarini/crypto-to-influxdb
 # d
 # e
     ChrisCarini/environment-variable-settings-summary-intellij-plugin
