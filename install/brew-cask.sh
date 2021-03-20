@@ -47,8 +47,10 @@ for APPLICATION in "${apps[@]}"; do
     if [ $? -eq 0 ]; then
         # If the application is NOT installed via `brew cask`,
         # check if the application is installed in the system already
+        APP_INFO=$(brew info --cask $APPLICATION)
+        APP_INFO_RESULT=$?
         stat "/Applications/$(brew info --cask $APPLICATION | grep -A1 Artifacts | tail -n1 | sed 's/\.app.*/.app/')" > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
+        if [ $APP_INFO_RESULT -eq 0 && $? -eq 0 ]; then
             echo "$APPLICATION *is* installed, skipping..."
         else
             # Application is not installed, let's install it with `brew cask`
