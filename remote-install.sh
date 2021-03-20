@@ -25,7 +25,7 @@ function clone_git_repo() {
   # Note: We can not use `is-macos` for the `if`, as the dotfiles are not cloned yet.
   if [[ "$OSTYPE" =~ ^darwin ]]; then
     echo_ri "Updating Software and Installing XCode..."
-    sudo softwareupdate -i -a && xcode-select --install
+    sudo softwareupdate --install --all --restart && xcode-select --install
   fi
 
   echo_ri "Cloning dotfiles repo..."
