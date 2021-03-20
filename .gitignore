@@ -6,3 +6,4 @@
 .DS_Store
 work/*
 tmp/*
+backup_to_nas.config
