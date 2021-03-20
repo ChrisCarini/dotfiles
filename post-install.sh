@@ -59,6 +59,6 @@ EOF
 
   # Install XQuartz; this may require a password prompt, so we delay this until after the user is present.
   header "-" "Installing XQuartz"
-  brew cask install xquartz
+  brew install --cask xquartz
 
 fi
