@@ -21,6 +21,13 @@ function clone_git_repo() {
   echo_ri "Adding GitHub SSH key to SSH Agent..."
   ssh-add $(find ~/.ssh -not -name "*.pub" -type f -name "*GitHub*")
 
+  # If we are on OSX, install XCode first
+  # Note: We can not use `is-macos` for the `if`, as the dotfiles are not cloned yet.
+  if [[ "$OSTYPE" =~ ^darwin ]]; then
+    echo_ri "Updating Software and Installing XCode..."
+    sudo softwareupdate -i -a && xcode-select --install
+  fi
+
   echo_ri "Cloning dotfiles repo..."
   git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
 }
