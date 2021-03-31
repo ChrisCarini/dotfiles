@@ -36,6 +36,7 @@ repos=(
 # l
     ChrisCarini/logshipper-intellij-plugin
 # m
+    manojVivek/medium-unlimited
 # n
 # o
     ChrisCarini/organizedPhotos

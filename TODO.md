@@ -37,3 +37,8 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) Add https://github.com/jakehilborn/displayplacer for automatic multi-display configuration
 
 1) OSX Big Sur Top Bar Dark -> System Preferences > Accessibility > Display > Display Tab > Reduce transparency
+
+1) Automatically install `Medium Unlimited`
+    - **GitHub Repo:** https://github.com/manojVivek/medium-unlimited
+    - **Chrome:** https://manojvivek.github.io/medium-unlimited/download/
+    - **Firefox:** https://addons.mozilla.org/en-US/firefox/addon/medium-unlimited-read-for-free/
