@@ -4,7 +4,11 @@
 
 # Add to end of path
 append_path() {
-  [ -d $1 ] && PATH="$PATH:$1"
+    # Trim any whitespace from the input - xargs is easy trick for this (ref: https://stackoverflow.com/a/12973694 )
+    NEW_PATH=$(echo $1 | xargs )
+
+    # Remove any newlines from path before appending the new path. This seems to happen from time-to-time after exporting.
+    [ -d $NEW_PATH ] && PATH="$(echo $PATH | tr -d '\n'):$NEW_PATH"
 }
 # Add to beginning of path
 prepend_path() {
