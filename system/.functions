@@ -100,3 +100,11 @@ manpdf() {
 lq () {
     awk '!/^#/' | jq -Rs '[split("\n\n")[] | select(length >0) | [split("\n")[] | {attribute: split(": ")[0], value: (split(": ")[1:] | join(": "))}] | [group_by(.attribute)[] | { key: .[0].attribute, value: [.[].value]}] | from_entries]'
 }
+
+# Convert an image into a base64 string for textual embedding in a webpage
+#   - Taken from: https://codewithhugo.com/convert-image-data-url/
+function img-data() {
+  TYPE=$(file --mime-type -b $1)
+  ENC=$(base64 $1)
+  echo "data:$TYPE;base64,$ENC"
+}
