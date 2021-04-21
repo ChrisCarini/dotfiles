@@ -32,5 +32,3 @@ alias comma-to-space="sed -e 's/[,]\{1,\}/ /g'"
 alias space-to-comma="sed -e 's/[ ]\{1,\}/,/g'"
 alias space-to-line='sed -e :a -e $'\''s/[ ]\{1,\}/\\\n/g;ta'\'''
 alias comma-to-line='sed -e :a -e $'\''s/[,]\{1,\}/\\\n/g;ta'\'''
-
-alias dingdingding="tput bel;sleep 0.5;tput bel;sleep 0.5;tput bel"
