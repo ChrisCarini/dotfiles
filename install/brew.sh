@@ -35,6 +35,8 @@ apps=(
   #  docker-machine-completion  # This causes failure due to completion already being installed.
   dockutil
   gcc
+  # GitHub CLI
+  gh
   git
   git-extras
   gpg
