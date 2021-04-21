@@ -1,7 +1,7 @@
 # Start with system path; retrieve it from getconf, otherwise it's just current $PATH
 is-executable getconf && PATH=$($(command -v getconf) PATH)
 
-# Prepend new items to path (if directory exists)
+# Append new items to path (if directory exists)
 append_path "/bin"
 append_path "/usr/bin"
 append_path "/usr/local/bin"
