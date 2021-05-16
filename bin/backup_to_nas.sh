@@ -72,10 +72,25 @@ for dir in ~/{code,Desktop,Downloads,dotfiles,GitHub}; do
   echo "---------------------------"
   echo "Push This machine -> Remote"
   echo "---------------------------"
-  rsync -auvz --exclude=".DS_Store" --exclude="*@eaDir/" --delete --progress "$dir/" "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name"
+  rsync -auvz \
+        --progress \
+        --exclude=".DS_Store" \
+        --exclude="*@eaDir/" \
+        --exclude="*/build/" \
+        --exclude="*/node_modules/" \
+        --exclude="*/venv/" \
+        --delete-excluded \
+        "$dir/" "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name"
   echo "---------------------------"
   echo "Push Remote -> This machine"
   echo "---------------------------"
-  rsync -auvz --exclude=".DS_Store" --exclude="*@eaDir/" --progress "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name/" "$dir"
+  rsync -auvz \
+        --progress \
+        --exclude=".DS_Store" \
+        --exclude="*@eaDir/" \
+        --exclude="*/build/" \
+        --exclude="*/node_modules/" \
+        --exclude="*/venv/" \
+        "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name/" "$dir"
 
 done
