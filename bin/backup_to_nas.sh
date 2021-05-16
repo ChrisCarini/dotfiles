@@ -59,6 +59,9 @@ trap "echo 'Exiting successfully, cleaning up lock file...' ; rm -f ~/backup_to_
 # Mirror to storage and back
 ##
 for dir in ~/{code,Desktop,Downloads,dotfiles,GitHub}; do
+  echo "======================================="
+  echo "BACKING UP: ${dir}"
+  echo "======================================="
   # Remote directory name; replace '/' with '_'
   remote_dir_name=${dir//\//_}
 
@@ -66,9 +69,13 @@ for dir in ~/{code,Desktop,Downloads,dotfiles,GitHub}; do
 #  echo "rsync -auvz --exclude=\"*@eaDir/\" --progress \"$dir/\" \"$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name\""
 #  echo "rsync -auvz --exclude=\"*@eaDir/\" --progress \"$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name/\" \"$dir\""
 
-  # Push This machine -> Remote
+  echo "---------------------------"
+  echo "Push This machine -> Remote"
+  echo "---------------------------"
   rsync -auvz --exclude=".DS_Store" --exclude="*@eaDir/" --delete --progress "$dir/" "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name"
-  # Push Remote -> This machine
+  echo "---------------------------"
+  echo "Push Remote -> This machine"
+  echo "---------------------------"
   rsync -auvz --exclude=".DS_Store" --exclude="*@eaDir/" --progress "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name/" "$dir"
 
 done
