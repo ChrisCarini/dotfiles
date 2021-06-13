@@ -46,6 +46,7 @@ repos=(
 # r
 # s
     ChrisCarini/sample-intellij-plugin
+    ChrisCarini/sample-load-test-apache-jmeter
     ChrisCarini/sample-python-profile-flask
     ChrisCarini/speedtest-to-gsheet
     ChrisCarini/skypi
