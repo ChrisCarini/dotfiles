@@ -2,6 +2,53 @@
 
 # ~/.macos — https://mths.be/macos
 
+#######################################
+##  HELPFUL COMMANDS, NOTES, & TIPS  ##
+#######################################
+####
+###
+##
+# COMMANDS
+##
+###
+####
+##--
+##- Get the Apple `System Preferences` Pane ID
+##--
+##- Ref: http://apetronix.com/find-pane-id-for-system-preferences-app/
+#osascript <<EOF
+#tell application "System Preferences"
+#	set CurrentPane to the id of the current pane
+#	set the clipboard to CurrentPane
+#	display dialog "Current Pane ID: " & CurrentPane & return & return & "Pane ID has been copied to the clipboard."
+#end tell
+#EOF
+##---------------------------------------------------------------------
+##--
+##- Get the all the 'anchors' in the Apple `System Preferences` Pane ID
+##--
+##- Ref: https://macosxautomation.com/applescript/features/system-prefs.html
+#osascript <<EOF
+#tell application "System Preferences"
+# activate
+# set the current pane to pane id "com.apple.preference.security"
+# get the name of every anchor of pane id "com.apple.preference.security"
+#end tell
+#EOF
+##---------------------------------------------------------------------
+####
+###
+##
+# NOTES
+##
+###
+####
+# - https://macos-defaults.com/
+# - https://www.shell-tips.com/mac/defaults/
+# - https://project-awesome.org/herrbischoff/awesome-macos-command-line
+# - https://github.com/kortina/dotfiles/blob/master/setup-osx.sh
+
+
 ##########################
 # Make utilities available
 ##########################
