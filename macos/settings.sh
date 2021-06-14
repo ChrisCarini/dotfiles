@@ -74,6 +74,11 @@ header "=" "General UI/UX"
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 # --------------------------------------
+header "-" "Revert the theme to the default (light) theme."
+# --------------------------------------
+defaults delete "Apple Global Domain" "AppleInterfaceStyle"
+
+# --------------------------------------
 header "-" "Show the battery percentage"
 # --------------------------------------
 defaults write com.apple.menuextra.battery ShowPercent YES
