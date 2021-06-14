@@ -98,6 +98,21 @@ if is-macos; then
   echo "Display, System, & Disk will remain awake for duration of this process (PID: $$)."
 fi
 
+if is-macos; then
+  ####################################################################
+  title "Grant 'Terminal.app' the 'Full Disk Access' permission."
+  ####################################################################
+  osascript <<EOF
+tell application "System Preferences"
+  activate
+  delay 1
+  set the current pane to pane id "com.apple.preference.security"
+  reveal anchor "Privacy_AllFiles" of pane id "com.apple.preference.security"
+end tell
+EOF
+  read -n 1 -s -r -p "Press any key when permission has been granted."
+fi
+
 ########################################################
 title "Copy ~/.ssh directory over from previous machine"
 ########################################################

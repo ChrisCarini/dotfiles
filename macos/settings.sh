@@ -75,6 +75,14 @@ defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 defaults write NSGlobalDomain AppleMetricUnits -bool false
 
+# ------------------------------------------
+header "-" "Reduce display transparency"
+# ------------------------------------------
+defaults write com.apple.Accessibility EnhancedBackgroundContrastEnabled -bool true
+# NOTE: The below command requires that "Full Disk Access" is granted to `Terminal.app`.
+#       This should have been done in `dotfiles/install.sh`.
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
 # =================
 header "=" "Finder"
 # =================
