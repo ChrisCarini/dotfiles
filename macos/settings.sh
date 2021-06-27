@@ -326,6 +326,16 @@ header "-" "Set OSX terminal to automatically close upon exit"
 # ------------------------------------------------------------
 plutil -replace "Window Settings".Basic.shellExitAction -integer 1 ~/Library/Preferences/com.apple.Terminal.plist
 
+# ------------------------------------------------------------
+header "-" "Set OSX terminal profile"
+# ------------------------------------------------------------
+open ~/dotfiles/macos/My\ Default.terminal
+sleep 5 # Sleep 5 seconds to allow the terminal that was opened above to settle before loading the profile as default.
+defaults write com.apple.terminal "Default Window Settings" -string "My Default"
+defaults write com.apple.terminal "Startup Window Settings" -string "My Default"
+#defaults write com.apple.terminal "Default Window Settings" -string "Basic"
+#defaults write com.apple.terminal "Startup Window Settings" -string "Basic"
+
 # ===========================
 header "=" "Activity Monitor"
 # ===========================
