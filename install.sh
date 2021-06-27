@@ -164,6 +164,10 @@ if is-macos; then
   ############################################
   "$DOTFILES_DIR/install/brew.sh"
   "$DOTFILES_DIR/install/brew-cask.sh"
+  "$DOTFILES_DIR/install/intellij-plugins.sh"
+  if [[ -f "$DOTFILES_DIR/work/install/intellij-plugins.sh" ]]; then
+    "$DOTFILES_DIR/work/install/intellij-plugins.sh"
+  fi
 fi
 
 # Install work applications, should any exist

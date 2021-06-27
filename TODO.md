@@ -10,16 +10,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
 
 1) IntelliJ Customizations
     1) Install work IJ
-    1) Automatically install IJ plugins (maybe not possible?)
-        1) `Grazie` - https://plugins.jetbrains.com/plugin/12175-grazie
-        1) `Environment Variable Settings Summary` - https://plugins.jetbrains.com/plugin/10998-environment-variable-settings-summary
-        1) `Automatic Power Saver` - https://plugins.jetbrains.com/plugin/11941-automatic-power-saver
-        1) `GitToolBox` - https://plugins.jetbrains.com/plugin/7499-gittoolbox
-        1) `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
-        1) `PHP` - https://plugins.jetbrains.com/plugin/6610-php
-        1) `Python` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
-            1) IC - https://plugins.jetbrains.com/plugin/7322-python-community-edition
-            1) IU - https://plugins.jetbrains.com/plugin/631-python
     1) Automatically configure IJ to point to settings repository -> https://github.com/ChrisCarini/jetbrains-settings-repository
 1) Chrome Customizations
     1) Install work userscripts to Chrome + Tampermonkey
