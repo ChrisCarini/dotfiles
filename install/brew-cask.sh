@@ -12,6 +12,7 @@ brew tap homebrew/cask-versions
 
 # Install packages
 apps=(
+    activitywatch  # https://formulae.brew.sh/cask/activitywatch
 #    atom
 #    arduino
 #    burp-suite
