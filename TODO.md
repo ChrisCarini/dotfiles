@@ -33,3 +33,8 @@ If you have suggestions or advice on any of these (or anything in this repositor
     - **GitHub Repo:** https://github.com/manojVivek/medium-unlimited
     - **Chrome:** https://manojvivek.github.io/medium-unlimited/download/
     - **Firefox:** https://addons.mozilla.org/en-US/firefox/addon/medium-unlimited-read-for-free/
+
+1) Outlook - Change Calendar "Default Reminder" to 5 minutes (Settings, Calendar, Calendar Options, Default Reminder)
+1) Outlook - Change Calendar "Time Scale" to 12 hours (View, Time Scale, 12 hours)
+
+1) OSX - Disable 'Search Manpages' -> https://intellij-support.jetbrains.com/hc/en-us/articles/360005137400-Cmd-Shift-A-hotkey-opens-Terminal-with-apropos-search-instead-of-the-Find-Action-dialog
