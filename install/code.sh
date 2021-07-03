@@ -22,6 +22,7 @@ repos=(
 # g
     ChrisCarini/google-apps-scripts
 # h
+    ChrisCarini/homelab-infra-configs
 # i
     ChrisCarini/intellij-code-exfiltration
     ChrisCarini/intellij-community
