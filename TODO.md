@@ -17,7 +17,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
     1) Automatically register user-scripts with Chrome
 1) OSX Customizations
     1) Show volume in menu bar
-    1) Disable `Dictionary.app` from popping up on 'hard touchpad press'
     1) Install YubiSwitch
 1) Script SSH keygen + upload to servers
 1) Outlook / O365 Customizations

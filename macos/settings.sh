@@ -135,6 +135,12 @@ defaults write com.apple.Accessibility EnhancedBackgroundContrastEnabled -bool t
 #       This should have been done in `dotfiles/install.sh`.
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+# ---------------------------------------------------------------
+header "-" "Prevent Force Click & Haptic Feedback (annoying dictionary popups.)"
+# ---------------------------------------------------------------
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -bool false
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -bool true
+
 # =================
 header "=" "Finder"
 # =================
