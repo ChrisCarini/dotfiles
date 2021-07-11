@@ -1,0 +1,30 @@
+# Entry              Description                                                             Equivalent To
+# =====--------------===========-------------------------------------------------------------=============
+# @yearly            Run once a year at midnight in the morning of January 1                 0 0 1 1 *
+# @annually          (same as above)                                                         
+# @monthly           Run once a month at midnight in the morning of the first of the month   0 0 1 * *
+# @weekly            Run once a week at midnight in the morning of Sunday                    0 0 * * 0 
+# @daily             Run once a day at midnight                                              0 0 * * *
+# @hourly            Run once an hour at the beginning of the hour                           0 * * * * 
+# @reboot            Run at startup                                                          @reboot
+# 
+# ╭───────────────── min (0 - 59)
+# │  ╭────────────── hour (0 - 23)
+# │  │  ╭─────────── day of month (1 - 31)
+# │  │  │  ╭──────── month (1 - 12)
+# │  │  │  │  ╭───── day of week (0 - 7) (0 or 7 are Sunday, or use names)
+# │  │  │  │  │
+# │  │  │  │  │
+# ╧  ╧  ╧  ╧  ╧
+# *  *  *  *  *  command to be executed
+#
+# The following example will run each 10 minutes
+# */10 * * * * /usr/bin/somedirectory/somecommand
+
+* * * * * ( /Users/ccarini/dotfiles/macos/osx_thermal_conditions/captureOsxThermalConditions.sh )
+* * * * * ( /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
+* * * * * ( sleep 10 ; /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
+* * * * * ( sleep 20 ; /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
+* * * * * ( sleep 30 ; /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
+* * * * * ( sleep 40 ; /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
+* * * * * ( sleep 50 ; /Users/ccarini/dotfiles/macos/osx_wifi_strength/captureWifiRSSI.sh )
