@@ -28,8 +28,8 @@ apps=(
   bash-completion
   brew-cask-completion
   coreutils
-  docker
-  docker-compose
+  #  docker          # This is installed as part of `brew-cask.sh` `docker` installation
+  #  docker-compose  # This is installed as part of `brew-cask.sh` `docker` installation
   #  docker-completion          # This causes failure due to completion already being installed.
   #  docker-compose-completion  # This causes failure due to completion already being installed.
   #  docker-machine-completion  # This causes failure due to completion already being installed.
