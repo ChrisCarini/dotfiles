@@ -6,4 +6,5 @@
 .DS_Store
 work/*
 tmp/*
+venv/
 backup_to_nas.config
