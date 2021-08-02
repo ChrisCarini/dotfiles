@@ -14,6 +14,7 @@ repos=(
 # a
 # b
 # c
+    ChrisCarini/chriscarini.com
     ChrisCarini/crypto-to-influxdb
 # d
 # e
