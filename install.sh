@@ -177,7 +177,7 @@ if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
   ###########################################
   "$DOTFILES_DIR/work/install/apps.sh"
 else
-  echo "No work/install/apps.sh exists; not bootstraping work applications!"
+  echo "No work/install/apps.sh exists; not bootstrapping work applications!"
 fi
 
 ##########################
@@ -198,7 +198,7 @@ title "Checkout source code"
 if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]]; then
   "$DOTFILES_DIR/work/install/code.sh"
 else
-  echo "No work/install/code.sh exists; not bootstraping work code!"
+  echo "No work/install/code.sh exists; not bootstrapping work code!"
 fi
 
 ##
