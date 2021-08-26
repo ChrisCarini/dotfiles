@@ -32,7 +32,7 @@ source ~/dotfiles/bin/create_work_dotfiles.sh
 ```
 
 #### Nuances
-The below files will be prefered over the ones contained within this repository.
+The below files will be preferred over the ones contained within this repository.
 1. `$DOTFILES_DIR/work/git/.gitconfig`
 1. `$DOTFILES_DIR/work/git/.gitignore_global`
 

@@ -15,7 +15,7 @@ brew analytics off
 # We need to chown the Cellar directory otherwise brew will complain a lot during the installs below.
 sudo chown -R $(whoami) /usr/local/Cellar
 
-# We need to chown /usr/local (the brew default prefix), among other suggeste fixes by `brew doctor`
+# We need to chown /usr/local (the brew default prefix), among other suggested fixes by `brew doctor`
 sudo chown -R $(whoami) $(brew --prefix)/*
 sudo chown -R $(whoami) $(brew --prefix)/var/log
 sudo chown -R $(whoami) $(brew --cache)

@@ -68,7 +68,7 @@ fi
 
 # Find the first, DOS partition and mount it
 if is-macos ; then
-    # I have no idea why, but getting the equivilant `sed` command / str to work seemed not-possible - I'm sure it is
+    # I have no idea why, but getting the equivalent `sed` command / str to work seemed not-possible - I'm sure it is
     # but I'd have to spend more time on it, and I don't want to right now...
     # We don't even seem to need this when mounting the image...
     BOOTSTART=`fdisk "$FILEPATH"  | grep Win95 | awk -F' ' '{print $11}'`
