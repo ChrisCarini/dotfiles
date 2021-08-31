@@ -162,6 +162,7 @@ if is-macos; then
   ############################################
   title "Installing brew, packages, and casks"
   ############################################
+  "$DOTFILES_DIR/install/misc.sh"
   "$DOTFILES_DIR/install/brew.sh"
   "$DOTFILES_DIR/install/brew-cask.sh"
   "$DOTFILES_DIR/install/intellij-plugins.sh"
