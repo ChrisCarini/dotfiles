@@ -4,6 +4,7 @@
 *.work
 *.priv
 .DS_Store
+work/
 work/*
 tmp/*
 venv/
