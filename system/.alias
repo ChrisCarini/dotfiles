@@ -32,3 +32,7 @@ alias comma-to-space="sed -e 's/[,]\{1,\}/ /g'"
 alias space-to-comma="sed -e 's/[ ]\{1,\}/,/g'"
 alias space-to-line='sed -e :a -e $'\''s/[ ]\{1,\}/\\\n/g;ta'\'''
 alias comma-to-line='sed -e :a -e $'\''s/[,]\{1,\}/\\\n/g;ta'\'''
+
+# clustergit - https://github.com/mnagel/clustergit
+alias clustergit='~/GitHub/clustergit/clustergit'
+alias cgf='clustergit  -a 84 --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/code/ --dir ~/tmp/ --fetch'
