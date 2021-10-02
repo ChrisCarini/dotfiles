@@ -39,3 +39,6 @@ alias killfinder="killall Finder"
 alias killdock="killall Dock"
 alias killmenubar="killall SystemUIServer NotificationCenter"
 alias killos="killfinder && killdock && killmenubar"
+
+# Finder favorites
+alias fixfavs="~/dotfiles/macos/finder_favorites.sh"
