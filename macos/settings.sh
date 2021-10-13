@@ -169,6 +169,12 @@ header "-" "Keep folders on top when sorting by name"
 # ---------------------------------------------------
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
+# -----------------------------------------------------------------------------------------
+header "-" "Set the ~/Desktop directory to be the default when opening a new Finder window"
+# -----------------------------------------------------------------------------------------
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/Desktop/"
+
 # -----------------------------------------------
 header "-" "Change desktop icon side to be 60x60"
 # -----------------------------------------------
