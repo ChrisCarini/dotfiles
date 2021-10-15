@@ -19,27 +19,16 @@ repos=(
     mnagel/clustergit
 # d
 # e
-    ChrisCarini/environment-variable-settings-summary-intellij-plugin
 # f
 # g
     ChrisCarini/google-apps-scripts
 # h
     ChrisCarini/homelab-infra-configs
 # i
-    ChrisCarini/intellij-code-exfiltration
-    ChrisCarini/intellij-community
-    ChrisCarini/intellij-notification-sample
-    ChrisCarini/intellij-platform-plugin-verifier-action
-    ChrisCarini/iris-jetbrains-plugin
 # j
-    ChrisCarini/jetbrains-auto-power-saver
-    ChrisCarini/jetbrains-ide-release-dates
-    ChrisCarini/jetbrains-plugin-scripts
-    ChrisCarini/jetbrains.chriscarini.com
     ChrisCarini/jupyter-docker
 # k
 # l
-    ChrisCarini/logshipper-intellij-plugin
 # m
     manojVivek/medium-unlimited
 # n
@@ -49,7 +38,6 @@ repos=(
 # q
 # r
 # s
-    ChrisCarini/sample-intellij-plugin
     ChrisCarini/sample-load-test-apache-jmeter
     ChrisCarini/sample-python-profile-flask
     ChrisCarini/speedtest-to-gsheet
@@ -76,15 +64,4 @@ for REPO in "${repos[@]}"; do
     echo "[Done] Cloning ${REPO}."
 done
 
-
-echo "Adding upstream and sync local 'intellij-community' with upstream..."
-cd ${BASE_CODE_PATH}/intellij-community/
-echo "Remote Before:"
-git remote -v
-git remote add upstream https://github.com/JetBrains/intellij-community.git
-echo "Remote After:"
-git remote -v
-git fetch upstream
-git checkout master
-git merge upstream/master
-echo "[Done] Sync local 'intellij-community' with upstream."
+~/dotfiles/macos/finder_favorites.sh "${BASE_CODE_PATH}"
