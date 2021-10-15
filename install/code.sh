@@ -72,10 +72,7 @@ for REPO in "${repos[@]}"; do
         continue
     fi
     echo "Cloning ${REPO}..."
-    git clone git@github.com:${REPO}.git
-    cd "$CODE_REPO_PATH"
-    git-config-repo-github
-    cd ${BASE_CODE_PATH}
+    git clone "git@github.com:${REPO}.git"
     echo "[Done] Cloning ${REPO}."
 done
 
