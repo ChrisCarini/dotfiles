@@ -34,6 +34,7 @@ repos=(
 # j
     ChrisCarini/jetbrains-auto-power-saver
     ChrisCarini/jetbrains-ide-release-dates
+    ChrisCarini/jetbrains-plugin-scripts
     ChrisCarini/jetbrains.chriscarini.com
     ChrisCarini/jupyter-docker
 # k
