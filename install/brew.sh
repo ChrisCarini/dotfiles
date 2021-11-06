@@ -24,6 +24,9 @@ chmod u+w $(brew --prefix)/var/log
 brew update
 brew upgrade
 
+# Tap for `displayplacer`
+brew tap jakehilborn/jakehilborn
+
 apps=(
   bash-completion
   brew-cask-completion
@@ -34,6 +37,7 @@ apps=(
   #  docker-compose-completion  # This causes failure due to completion already being installed.
   #  docker-machine-completion  # This causes failure due to completion already being installed.
   dockutil
+  displayplacer # `brew tap jakehilborn/jakehilborn` is the tap run above in order to make this a
   gcc
   # GitHub CLI
   gh

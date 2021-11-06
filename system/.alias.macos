@@ -42,3 +42,10 @@ alias killos="killfinder && killdock && killmenubar"
 
 # Finder favorites
 alias fixfavs="~/dotfiles/macos/finder_favorites.sh"
+
+# Makes use of `displayplacer` installed in `brew.sh`
+# This command configures 3 monitors:
+#   1) 16" MBP Screen (primary)
+#   2) 27" Lenovo ThinkVision P27h-10 (secondary; above primary)
+#   3) 24" Dell U2410f (tertiary; vertical, to the left of secondary)
+alias fixdisplay='displayplacer "id:F589CC6F-436E-8F68-0FF8-E4DD8AA7D482 res:1792x1120 hz:59 color_depth:4 scaling:on origin:(0,0) degree:0" "id:9D01A052-05E8-A001-0A69-689FECAA2047 res:1200x1920 hz:59 color_depth:8 scaling:off origin:(-1579,-1674) degree:90" "id:CC818B4D-3765-C789-7B9D-ED71FDEA8ADC res:2560x1440 hz:60 color_depth:8 scaling:off origin:(-379,-1440) degree:0"'
