@@ -22,6 +22,7 @@ plugins=(
   # Other Plugins
   7499  # `GitToolBox` - https://plugins.jetbrains.com/plugin/7499-gittoolbox
   12175 # `Grazie` - https://plugins.jetbrains.com/plugin/12175-grazie
+  9746  # `Ideolog` - https://plugins.jetbrains.com/plugin/9746-ideolog
   7345  # `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
   6610  # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
   7322  # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
