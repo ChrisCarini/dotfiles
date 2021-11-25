@@ -20,6 +20,7 @@ plugins=(
   10924 # `sample-notification` - https://plugins.jetbrains.com/plugin/10924-sample-notification
 
   # Other Plugins
+  17718 # `GitHub Copilot - https://plugins.jetbrains.com/plugin/17718-github-copilot
   7499  # `GitToolBox` - https://plugins.jetbrains.com/plugin/7499-gittoolbox
   12175 # `Grazie` - https://plugins.jetbrains.com/plugin/12175-grazie
   9746  # `Ideolog` - https://plugins.jetbrains.com/plugin/9746-ideolog
