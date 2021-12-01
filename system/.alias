@@ -40,9 +40,9 @@ alias comma-to-line='sed -e :a -e $'\''s/[,]\{1,\}/\\\n/g;ta'\'''
 
 # clustergit - https://github.com/mnagel/clustergit
 alias clustergit='~/GitHub/clustergit/clustergit'
-alias cg='clustergit -a 84'
-alias cgh='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/'
+alias cg='clustergit -a 94'
+alias cgh='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/'
 alias cgw='cg --dir ~/code/ --dir ~/tmp/'
-alias cga='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/code/ --dir ~/tmp/'
+alias cga='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/ --dir ~/code/ --dir ~/tmp/'
 alias cgp='cga --pull'
 alias cgf='cga --fetch'
