@@ -1,3 +1,8 @@
+# Tell grep to show line numbers for matches
+if is-supported "grep -n a <<< a"; then
+  GREP_OPTIONS+=" --line-number"
+fi
+
 # Tell grep to highlight matches
 if is-supported "grep --color a <<< a"; then
   GREP_OPTIONS+=" --color=auto"
@@ -13,6 +18,9 @@ elif is-supported "echo | grep --exclude=.cvs ''"; then
     GREP_OPTIONS+=" --exclude=$PATTERN"
   done
 fi
+
+# Trim whitespace from grep options
+GREP_OPTIONS="$(echo "$GREP_OPTIONS" | xargs)"
 
 unset PATTERN
 alias grep="grep $GREP_OPTIONS"
