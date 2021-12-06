@@ -38,7 +38,7 @@ apps=(
     tunnelblick
 #    virtualbox
 #    visual-studio-code
-#    vlc
+    vlc
 #    xquartz # For X11 forwarding - NOTE: THIS IS INSTALLED IN post-install.sh BECAUSE IT PROMPTS FOR PASSWORD.
 )
 
