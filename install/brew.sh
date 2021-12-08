@@ -44,6 +44,7 @@ apps=(
   git
   git-extras
   gpg
+  gping # https://github.com/orf/gping
   hyperfine
   imagemagick
   jq
