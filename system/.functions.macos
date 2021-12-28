@@ -2,3 +2,15 @@
 manpdf() {
   man -t "$1" | open -f -a /Applications/Preview.app/
 }
+
+# See `.functions` for non-MacOS specific (ie, generic)
+dingdingding() {
+    # SOUND_NAME="Submarine" # We should never be in a submarine.
+    # SOUND_NAME="Basso" # Fail
+    # SOUND_NAME="Glass" # Pass
+    osascript -e 'display notification "" with title "Ding Ding Ding!" subtitle "Somethings done." sound name "Glass"'
+
+    tput bel;sleep 0.5;
+    tput bel;sleep 0.5;
+    tput bel
+}
