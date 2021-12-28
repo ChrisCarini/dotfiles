@@ -60,7 +60,7 @@ smiley() {
 is_host_up() {
 	echo "Pinging $1 until host is up..."
 	ping_cancelled=false    # Keep track of whether the loop was cancelled, or succeeded
-	until ping -c1 "$1" &>/dev/null; do :; done &    # The "&" backgrounds it
+	until ping -c1 "$1" &>/dev/null; do echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for $1..."; done &    # The "&" backgrounds it
 	trap "kill $!; ping_cancelled =true" SIGINT
 	wait $!          # Wait for the loop to exit, one way or another
 	trap - SIGINT    # Remove the trap, now we're done with it
