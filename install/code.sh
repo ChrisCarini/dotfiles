@@ -44,6 +44,7 @@ repos=(
     ChrisCarini/skypi
     ChrisCarini/speedtest-to-gsheet
 # t
+    ChrisCarini/trivia-box
 # u
     ChrisCarini/upptime
 # v
