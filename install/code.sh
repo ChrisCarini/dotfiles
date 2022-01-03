@@ -45,6 +45,7 @@ repos=(
     ChrisCarini/skypi
     ChrisCarini/speedtest-to-gsheet
 # t
+    ChrisCarini/treasury-direct-password-enable-user-script
     ChrisCarini/trivia-box
 # u
     ChrisCarini/upptime
