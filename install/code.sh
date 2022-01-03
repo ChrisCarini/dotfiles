@@ -21,6 +21,7 @@ repos=(
 # d
 # e
 # f
+    ChrisCarini/fitbit-data-extract
 # g
     ChrisCarini/GitJournal
     ChrisCarini/google-apps-scripts
