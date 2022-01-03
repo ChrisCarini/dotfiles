@@ -39,11 +39,13 @@ repos=(
 # q
 # r
 # s
+    lorenzodifuccia/safaribooks
     ChrisCarini/sample-load-test-apache-jmeter
     ChrisCarini/sample-python-profile-flask
     ChrisCarini/shodan-exposure-box
     ChrisCarini/skypi
     ChrisCarini/speedtest-to-gsheet
+    tradytics/surpriver
 # t
     ChrisCarini/treasury-direct-password-enable-user-script
     ChrisCarini/trivia-box
