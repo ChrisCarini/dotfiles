@@ -12,6 +12,7 @@ cd ${BASE_CODE_PATH}
 
 repos=(
 # a
+    ChrisCarini/adventofcode
 # b
 # c
     ChrisCarini/chriscarini.com
