@@ -38,6 +38,7 @@ repos=(
 # p
 # q
 # r
+    ChrisCarini/README
 # s
     lorenzodifuccia/safaribooks
     ChrisCarini/sample-load-test-apache-jmeter
