@@ -31,6 +31,7 @@ repos=(
     ChrisCarini/jupyter-docker
 # k
 # l
+    ChrisCarini/little-snitch-rule-groups
 # m
     manojVivek/medium-unlimited
 # n
