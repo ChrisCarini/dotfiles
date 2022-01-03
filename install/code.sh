@@ -22,6 +22,7 @@ repos=(
 # e
 # f
 # g
+    ChrisCarini/GitJournal
     ChrisCarini/google-apps-scripts
 # h
     ChrisCarini/homelab-infra-configs
