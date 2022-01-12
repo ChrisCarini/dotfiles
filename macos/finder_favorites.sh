@@ -20,8 +20,9 @@ if [ -x "$(command -v mysides)" ]; then
   mysides add "Downloads" file:///Users/$USER/Downloads/
   mysides add "$USER" file:///Users/$USER/
   mysides add "Archive" file:///Users/$USER/Desktop/Archive/
-  mysides add "tmp" file:///Users/$USER/tmp/
+  mysides add "GitHub" file:///Users/$USER/GitHub
   mysides add "code" file:///Users/$USER/code
+  mysides add "tmp" file:///Users/$USER/tmp/
   mysides add "~DELETE THIS STUFF" file:///Users/$USER/Desktop/~DELETE%20THIS%20STUFF/
 else
   echo "###################"
