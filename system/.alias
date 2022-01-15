@@ -51,3 +51,7 @@ alias cghf='cgh --fetch'
 alias cgw='cg --dir ~/dotfiles/ --dir ~/code/ --dir ~/tmp/'
 alias cgwp='cgw --pull'
 alias cgwf='cgw --fetch'
+
+# URL-encode & decode
+alias urldecode='python3 -c "import sys, urllib.parse as ul;print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul;print(ul.quote_plus(sys.argv[1]))"'
