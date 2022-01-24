@@ -15,6 +15,7 @@ repos=(
     ChrisCarini/adventofcode
 # b
 # c
+    ChrisCarini/ChrisCarini  # Special GitHub repo for customized profile README.
     ChrisCarini/chriscarini.com
     ChrisCarini/crypto-to-influxdb
     mnagel/clustergit
