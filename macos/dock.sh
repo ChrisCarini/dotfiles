@@ -3,7 +3,7 @@
 ##
 # Make utilities available
 #
-# Needed because we make use of is-macos-catalina within this script.
+# Needed because we make use of is-macos-catalina-or-later within this script.
 ##
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ..  && pwd )"
 PATH="$DOTFILES_DIR/bin:$PATH"
@@ -27,7 +27,7 @@ dockutil --no-restart --add "/Applications/Google Chrome.app"
 dockutil --no-restart --add "$(ls -trd /Applications/LI\ IntelliJ\ IDEA\ 20* | head -n1)"
 
 # Term
-if is-macos-catalina ; then
+if is-macos-catalina-or-later ; then
   dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
 else
   dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
@@ -41,7 +41,7 @@ dockutil --no-restart --add "/Applications/IntelliJ IDEA CE.app"
 dockutil --no-restart --add "/Applications/Slack.app"
 
 # Activity Monitor
-if is-macos-catalina ; then
+if is-macos-catalina-or-later ; then
   dockutil --no-restart --add "/System/Applications/Utilities/Activity Monitor.app"
 else
   dockutil --no-restart --add "/Applications/Utilities/Activity Monitor.app"

@@ -5,6 +5,9 @@ if [[ "$OSTYPE" =~ ^darwin19 ]]; then
 # 20 = Big Sur
 elif [[ "$OSTYPE" =~ ^darwin20 ]]; then
   exit 0
+# 21 = Monterey
+elif [[ "$OSTYPE" =~ ^darwin21 ]]; then
+  exit 0
 else
   exit 1
 fi
