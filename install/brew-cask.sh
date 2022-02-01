@@ -24,6 +24,7 @@ apps=(
     google-chrome
 #    google-chrome-canary
     gpg-suite
+    hammerspoon  # Mostly as a replacement for `shiftit`.
     intellij-idea
     intellij-idea-ce
     iterm2
@@ -31,7 +32,7 @@ apps=(
 #    mysqlworkbench
     mysides  # Needed to be able to manipulate Finder favorites - See https://github.com/mosen/mysides
     OmniDiskSweeper  # https://www.omnigroup.com/more
-    shiftit
+#    shiftit  # On 2022-01-31 this stopped working when in Zoom and/or MS Teams VCs. Switching to Hammerspoon.
     slack
 #    spotify
 #    sublime-text
