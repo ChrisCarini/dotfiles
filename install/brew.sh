@@ -47,6 +47,7 @@ apps=(
   gping # https://github.com/orf/gping
   hyperfine
   imagemagick
+  jless
   jq
   libcouchbase
   mosh
