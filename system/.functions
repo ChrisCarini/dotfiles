@@ -114,3 +114,10 @@ function img-data() {
   ENC=$(base64 $1)
   echo "data:$TYPE;base64,$ENC"
 }
+
+function mkvenv() {
+  python3 -m venv venv
+  ln -s venv/bin/activate activate
+  source activate
+  pip install --upgrade pip
+}
