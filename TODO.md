@@ -36,4 +36,16 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) Outlook - Change Calendar "Default Reminder" to 5 minutes (Settings, Calendar, Calendar Options, Default Reminder)
 1) Outlook - Change Calendar "Time Scale" to 12 hours (View, Time Scale, 12 hours)
 
-1) OSX - Disable 'Search Manpages' -> https://intellij-support.jetbrains.com/hc/en-us/articles/360005137400-Cmd-Shift-A-hotkey-opens-Terminal-with-apropos-search-instead-of-the-Find-Action-dialog
+
+
+
+LOOK INTO
+=========
+- Brewfile
+  - https://thoughtbot.com/blog/brewfile-a-gemfile-but-for-homebrew
+  - https://github.com/browniebroke/macbook-scripts
+    - Good example of
+      1) Brewfile
+      2) python script to see what changed in Brewfile
+      3) dotfiles CI for GitHub Actions
+- https://github.com/lra/mackup
