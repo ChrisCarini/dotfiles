@@ -55,6 +55,7 @@ apps=(
   #  mysql@5.7  # needed for work
   nano
   nmap
+  p7zip
   packer
   ssh-copy-id
   telnet
