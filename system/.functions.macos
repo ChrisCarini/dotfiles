@@ -14,3 +14,58 @@ dingdingding() {
     tput bel;sleep 0.5;
     tput bel
 }
+
+gource_me() {
+  if [ ! -z $1 ] ;  then
+      # --user-image-dir ~/path/to/images/formatted/developer/name/from/git/commit/log/dot/png/example/Chris Carini.png
+      IMAGE_REPO="--user-image-dir ${1}"
+  else
+      IMAGE_REPO=""
+  fi
+
+  MAIN_BRANCH=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+  PROJECT_NAME=${PWD##*/}
+  COMMIT_COUNT=$(git rev-list --count $MAIN_BRANCH)
+
+  echo "Run gource for ${PROJECT_NAME} over ${COMMIT_COUNT} commits on ${MAIN_BRANCH} branch?"
+
+  read -p "Proceed? [y/N] " -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+      echo "Exiting..."
+      return 1
+  fi
+
+  gource \
+    --seconds-per-day 0.1 \
+    --date-format "${PROJECT_NAME} - %Y-%m-%dT%H:%M:%S" \
+    $IMAGE_REPO \
+    --hide filenames,dirnames,root \
+    -1280x720 \
+    -o "gource-${PROJECT_NAME}.ppm"
+
+  ffmpeg \
+    -y -r 60 \
+    -f image2pipe -vcodec ppm \
+    -i "gource-${PROJECT_NAME}.ppm" \
+    -vcodec libx264 \
+    -preset medium \
+    -pix_fmt yuv420p \
+    -crf 1 \
+    -threads 0 \
+    -bf 0 \
+    "gource-${PROJECT_NAME}.mp4"
+
+  echo "Two files created:"
+  ls -lash gource*.{ppm,mp4} 2>/dev/null
+
+  read -p "Open video? [y/N] " -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+      echo 'Ok. Done!'
+      return 0
+  fi
+  open gource-*.mp4
+}

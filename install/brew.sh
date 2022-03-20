@@ -43,6 +43,7 @@ apps=(
   gh
   git
   git-extras
+  gource
   gpg
   gping # https://github.com/orf/gping
   hyperfine
