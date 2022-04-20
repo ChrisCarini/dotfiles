@@ -77,4 +77,9 @@ if [ -d "${BASE_JB_CODE_PATH}/intellij-community/" ]; then
   git merge upstream/master
   echo "[Done] Sync local 'intellij-community' with upstream."
 fi
+
+# Clone JetBrains IntelliJ Community repo
+# NOTE: Making use of blobless clones: https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/#user-content-blobless-clones
+git clone --filter=blob:none https://github.com/JetBrains/intellij-community.git JB_intellij-community
+
 popd
