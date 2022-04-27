@@ -27,6 +27,7 @@ plugins=(
   7345  # `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
   6610  # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
   7322  # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
+  17035 # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
 )
 
 for PLUGIN in "${plugins[@]}"; do
