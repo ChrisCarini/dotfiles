@@ -53,6 +53,7 @@ smiley() {
 }
 
 # Got from SO -> https://serverfault.com/a/42382
+# See `.functions.macos` for MacOS specific (shows notification)
 is_host_up() {
 	echo "Pinging $1 until host is up..."
 	ping_cancelled=false    # Keep track of whether the loop was cancelled, or succeeded
