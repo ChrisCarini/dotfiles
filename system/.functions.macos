@@ -3,12 +3,28 @@ manpdf() {
   man -t "$1" | open -f -a /Applications/Preview.app/
 }
 
+notify() {
+  TITLE=$1
+  SUBTITLE=$2
+  BODY=$3
+
+  # SOUND_NAME="Submarine" # We should never be in a submarine.
+  # SOUND_NAME="Basso" # Fail
+  # SOUND_NAME="Glass" # Pass
+  SOUND_NAME=$4
+  if [[ -z "$SOUND_NAME" ]]; then
+    osascript -e "display notification \"${BODY}\" with title \"${TITLE}\" subtitle \"${SUBTITLE}\""
+  else
+    osascript -e "display notification \"${BODY}\" with title \"${TITLE}\" subtitle \"${SUBTITLE}\" sound name \"${SOUND_NAME}\""
+  fi
+}
+
 # See `.functions` for non-MacOS specific (ie, generic)
 dingdingding() {
     # SOUND_NAME="Submarine" # We should never be in a submarine.
     # SOUND_NAME="Basso" # Fail
     # SOUND_NAME="Glass" # Pass
-    osascript -e 'display notification "" with title "Ding Ding Ding!" subtitle "Somethings done." sound name "Glass"'
+    notify 'Ding Ding Ding!' 'Somethings done.' '' 'Glass'
 
     tput bel;sleep 0.5;
     tput bel;sleep 0.5;
