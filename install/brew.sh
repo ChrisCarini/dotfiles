@@ -58,6 +58,7 @@ apps=(
   nmap
   p7zip
   packer
+  pv
   ssh-copy-id
   telnet
   tree
