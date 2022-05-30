@@ -21,6 +21,7 @@ jetbrains_plugin_repos=(
   ChrisCarini/intellij-notification-sample
   ChrisCarini/iris-jetbrains-plugin
   ChrisCarini/jetbrains-auto-power-saver
+  ChrisCarini/loc-change-count-detector-jetbrains-plugin
   ChrisCarini/logshipper-intellij-plugin
   ChrisCarini/sample-intellij-plugin
 )

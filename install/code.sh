@@ -35,7 +35,6 @@ repos=(
 # k
 # l
     ChrisCarini/little-snitch-rule-groups
-    ChrisCarini/loc-change-count-detector-jetbrains-plugin
 # m
     manojVivek/medium-unlimited
 # n
