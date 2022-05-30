@@ -29,6 +29,7 @@ repos=(
 # h
     ChrisCarini/homelab-infra-configs
 # i
+    ChrisCarini/ieee-csdl-downloader
 # j
     ChrisCarini/jupyter-docker
 # k
