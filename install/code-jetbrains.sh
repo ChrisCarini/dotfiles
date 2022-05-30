@@ -9,7 +9,7 @@ BASE_CODE_PATH=${1:-~/GitHub}
 BASE_JB_CODE_PATH="${BASE_CODE_PATH}/jetbrains"
 BASE_JB_PLUGINS_CODE_PATH="${BASE_JB_CODE_PATH}/plugins"
 
-# Create a directory structure for our JetBrains tepos.
+# Create a directory structure for our JetBrains repos.
 mkdir -p "${BASE_JB_PLUGINS_CODE_PATH}"
 
 ##
