@@ -18,6 +18,7 @@ mkdir -p "${BASE_JB_PLUGINS_CODE_PATH}"
 jetbrains_plugin_repos=(
   ChrisCarini/environment-variable-settings-summary-intellij-plugin
   ChrisCarini/example-loc-plugin-config-plugin
+  ChrisCarini/git-push-reminder-jetbrains-plugin
   ChrisCarini/intellij-code-exfiltration
   ChrisCarini/intellij-notification-sample
   ChrisCarini/iris-jetbrains-plugin
