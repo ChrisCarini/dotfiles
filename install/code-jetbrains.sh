@@ -16,6 +16,7 @@ mkdir -p "${BASE_JB_PLUGINS_CODE_PATH}"
 # Checkout JetBrains Plugin Repos
 ##
 jetbrains_plugin_repos=(
+  ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
   ChrisCarini/environment-variable-settings-summary-intellij-plugin
   ChrisCarini/example-loc-plugin-config-plugin
   ChrisCarini/git-push-reminder-jetbrains-plugin
@@ -23,6 +24,7 @@ jetbrains_plugin_repos=(
   ChrisCarini/intellij-notification-sample
   ChrisCarini/iris-jetbrains-plugin
   ChrisCarini/jetbrains-auto-power-saver
+  ChrisCarini/jetbrains-sdk-cleaner
   ChrisCarini/loc-change-count-detector-jetbrains-plugin
   ChrisCarini/logshipper-intellij-plugin
   ChrisCarini/sample-intellij-plugin
