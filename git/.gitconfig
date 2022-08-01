@@ -56,6 +56,8 @@
 [alias]
 	l = log --graph --decorate --oneline --all
 	lgo = log
+	pus = push
+	pul = pull
 
 [color]
 	ui = auto
