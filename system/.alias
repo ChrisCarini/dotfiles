@@ -39,6 +39,10 @@ alias space-to-comma="sed -e 's/[ ]\{1,\}/,/g'"
 alias space-to-line='sed -e :a -e $'\''s/[ ]\{1,\}/\\\n/g;ta'\'''
 alias comma-to-line='sed -e :a -e $'\''s/[,]\{1,\}/\\\n/g;ta'\'''
 
+# git
+alias gp='git pull'
+alias gf='git fetch --prune'
+
 # clustergit - https://github.com/mnagel/clustergit
 alias clustergit='~/GitHub/clustergit/clustergit'
 alias cg='clustergit --align 94 --workers 3'
