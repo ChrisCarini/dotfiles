@@ -113,3 +113,48 @@ listening() {
 open-ports() {
   listening $1
 }
+
+make-hdr() {
+  ##
+  # Requires installation of Luminance version 2.6.1 (downloaded from https://github.com/LuminanceHDR/LuminanceHDR/issues/192#issuecomment-1194372488 )
+  ##
+  FILE_EXTENSION=NEF
+
+  if compgen -G "*.exr" >/dev/null && compgen -G "*.tif" >/dev/null; then
+    echo "Both the 'exr' and 'tif' file exists. Skipping [$(pwd)] directory..."
+    return
+  fi
+  echo "Creating High Dynamic Range photo for [$(pwd)] directory..."
+
+  /Applications/Luminance\ HDR\ 2.6.1.app/Contents/MacOS/luminance-hdr-cli \
+    --align AIS \
+    --gamma 1 \
+    --saturation 1 \
+    --postgamma 1 \
+    \
+    --hdrModel debevec \
+    --hdrWeight triangular \
+    --hdrResponseCurve gamma \
+    \
+    --tmo drago \
+    --tmoDrgBias "0.75" \
+    \
+    --ldrQuality 100 \
+    --ldrTiff 16b \
+    --proposedldrname tif \
+    --proposedhdrname exr \
+    \
+    *.$FILE_EXTENSION
+}
+
+make-all-hdr() {
+  # Run this from within a 'year' directory. (ie, `./Photos/20xx/`)
+  BASE_DIR="."
+  for i in $BASE_DIR/*/HDR_*; do
+    echo
+    echo "Current Dir: ${i}"
+    pushd "${i}" >/dev/null
+    make-hdr
+    popd >/dev/null
+  done
+}
