@@ -48,7 +48,6 @@
 # - https://project-awesome.org/herrbischoff/awesome-macos-command-line
 # - https://github.com/kortina/dotfiles/blob/master/setup-osx.sh
 
-
 ##########################
 # Make utilities available
 ##########################
@@ -231,6 +230,14 @@ defaults write com.apple.dock show-process-indicators -bool true
 header "-" "Don’t automatically rearrange Spaces based on most recent use"
 # ------------------------------------------------------------------------
 defaults write com.apple.dock mru-spaces -bool false
+
+# ----------------------------------------------------
+header "-" "Disable 'notes' hotcorner in bottom right"
+# ----------------------------------------------------
+# See nice write up here: https://blog.jiayu.co/2018/12/quickly-configuring-hot-corners-on-macos/
+# Note: No need to `killall Dock` as this is done in the `dock.sh` script that runs after this.
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 1048576
 
 # ==========================
 header "=" "Safari & WebKit"
