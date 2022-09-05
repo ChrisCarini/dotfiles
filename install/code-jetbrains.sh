@@ -50,6 +50,7 @@ popd
 jetbrains_misc_repos=(
 #  ChrisCarini/intellij-community # 2021-10-15 - ChrisCarini - Commenting out, because I do not currently have / need a fork of IC.
   ChrisCarini/intellij-platform-plugin-verifier-action
+  ChrisCarini/jetbrains-error-utils
   ChrisCarini/jetbrains-ide-release-dates
   ChrisCarini/jetbrains-plugin-scripts
   ChrisCarini/jetbrains.chriscarini.com
