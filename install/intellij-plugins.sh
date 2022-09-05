@@ -28,6 +28,8 @@ plugins=(
   6610  # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
   7322  # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
   17035 # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
+  10080 # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
+  13308 # `Indent Rainbow` - https://plugins.jetbrains.com/plugin/13308-indent-rainbow
 )
 
 for PLUGIN in "${plugins[@]}"; do
