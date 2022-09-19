@@ -25,6 +25,7 @@ repos=(
     ChrisCarini/fitbit-data-extract
 # g
     ChrisCarini/GitJournal
+    ChrisCarini/github-repo-files-sync
     ChrisCarini/google-apps-scripts
 # h
     ChrisCarini/homelab-infra-configs
