@@ -1,3 +1,6 @@
+# Use `git` installed by `brew`.
+alias git="/usr/local/bin/git"
+
 # Convert MP4 to MP3
 alias convertmp4tomp3='for file in ./*.mp4; do /Applications/VLC.app/Contents/MacOS/VLC -I dummy "$file" --sout="#transcode{acodec=mp3,vcodec=dummy}:standard{access=file,mux=raw,dst=\"$(echo "$file" | sed 's/\.[^\.]*$/.mp3/')\"}" vlc://quit; done'
 
