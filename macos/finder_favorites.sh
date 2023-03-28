@@ -23,6 +23,9 @@ if [ -x "$(command -v mysides)" ]; then
   mysides add "GitHub" file:///Users/$USER/GitHub
   mysides add "code" file:///Users/$USER/code
   mysides add "tmp" file:///Users/$USER/tmp/
+  mysides add "Financial" file:///Users/$USER/Desktop/Archive/Personal/Financial/
+  mysides add "5068 Tifton Way - HH" file:///Users/$USER/Desktop/Archive/Personal/Housing/House%20Hunting/2022%20-%20HOUSE%20HUNTING/5068%20Tifton%20Way/
+  mysides add "5068 Tifton Way" file:///Users/$USER/Desktop/Archive/Personal/Housing/5068%20Tifton%20Way/
   mysides add "~DELETE THIS STUFF" file:///Users/$USER/Desktop/~DELETE%20THIS%20STUFF/
 else
   echo "###################"
