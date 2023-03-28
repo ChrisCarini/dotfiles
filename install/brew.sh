@@ -58,6 +58,7 @@ apps=(
   nmap
   p7zip
   packer
+  pinentry-mac # For nicer GPG pin prompting
   pv
   ssh-copy-id
   telnet
