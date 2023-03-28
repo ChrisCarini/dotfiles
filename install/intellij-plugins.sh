@@ -30,6 +30,8 @@ plugins=(
   17035 # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
   10080 # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
   13308 # `Indent Rainbow` - https://plugins.jetbrains.com/plugin/13308-indent-rainbow
+  12494 # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
+  1347  # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
 )
 
 for PLUGIN in "${plugins[@]}"; do
