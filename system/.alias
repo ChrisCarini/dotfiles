@@ -55,6 +55,9 @@ alias cghf='cgh --fetch'
 alias cgw='cg --dir ~/dotfiles/ --dir ~/code/ --dir ~/tmp/'
 alias cgwp='cgw --pull'
 alias cgwf='cgw --fetch'
+alias cgj='cg --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/'
+alias cgjp='cgj --pull'
+alias cgjf='cgj --fetch'
 
 # URL-encode & decode
 alias urldecode='python3 -c "import sys, urllib.parse as ul;print(ul.unquote_plus(sys.argv[1]))"'
