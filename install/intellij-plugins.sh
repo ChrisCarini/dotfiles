@@ -32,6 +32,7 @@ plugins=(
   13308 # `Indent Rainbow` - https://plugins.jetbrains.com/plugin/13308-indent-rainbow
   12494 # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
   1347  # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
+  14494 # `PDF Viewer` - https://plugins.jetbrains.com/plugin/14494-pdf-viewer
 )
 
 for PLUGIN in "${plugins[@]}"; do
