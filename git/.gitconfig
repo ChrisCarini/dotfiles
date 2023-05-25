@@ -7,6 +7,8 @@
 	excludesfile = ~/.gitignore_global
 	# See https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf
 	autocrlf = input
+[init]
+	defaultBranch = main
 [push]
 	default = simple
 	# See https://twitter.com/JI/status/1546948817462800384
