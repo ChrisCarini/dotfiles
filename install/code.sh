@@ -52,6 +52,7 @@ repos=(
     ChrisCarini/shodan-exposure-box
     ChrisCarini/skypi
     ChrisCarini/speedtest-to-gsheet
+    ChrisCarini/speedtest-to-mysql
     tradytics/surpriver
 # t
     ChrisCarini/treasury-direct-password-enable-user-script
