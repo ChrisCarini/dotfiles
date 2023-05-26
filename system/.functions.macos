@@ -3,6 +3,22 @@ manpdf() {
   man -t "$1" | open -f -a /Applications/Preview.app/
 }
 
+# Convert Markdown files to PDF; the way I like (so far)
+markdown2pdf() {
+    if [ $# -ne 2 ]; then
+        echo "markdown2pdf <input.md> <output.pdf>"
+        return 1
+    fi
+    pandoc $1 \
+    -t pdf \
+    -V colorlinks=true \
+    -V linkcolor=blue \
+    -V urlcolor=blue \
+    -V toccolor=gray \
+    -V geometry:margin=0.5in \
+    -o $2
+}
+
 notify() {
   TITLE=$1
   SUBTITLE=$2
