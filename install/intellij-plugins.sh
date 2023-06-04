@@ -11,9 +11,14 @@ fi
 # Install plugins
 plugins=(
   # My Plugins
+  19543 # `Automatic GitHub Issue Navigation Configuration` - https://plugins.jetbrains.com/plugin/19543-automatic-github-issue-navigation-configuration
   11941 # `Automatic Power Saver` - https://plugins.jetbrains.com/plugin/11941-automatic-power-saver
   10998 # `Environment Variable Settings Summary` - https://plugins.jetbrains.com/plugin/10998-environment-variable-settings-summary
+  19508 # `Git Push Reminder` - https://plugins.jetbrains.com/plugin/19508-git-push-reminder
+  18137 # `Iris` - https://plugins.jetbrains.com/plugin/18137-iris
+  19113 # `Lines of Code Change Observer` - https://plugins.jetbrains.com/plugin/19113-lines-of-code-change-observer
   11195 # `Logshipper` - https://plugins.jetbrains.com/plugin/11195-logshipper
+  18126 # `sample-menu-action` - https://plugins.jetbrains.com/plugin/18126-sample-menu-action
   10924 # `sample-notification` - https://plugins.jetbrains.com/plugin/10924-sample-notification
 
   # Other Plugins
