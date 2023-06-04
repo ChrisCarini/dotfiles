@@ -22,19 +22,33 @@ plugins=(
   10924 # `sample-notification` - https://plugins.jetbrains.com/plugin/10924-sample-notification
 
   # Other Plugins
+  6834  # `Apache config (.htaccess)` - https://plugins.jetbrains.com/plugin/6834-apache-config--htaccess-
+  12494 # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
+  8393  # `Code::Stats` - https://plugins.jetbrains.com/plugin/8393-code-stats
+  14823 # `Full Line Code Completion` - https://plugins.jetbrains.com/plugin/14823-full-line-code-completion
   17718 # `GitHub Copilot - https://plugins.jetbrains.com/plugin/17718-github-copilot
   7499  # `GitToolBox` - https://plugins.jetbrains.com/plugin/7499-gittoolbox
+  9568  # `Go` - https://plugins.jetbrains.com/plugin/9568-go
+  8097  # `GraphQL` - https://plugins.jetbrains.com/plugin/8097-graphql
   12175 # `Grazie` - https://plugins.jetbrains.com/plugin/12175-grazie
+  6884  # `Handlebars / Mustache` - https://plugins.jetbrains.com/plugin/6884-handlebars-mustache
   9746  # `Ideolog` - https://plugins.jetbrains.com/plugin/9746-ideolog
-  7345  # `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
-  6610  # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
-  7322  # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
-  17035 # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
-  10080 # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
   13308 # `Indent Rainbow` - https://plugins.jetbrains.com/plugin/13308-indent-rainbow
-  12494 # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
-  1347  # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
+  6981  # `Ini` - https://plugins.jetbrains.com/plugin/6981-ini
+  6954  # `Kotlin` - https://plugins.jetbrains.com/plugin/6954-kotlin
+  9333  # `Makefile Language` - https://plugins.jetbrains.com/plugin/9333-makefile-language
   14494 # `PDF Viewer` - https://plugins.jetbrains.com/plugin/14494-pdf-viewer
+  6610  # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
+  18568 # `Polaris` - https://plugins.jetbrains.com/plugin/18568-polaris
+  7345  # `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
+  7322  # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
+  631   # `Python (IU)` - https://plugins.jetbrains.com/plugin/631-python
+  10080 # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
+  10837 # `Requirements` - https://plugins.jetbrains.com/plugin/10837-requirements
+  17035 # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
+  1347  # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
+  2162  # `String Manipulation` - https://plugins.jetbrains.com/plugin/2162-string-manipulation
+  7425  # `WakaTime` - https://plugins.jetbrains.com/plugin/7425-wakatime
 )
 
 for PLUGIN in "${plugins[@]}"; do
