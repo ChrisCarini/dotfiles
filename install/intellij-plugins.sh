@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 ####
-# PERSONAL INTELLIJ PLUGINS
+# PERSONAL INTELLIJ PLUGINS - IntelliJ Community & Ultimate
 ####
-
-# Ref: https://intellij-support.jetbrains.com/hc/en-us/articles/206544519
-INSTALL_TO_DIR="~/Library/Application\ Support/JetBrains/IdeaIC20*/plugins/"
 
 if ! is-macos -o ! is-executable wget -o ! is-executable unzip; then
   echo "Skipped: IntelliJ Plugins"
@@ -40,6 +37,9 @@ for PLUGIN in "${plugins[@]}"; do
   echo "Installing [$PLUGIN] ..."
 
   wget -O "/tmp/IJ_PLUGIN-$PLUGIN.zip" https://plugins.jetbrains.com/files/$(curl "https://plugins.jetbrains.com/api/plugins/$PLUGIN/updates" | jq -r '.[0].file')
-  unzip "/tmp/IJ_PLUGIN-$PLUGIN.zip" -d "$INSTALL_TO_DIR"
+  # Ref: https://intellij-support.jetbrains.com/hc/en-us/articles/206544519
+  for install_dir in ~/Library/Application\ Support/JetBrains/{IdeaIC,IntelliJIdea}20*/plugins/ ; do
+    unzip "/tmp/IJ_PLUGIN-$PLUGIN.zip" -d "$install_dir"
+  done
   rm "/tmp/IJ_PLUGIN-$PLUGIN.zip"
 done
