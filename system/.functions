@@ -32,6 +32,18 @@ git-sync-fork() {
   git merge upstream/master
 }
 
+# From https://stackoverflow.com/a/60303161/21599954
+git-full-clone-to-shallow() {
+  ORIGIN_URL=$(git remote get-url origin)
+  COMMIT=$(git rev-parse HEAD)
+
+  rm -rf .git
+  git init .
+  git remote add origin $ORIGIN_URL
+  git fetch origin $COMMIT --depth 1
+  git reset --mixed $COMMIT
+}
+
 ##
 # Misc
 ##
