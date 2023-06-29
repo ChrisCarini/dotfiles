@@ -41,13 +41,10 @@ if is-macos; then
   #   magical "Add a fingerprint" button, please let me know!
   #
   # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  osascript <<EOF
-tell application "System Preferences"
-  activate
-  delay 1
-  set the current pane to pane id "com.apple.preferences.password"
-end tell
-EOF
+  # NOTES:
+  #   - Preference Panes can be found here: /System/Library/PreferencePanes/TouchID.prefPane
+  #   - https://github.com/bvanpeski/SystemPreferences/blob/main/macos_preferencepanes-Ventura.md
+  open x-apple.systempreferences:com.apple.Touch-ID-Settings.extension
 
   header "=" "Opening OSX Applications..."
 
