@@ -51,6 +51,7 @@ apps=(
   gh
   git
   git-extras
+  go # https://go.dev/
   gource
   gpg
   gping # https://github.com/orf/gping

@@ -172,7 +172,6 @@ if is-macos; then
   ############################################
   title "Installing brew, packages, and casks"
   ############################################
-  "$DOTFILES_DIR/install/misc.sh"
   "$DOTFILES_DIR/install/brew.sh"
   "$DOTFILES_DIR/install/brew-cask.sh"
   "$DOTFILES_DIR/install/hammerspoon.sh"
@@ -180,6 +179,7 @@ if is-macos; then
   if [[ -f "$DOTFILES_DIR/work/install/intellij-plugins.sh" ]]; then
     "$DOTFILES_DIR/work/install/intellij-plugins.sh"
   fi
+  "$DOTFILES_DIR/install/misc.sh"
 fi
 
 ##########################
