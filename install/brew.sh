@@ -8,6 +8,14 @@ fi
 # Note: We pipe echo, because brew installation will prompt the user to hit the [enter] key.
 echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+# Add brew path to current environment.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if [[ ! -x "$(command -v brew)" ]]; then
+  echo "Brew not found on path; exiting."
+  exit 1
+fi
+
 # Turn off `brew` analytics
 # Docs: https://docs.brew.sh/Analytics.html
 brew analytics off

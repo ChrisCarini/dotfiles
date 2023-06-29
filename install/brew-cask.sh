@@ -4,6 +4,14 @@ if ! is-macos -o ! is-executable brew; then
   return
 fi
 
+# Add brew path to current environment.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if [[ ! -x "$(command -v brew)" ]]; then
+  echo "Brew not found on path; exiting."
+  exit 1
+fi
+
 # Turn off `brew` analytics
 # Docs: https://docs.brew.sh/Analytics.html
 brew analytics off
