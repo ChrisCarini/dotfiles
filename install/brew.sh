@@ -6,7 +6,7 @@ fi
 
 # Install Brew
 # Note: We pipe echo, because brew installation will prompt the user to hit the [enter] key.
-echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Add brew path to current environment.
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -20,14 +20,14 @@ fi
 # Docs: https://docs.brew.sh/Analytics.html
 brew analytics off
 
-# We need to chown the Cellar directory otherwise brew will complain a lot during the installs below.
-sudo chown -R $(whoami) /usr/local/Cellar
-
-# We need to chown /usr/local (the brew default prefix), among other suggested fixes by `brew doctor`
-sudo chown -R $(whoami) $(brew --prefix)/*
-sudo chown -R $(whoami) $(brew --prefix)/var/log
-sudo chown -R $(whoami) $(brew --cache)
-chmod u+w $(brew --prefix)/var/log
+## We need to chown the Cellar directory otherwise brew will complain a lot during the installs below.
+#sudo chown -R $(whoami) /usr/local/Cellar
+#
+## We need to chown /usr/local (the brew default prefix), among other suggested fixes by `brew doctor`
+#sudo chown -R $(whoami) $(brew --prefix)/*
+#sudo chown -R $(whoami) $(brew --prefix)/var/log
+#sudo chown -R $(whoami) $(brew --cache)
+#chmod u+w $(brew --prefix)/var/log
 
 brew update
 brew upgrade
