@@ -138,6 +138,20 @@ else
   fi
 fi
 
+# TODO(ChrisCarini) - Move this out of personal dotfiles, and into a script that's pulled before `git clone` is run below.
+#  NOTE: This can't be in work dotfiles, because this is needed in order to `git clone` from work.
+if is-macos; then
+  ###################################
+  title "Configure ssh config files."
+  ###################################
+  echo "Run the below command(s) to configure:"
+  echo
+  echo "  - brewin engtools install lnkd-manage-ssh"
+  echo "  - sudo /usr/local/linkedin/bin/manage-ssh --force"
+
+  read -n 1 -s -r -p "Press any key when run and completed."
+fi
+
 ##############################
 title "Checkout work dotfiles"
 ##############################
