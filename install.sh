@@ -158,6 +158,16 @@ for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
   [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
+# Install work applications, should any exist. Do this before installing IntelliJ plugins, as the apps need to exist first.
+if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
+  ###########################################
+  title "Install work applications"
+  ###########################################
+  "$DOTFILES_DIR/work/install/apps.sh"
+else
+  echo "No work/install/apps.sh exists; not bootstrapping work applications!"
+fi
+
 if is-macos; then
   ############################################
   title "Installing brew, packages, and casks"
@@ -170,16 +180,6 @@ if is-macos; then
   if [[ -f "$DOTFILES_DIR/work/install/intellij-plugins.sh" ]]; then
     "$DOTFILES_DIR/work/install/intellij-plugins.sh"
   fi
-fi
-
-# Install work applications, should any exist
-if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
-  ###########################################
-  title "Install work applications"
-  ###########################################
-  "$DOTFILES_DIR/work/install/apps.sh"
-else
-  echo "No work/install/apps.sh exists; not bootstrapping work applications!"
 fi
 
 ##########################
