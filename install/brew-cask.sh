@@ -37,6 +37,7 @@ apps=(
     intellij-idea-ce
     iterm2
 #    kitematic
+    little-snitch
 #    mysqlworkbench
     mysides  # Needed to be able to manipulate Finder favorites - See https://github.com/mosen/mysides
     OmniDiskSweeper  # https://www.omnigroup.com/more
