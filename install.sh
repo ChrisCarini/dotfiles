@@ -15,14 +15,15 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 # For adding $USER to /etc/sudoers for duration of install script
 #################################################################
 USER_SUDOER="${USER} ALL=(ALL) NOPASSWD: ALL"
+TMP_SUDOERS_D_FILE=/etc/sudoers.d/ChrisCarini_dotfiles_install_sh_script
 
 #############################
 # Setup the cleanup functions
 #############################
 # Below, we will add the user to the sudoers file - this will revert that upon exit
 function reset_sudoers() {
-  echo 'Resetting /etc/sudoers ...'
-  /usr/bin/sudo -E -- /usr/bin/sed -i '' "/^${USER_SUDOER}/d" /etc/sudoers
+  echo 'Resetting /etc/sudoers.d ...'
+  /usr/bin/sudo rm "${TMP_SUDOERS_D_FILE}"
 }
 
 # The main method for script finalization
@@ -66,7 +67,8 @@ title "Elevate privileges to avoid prompts throughout the installation"
 echo "Prompting for sudo password..."
 sudo --validate || exit 1
 
-echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a /etc/sudoers >/dev/null
+echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a "${TMP_SUDOERS_D_FILE}" >/dev/null
+/usr/bin/sudo chmod 644 "${TMP_SUDOERS_D_FILE}"
 
 ########################################
 title "Ensure shell is set to /bin/bash"
