@@ -112,17 +112,14 @@ if is-macos; then
 fi
 
 if is-macos; then
-  ####################################################################
-  title "Grant 'Terminal.app' the 'Full Disk Access' permission."
-  ####################################################################
-  osascript <<EOF
-tell application "System Preferences"
-  activate
-  delay 1
-  set the current pane to pane id "com.apple.preference.security"
-  reveal anchor "Privacy_AllFiles" of pane id "com.apple.preference.security"
-end tell
-EOF
+  ######################################################################################
+  title "Grant '/Application/Utilities/Terminal.app' the 'Full Disk Access' permission."
+  ######################################################################################
+  # NOTES:
+  #   - Preference Panes can be found here: /System/Library/PreferencePanes/Security.prefPane
+  #   - https://github.com/bvanpeski/SystemPreferences/blob/main/macos_preferencepanes-Ventura.md
+  open "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles"
+
   read -n 1 -s -r -p "Press any key when permission has been granted."
 fi
 
