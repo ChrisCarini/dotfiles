@@ -26,6 +26,7 @@ apps=(
 #    burp-suite
 #    Caffeine
     docker  # This installs the OSX Docker Desktop Application
+    hpedrorodrigues/tools/dockutil  # See https://github.com/kcrawford/dockutil/issues/127#issuecomment-1118733013
 #    filezilla
     firefox
     flux

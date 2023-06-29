@@ -44,7 +44,7 @@ apps=(
   #  docker-completion          # This causes failure due to completion already being installed.
   #  docker-compose-completion  # This causes failure due to completion already being installed.
   #  docker-machine-completion  # This causes failure due to completion already being installed.
-  dockutil
+  # dockutil # See temporary cask in brew-cask.sh
   displayplacer # `brew tap jakehilborn/jakehilborn` is the tap run above in order to make this a
   gcc
   # GitHub CLI
