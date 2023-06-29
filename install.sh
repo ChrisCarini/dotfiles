@@ -42,9 +42,20 @@ function finalize_script() {
   echo
   echo "Logging the user out in 30 seconds to allow for the setting changes to take effect."
   echo
+  echo -e "Hold \033[1;39mSPACE\033[0m/\033[1;39mENTER\033[0m speed up logging out. Press any other key to abort logout."
+  echo
   for i in {01..30}; do
-    sleep 1
-    printf "\r $i of 30 seconds until logout..."
+    printf "\r %s of 30 seconds until logout..." "${i}"
+    # In the following line -t for timeout, -N for just 1 character
+    read -s -r -t 1 -n 1 input # wait 1 sec for 1 char of user input; suppress input on screen
+    if [ "$input" != '' ]; then
+      echo
+      echo "Aborting logout..."
+      echo
+      echo -e "$(tput setaf 1)WARNING: Ensure you log out to have all configuration changes take effect and post-installation to complete.$(tput sgr0)\033[m"
+      echo
+      exit 1
+    fi
   done
 
   # Forcefully log out the user.
