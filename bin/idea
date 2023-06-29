@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Starting IntelliJ IDEA Ultimate..."
+echo "Args: $@"
+open -na "IntelliJ IDEA.app" --args "$@"

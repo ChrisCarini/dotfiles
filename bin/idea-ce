@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Starting IntelliJ IDEA CE..."
+echo "Args: $@"
+open -Wa "IntelliJ IDEA CE.app" --args "$@"
