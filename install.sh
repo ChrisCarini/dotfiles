@@ -231,7 +231,7 @@ fi
 # If OSX, let's do the dock + settings
 ##
 if is-macos; then
-  sudo . "$DOTFILES_DIR/macos/settings.sh"
+  sudo "$DOTFILES_DIR/macos/settings.sh"
   # Run dock.sh last, as the final step kills all items launched from the dock,
   # including the terminal the install.sh script is running from.
   . "$DOTFILES_DIR/macos/dock.sh"
