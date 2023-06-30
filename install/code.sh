@@ -78,4 +78,4 @@ for REPO in "${repos[@]}"; do
     echo "[Done] Cloning ${REPO}."
 done
 
-~/dotfiles/macos/finder_favorites.sh "${BASE_CODE_PATH}"
+. "${HOME}/dotfiles/install/code-jetbrains.sh" "${BASE_CODE_PATH}"

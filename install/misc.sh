@@ -12,4 +12,4 @@
 # GitHub: https://github.com/syncfast/clockwise
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
-go get github.com/syncfast/clockwise
+go install github.com/syncfast/clockwise@master

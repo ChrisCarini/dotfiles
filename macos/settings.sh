@@ -201,7 +201,7 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 # ----------------------------------------------------------
 header "-" "Finder: Add desired folders to Finder Favorites"
 # ----------------------------------------------------------
-~/dotfiles/macos/finder_favorites.sh
+. "${HOME}/dotfiles/macos/finder_favorites.sh"
 
 # ===========================================
 header "=" "Dock, Dashboard, and hot corners"

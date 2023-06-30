@@ -8,6 +8,12 @@ elif [[ "$OSTYPE" =~ ^darwin20 ]]; then
 # 21 = Monterey
 elif [[ "$OSTYPE" =~ ^darwin21 ]]; then
   exit 0
+# 22 = Ventura
+elif [[ "$OSTYPE" =~ ^darwin22 ]]; then
+  exit 0
+# 23 = Sonoma
+elif [[ "$OSTYPE" =~ ^darwin23 ]]; then
+  exit 0
 else
   exit 1
 fi

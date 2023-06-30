@@ -187,7 +187,7 @@ if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
   ###########################################
   title "Install work applications"
   ###########################################
-  "$DOTFILES_DIR/work/install/apps.sh"
+  . "$DOTFILES_DIR/work/install/apps.sh"
 else
   echo "No work/install/apps.sh exists; not bootstrapping work applications!"
 fi
@@ -196,14 +196,14 @@ if is-macos; then
   ############################################
   title "Installing brew, packages, and casks"
   ############################################
-  "$DOTFILES_DIR/install/brew.sh"
-  "$DOTFILES_DIR/install/brew-cask.sh"
-  "$DOTFILES_DIR/install/hammerspoon.sh"
-  "$DOTFILES_DIR/install/intellij-plugins.sh"
+  . "$DOTFILES_DIR/install/brew.sh"
+  . "$DOTFILES_DIR/install/brew-cask.sh"
+  . "$DOTFILES_DIR/install/hammerspoon.sh"
+  . "$DOTFILES_DIR/install/intellij-plugins.sh"
   if [[ -f "$DOTFILES_DIR/work/install/intellij-plugins.sh" ]]; then
-    "$DOTFILES_DIR/work/install/intellij-plugins.sh"
+    . "$DOTFILES_DIR/work/install/intellij-plugins.sh"
   fi
-  "$DOTFILES_DIR/install/misc.sh"
+  . "$DOTFILES_DIR/install/misc.sh"
 fi
 
 ##########################
@@ -219,10 +219,10 @@ mkdir ~/Desktop/Screen\ Shots\ To\ Save
 ############################
 title "Checkout source code"
 ############################
-"$DOTFILES_DIR/install/code.sh"
+. "$DOTFILES_DIR/install/code.sh"
 # Run work code bootstrap, should it exist
 if [[ -f "$DOTFILES_DIR/work/install/code.sh" ]]; then
-  "$DOTFILES_DIR/work/install/code.sh"
+  . "$DOTFILES_DIR/work/install/code.sh"
 else
   echo "No work/install/code.sh exists; not bootstrapping work code!"
 fi
@@ -231,8 +231,8 @@ fi
 # If OSX, let's do the dock + settings
 ##
 if is-macos; then
-  sudo "$DOTFILES_DIR/macos/settings.sh"
+  sudo . "$DOTFILES_DIR/macos/settings.sh"
   # Run dock.sh last, as the final step kills all items launched from the dock,
   # including the terminal the install.sh script is running from.
-  "$DOTFILES_DIR/macos/dock.sh"
+  . "$DOTFILES_DIR/macos/dock.sh"
 fi
