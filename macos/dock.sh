@@ -33,10 +33,12 @@ else
   dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
 fi
 
-# iTerm
-dockutil --no-restart --add "/Applications/iTerm.app"
-# IJ
+## iTerm
+#dockutil --no-restart --add "/Applications/iTerm.app"
+# IJ CE
 dockutil --no-restart --add "/Applications/IntelliJ IDEA CE.app"
+# IJ IU
+dockutil --no-restart --add "/Applications/IntelliJ IDEA.app"
 # Slack
 dockutil --no-restart --add "/Applications/Slack.app"
 
