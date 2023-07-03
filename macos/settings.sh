@@ -100,31 +100,38 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 # ======================================================================
 header "=" "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
 # ======================================================================
-# ---------------------------------------------------
-header "-" "Disable “natural” (Lion-style) scrolling"
-# ---------------------------------------------------
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# -----------------------------------------------------
+header "-" "Disable \"natural\" (Lion-style) scrolling"
+# -----------------------------------------------------
+defaults write -globalDomain com.apple.swipescrolldirection -bool false
+
+# --------------------------------------------------------------------
+header "-" "Change quote characters for single quote and double quote"
+# --------------------------------------------------------------------
+defaults write -globalDomain KB_SingleQuoteOption -string "'abc'"
+defaults write -globalDomain KB_DoubleQuoteOption -string "\"abc\""
+defaults write -globalDomain NSUserQuotesArray -array "'\"'" "'\"'" "'" "'"
 
 # -----------------------------------------------------------------
 header "-" "Disable press-and-hold for keys in favor of key repeat"
 # -----------------------------------------------------------------
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write -globalDomain ApplePressAndHoldEnabled -bool false
 
 # ------------------------------------------
 header "-" "Set a fast keyboard repeat rate"
 # ------------------------------------------
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 25
+defaults write -globalDomain KeyRepeat -int 2
+defaults write -globalDomain InitialKeyRepeat -int 25
 
 # ----------------------------------------
 header "-" "Set language and text formats"
 # ----------------------------------------
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en-US"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
-defaults write NSGlobalDomain AppleMetricUnits -bool false
+defaults write -globalDomain AppleLanguages -array "en-US"
+defaults write -globalDomain AppleLocale -string "en_US@currency=USD"
+defaults write -globalDomain AppleMeasurementUnits -string "Inches"
+defaults write -globalDomain AppleMetricUnits -bool false
 
 # ------------------------------------------
 header "-" "Reduce display transparency"
@@ -151,7 +158,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 # -----------------------------------------------
 header "-" "Finder: show all filename extensions"
 # -----------------------------------------------
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -globalDomain AppleShowAllExtensions -bool true
 
 # ----------------------------------
 header "-" "Finder: show status bar"
