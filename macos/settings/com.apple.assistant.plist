@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Is Trial config set to disable media entity sync</key>
+	<false/>
+	<key>Last Known Analytics Store State</key>
+	<integer>0</integer>
+	<key>Last client experiment check date</key>
+	<date>2023-07-03T13:49:01Z</date>
+	<key>Last server experiment check date</key>
+	<date>2023-07-03T13:49:01Z</date>
+	<key>MultiUser Shared Data Needs Sync</key>
+	<true/>
+	<key>Voice Trigger Needs Sync</key>
+	<true/>
+</dict>
+</plist>

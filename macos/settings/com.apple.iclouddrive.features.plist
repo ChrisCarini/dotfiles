@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iCloudDrive-on-FPFS</key>
+	<true/>
+	<key>iCloudDrive-on-FPFS-last-boot-timestamp</key>
+	<integer>1688120267</integer>
+	<key>iCloudDrive-on-FPFS-last-boot-uuid</key>
+	<string>E762CB7A-F1BC-44D7-9548-B40AC7362338</string>
+</dict>
+</plist>

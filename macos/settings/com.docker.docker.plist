@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BugsnagUserName</key>
+	<string>C0579661-7453-4A7D-A5DD-D3AAD01F3135</string>
+	<key>BugsnagUserUserId</key>
+	<string>C0579661-7453-4A7D-A5DD-D3AAD01F3135</string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
+	<key>SUEnableAutomaticChecks</key>
+	<false/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+</dict>
+</plist>

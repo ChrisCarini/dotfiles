@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>13679422246825973176</key>
+	<string>9iz+aYF8M5wEFTTvuLcIFQ==</string>
+	<key>AdPlatformsStatusConditionSetDate</key>
+	<date>2023-07-02T21:55:25Z</date>
+	<key>AppUsageBiomeStartDate</key>
+	<date>2023-07-03T14:25:19Z</date>
+	<key>ArcadeDeviceGUID</key>
+	<string>5CE91EBF4722</string>
+	<key>ArcadeDeviceID</key>
+	<string>4B34F562-D8B7-4900-A91A-BB8317AA6B4B</string>
+	<key>ArcadeDeviceIDCreationDate</key>
+	<date>2023-06-30T10:46:04Z</date>
+	<key>ArcadePayoutDeviceID</key>
+	<string>3B7FA426-6D2D-41D0-98AF-E2BC1E00C657</string>
+	<key>ArcadePayoutIntervalStartDate</key>
+	<date>2023-07-03T12:13:26Z</date>
+	<key>ArcadePayoutLaunchesIntervalStartDate</key>
+	<date>2023-07-03T12:13:26Z</date>
+	<key>ArcadePayoutResetDate</key>
+	<date>2023-07-09T07:00:00Z</date>
+	<key>ArcadeSubscriptionState</key>
+	<string>Unsubscribed</string>
+	<key>ArcadeSummaryIntervalStartDate</key>
+	<date>2023-07-03T12:13:26Z</date>
+	<key>ArcadeSummaryLaunchesIntervalStartDate</key>
+	<date>2023-07-03T12:13:26Z</date>
+	<key>CrossfireIntervalStartDate</key>
+	<date>2023-07-03T14:25:19Z</date>
+	<key>CrossfireLaunchesIntervalStartDate</key>
+	<date>2023-07-03T14:25:19Z</date>
+	<key>CurrentUpdateSource</key>
+	<integer>0</integer>
+	<key>LastOSBuildVersion</key>
+	<string>22F82</string>
+	<key>LastOSInstallDate</key>
+	<date>2023-06-30T10:46:04Z</date>
+	<key>LastUpdatesCheck</key>
+	<date>2023-07-03T01:01:14Z</date>
+	<key>LastWeeklyAnalyticsPostDate</key>
+	<date>2023-07-01T12:44:05Z</date>
+	<key>OncePerBoot</key>
+	<dict>
+		<key>fsEntitlements</key>
+		<integer>1</integer>
+	</dict>
+	<key>TargetDateArcadePostPayout</key>
+	<date>2023-07-04T00:13:26Z</date>
+	<key>TargetDateArcadePostSummary</key>
+	<date>2023-07-04T00:13:26Z</date>
+	<key>TargetDateCrossfirePost</key>
+	<date>2023-07-03T20:25:19Z</date>
+	<key>WelcomeNotificationLastAppStoreConnectionProductVersion</key>
+	<string>13.4.1</string>
+</dict>
+</plist>

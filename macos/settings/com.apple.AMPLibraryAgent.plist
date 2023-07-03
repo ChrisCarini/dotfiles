@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>books-migrated</key>
+	<integer>1</integer>
+	<key>books-persistent-id</key>
+	<integer>-5756643675299255131</integer>
+	<key>debugAssertCategoriesEnabled</key>
+	<integer>0</integer>
+	<key>debugAssertCategoriesVersion</key>
+	<integer>3</integer>
+	<key>devices-persistent-id</key>
+	<integer>-274579825049266425</integer>
+	<key>imported-media-domains</key>
+	<integer>15</integer>
+	<key>imported-media-domains-modification-date</key>
+	<string>Sun, 02 Jul 2023 16:01:13 GMT</string>
+	<key>podcasts-migrated</key>
+	<integer>1</integer>
+	<key>podcasts-persistent-id</key>
+	<integer>-8645644032237894909</integer>
+	<key>storeMediaTypeFlags</key>
+	<integer>3422</integer>
+	<key>storeSupportsPasswordSettings</key>
+	<true/>
+	<key>storeSupportsPreviousPurchases</key>
+	<true/>
+	<key>storeSupportsUPP</key>
+	<true/>
+</dict>
+</plist>

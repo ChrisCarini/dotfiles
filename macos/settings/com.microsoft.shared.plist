@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HostMetadata.7A396265-F179-423C-A494-AC02B0437E33</key>
+	<dict>
+		<key>Audience</key>
+		<string>Microsoft</string>
+		<key>AudienceChannel</key>
+		<string>DevMain</string>
+		<key>AudienceGroup</key>
+		<string>Microsoft</string>
+		<key>PreviewEnabled</key>
+		<string>true</string>
+		<key>SHSuffixKey_0</key>
+		<string>_phx</string>
+		<key>SHSuffixKey_1</key>
+		<string>_arm</string>
+		<key>Tenant_Id</key>
+		<string>72f988bf-86f1-41af-91ab-2d7cd011db47</string>
+	</dict>
+</dict>
+</plist>

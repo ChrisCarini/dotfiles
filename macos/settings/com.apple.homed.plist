@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CKPerBootTasks</key>
+	<array>
+		<string>CKAcccountInfoCacheReset</string>
+		<string>CKAccountInfoCacheReset</string>
+	</array>
+	<key>CKStartupTime</key>
+	<integer>1688120267</integer>
+	<key>CloudKitAccountInfoCache</key>
+	<dict>
+		<key>f957052a54d20d495faefb99fead8c9eae69a5abb8b2b74930af81c30e7e2c5d</key>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwbVSRu
+		dWxs1w0ODxAREhMUFRYXGBkaViRjbGFzc18QE0hhc1ZhbGlkQ3JlZGVudGlh
+		bHNcV2FscnVzU3RhdHVzXxAQQWNjb3VudFBhcnRpdGlvbl8QJERldmljZVRv
+		RGV2aWNlRW5jcnlwdGlvbkF2YWlsYWJpbGl0eV1BY2NvdW50U3RhdHVzXxAc
+		QWNjb3VudEluZm9WYWxpZGF0aW9uQ291bnRlcoACCBACEAEQABADECHSHB0e
+		H1okY2xhc3NuYW1lWCRjbGFzc2VzXUNLQWNjb3VudEluZm+iHiBYTlNPYmpl
+		Y3QACAARABoAJAApADIANwBJAEwAUQBTAFcAXQBsAHMAiQCWAKkA0ADeAP0A
+		/wEAAQIBBAEGAQgBCgEPARoBIwExATQAAAAAAAACAQAAAAAAAAAhAAAAAAAA
+		AAAAAAAAAAABPQ==
+		</data>
+	</dict>
+	<key>HMDCoreAnalyticsPeriodicReporterXPCCounterReportTime</key>
+	<real>710087955.75235105</real>
+	<key>HMDHomeManagerGenerationCounter</key>
+	<integer>2</integer>
+	<key>HMDLogEventDailySchedulerLastRunTimeKey</key>
+	<date>2023-07-03T03:38:33Z</date>
+	<key>homedLaunchTime</key>
+	<date>2023-06-30T15:47:34Z</date>
+	<key>kAssistantConfigurationNumberOfEntitiesKey</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BirthdayEventsGenerationAttemptsToResetKey</key>
+	<integer>0</integer>
+	<key>BirthdayEventsGenerationLastLocale</key>
+	<string>en_US</string>
+	<key>BirthdayEventsGenerationVersion</key>
+	<integer>13</integer>
+	<key>CALPrefLastTruthFileMigrationVersion</key>
+	<integer>1</integer>
+	<key>NotificationSourceClientIdentifierVersion</key>
+	<integer>1</integer>
+	<key>NotificationsLastLocale</key>
+	<string>en_US</string>
+	<key>PrefMigrationSeed</key>
+	<integer>3</integer>
+	<key>ShowDeclinedEvents</key>
+	<false/>
+	<key>enableTravelAdvisoriesForAutomaticBehavior</key>
+	<true/>
+	<key>kCalDBLastSpotLightIndexVersion</key>
+	<integer>18</integer>
+</dict>
+</plist>

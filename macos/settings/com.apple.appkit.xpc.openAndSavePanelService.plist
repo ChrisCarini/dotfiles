@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSNavRecentPlaces</key>
+	<array>
+		<string>~/code/tools-analytics-spark</string>
+		<string>~/code/insights-labs</string>
+		<string>~/code/dei-insights-tableau-toolbelt</string>
+		<string>~/code/developer-productivity-analysis/.idea/runConfigurations</string>
+		<string>~/code/developer-productivity-analysis/developer-productivity-analysis</string>
+	</array>
+</dict>
+</plist>

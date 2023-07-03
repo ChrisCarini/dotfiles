@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bypassAvailability</key>
+	<false/>
+	<key>debugUI</key>
+	<false/>
+	<key>enableAlbumsDomain</key>
+	<true/>
+	<key>enableArtDomain</key>
+	<true/>
+	<key>enableBooksDomain</key>
+	<true/>
+	<key>enableCoarseClassification</key>
+	<true/>
+	<key>enableLandmarkDomain</key>
+	<true/>
+	<key>enableNatureDomain</key>
+	<true/>
+	<key>enablePetsDomain</key>
+	<true/>
+	<key>enablePhotosApp</key>
+	<true/>
+	<key>enableQuickLook</key>
+	<true/>
+	<key>enableSafariApp</key>
+	<true/>
+	<key>enableScreenshots</key>
+	<true/>
+	<key>firstTimeExperience</key>
+	<true/>
+	<key>initialized</key>
+	<true/>
+	<key>sendLocationInfo</key>
+	<true/>
+	<key>sendOCRText</key>
+	<true/>
+	<key>verboseLogging</key>
+	<false/>
+</dict>
+</plist>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CKPerBootTasks</key>
+	<array>
+		<string>CKAcccountInfoCacheReset</string>
+		<string>CKAccountInfoCacheReset</string>
+	</array>
+	<key>CKStartupTime</key>
+	<integer>1688120267</integer>
+	<key>CloudKitAccountInfoCache</key>
+	<dict>
+		<key>f505b72767a138b7dad1afa5de312a7fb1e16223abe79203bb3c9b6dab77bda1</key>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwbVSRu
+		dWxs1w0ODxAREhMUFRYXGBkaViRjbGFzc18QE0hhc1ZhbGlkQ3JlZGVudGlh
+		bHNcV2FscnVzU3RhdHVzXxAQQWNjb3VudFBhcnRpdGlvbl8QJERldmljZVRv
+		RGV2aWNlRW5jcnlwdGlvbkF2YWlsYWJpbGl0eV1BY2NvdW50U3RhdHVzXxAc
+		QWNjb3VudEluZm9WYWxpZGF0aW9uQ291bnRlcoACCBACEAEQABADECHSHB0e
+		H1okY2xhc3NuYW1lWCRjbGFzc2VzXUNLQWNjb3VudEluZm+iHiBYTlNPYmpl
+		Y3QACAARABoAJAApADIANwBJAEwAUQBTAFcAXQBsAHMAiQCWAKkA0ADeAP0A
+		/wEAAQIBBAEGAQgBCgEPARoBIwExATQAAAAAAAACAQAAAAAAAAAhAAAAAAAA
+		AAAAAAAAAAABPQ==
+		</data>
+	</dict>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertEventsNotification:/notification/usageActivityDate</key>
+	<date>2023-07-03T17:16:26Z</date>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertEventsNotification:/portrait/entityActivityDate</key>
+	<date>2023-07-03T03:38:48Z</date>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertEventsNotification:/portrait/topicActivityDate</key>
+	<date>2023-07-03T03:38:47Z</date>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertLocalEventsNotification:/notification/usageActivityDate</key>
+	<date>2023-07-03T17:16:26Z</date>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertLocalEventsNotification:/portrait/entityActivityDate</key>
+	<date>2023-07-03T03:38:48Z</date>
+	<key>_DKThrottledActivityLast_DKKnowledgeStorageLogging_DKKnowledgeStorageDidInsertLocalEventsNotification:/portrait/topicActivityDate</key>
+	<date>2023-07-03T03:38:47Z</date>
+	<key>kCDIntentDeletionContactStoreChangeHistoryToken</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVZfdG9rZW6AAacLDBEZGhshVSRudWxs0g0O
+	DxBWJGNsYXNzXxAiTlNQZXJzaXN0ZW50SGlzdG9yeVRva2VuRGljdGlvbmFyeYAGgALT
+	EhMNFBYYV05TLmtleXNaTlMub2JqZWN0c6EVgAOhF4AEgAVfECRGRUExMjU3Ri05QkNF
+	LTQ2MTUtQTQ2NC1DRUFBRjhBRDE2NEIQBNIcHR4fWiRjbGFzc25hbWVYJGNsYXNzZXNc
+	TlNEaWN0aW9uYXJ5oh4gWE5TT2JqZWN00hwdIiNfEBlfTlNQZXJzaXN0ZW50SGlzdG9y
+	eVRva2VuoyQlIF8QGV9OU1BlcnNpc3RlbnRIaXN0b3J5VG9rZW5fEBhOU1BlcnNpc3Rl
+	bnRIaXN0b3J5VG9rZW4ACAARABoAJAApADIANwBJAEwAUwBVAF0AYwBoAG8AlACWAJgA
+	nwCnALIAtAC2ALgAugC8AOMA5QDqAPUA/gELAQ4BFwEcATgBPAFYAAAAAAAAAgEAAAAA
+	AAAAJgAAAAAAAAAAAAAAAAAAAXM=
+	</data>
+	<key>kCDIntentDeletionPendingDeletesQueued</key>
+	<false/>
+</dict>
+</plist>

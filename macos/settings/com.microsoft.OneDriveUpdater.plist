@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PackageStandaloneUpdaterUpdateErrorCount</key>
+	<integer>0</integer>
+	<key>StandaloneDaemonConnectionErrorCount</key>
+	<integer>0</integer>
+	<key>StandaloneUpdaterUpdateErrorCount</key>
+	<integer>0</integer>
+	<key>TelemetrySafemodeKey</key>
+	<false/>
+	<key>UpdaterUpdateErrorCount</key>
+	<integer>0</integer>
+</dict>
+</plist>

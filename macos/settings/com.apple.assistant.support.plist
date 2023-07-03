@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Offline Dictation Status</key>
+	<dict>
+		<key>ar-SA</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>de-DE</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-AU</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-CA</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-GB</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-IN</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-SG</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>en-US</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>es-ES</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>es-MX</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>es-US</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>fr-CA</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<false/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<false/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<false/>
+		</dict>
+		<key>fr-FR</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>it-IT</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>ja-JP</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>ko-KR</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>pt-BR</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<false/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<false/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<false/>
+		</dict>
+		<key>ru-RU</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>tr-TR</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>yue-CN</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<false/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<false/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>zh-CN</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>zh-HK</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+		<key>zh-TW</key>
+		<dict>
+			<key>Auto Punctuation</key>
+			<true/>
+			<key>Continuous Listening</key>
+			<true/>
+			<key>Emoji Recognition</key>
+			<true/>
+			<key>High Quality</key>
+			<true/>
+			<key>Installed</key>
+			<false/>
+			<key>On Device Search</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

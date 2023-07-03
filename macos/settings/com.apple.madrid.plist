@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloudKitCheckedMiCSwitchEligibilityOnImagentLaunch</key>
+	<true/>
+	<key>CloudKitIsEligibleForTruthZone</key>
+	<false/>
+	<key>CloudKitIsRemovedFromBackup</key>
+	<false/>
+	<key>CloudKitSyncingEnabled</key>
+	<false/>
+	<key>IMCloudKitAccountStatusKey</key>
+	<integer>1</integer>
+	<key>IMCloudKitStartingDisableDevices</key>
+	<false/>
+	<key>IMCloudKitStartingEnabledSettingChange</key>
+	<false/>
+	<key>IMCloudKitStartingInitialSync</key>
+	<false/>
+	<key>IMCloudKitStartingPeriodicSync</key>
+	<false/>
+	<key>IMCloudKitSyncControllerSyncRecordTypeKey</key>
+	<integer>0</integer>
+	<key>IMCloudKitSyncControllerSyncStateKey</key>
+	<integer>0</integer>
+	<key>IMCloudKitSyncControllerSyncTypeKey</key>
+	<integer>0</integer>
+	<key>IMCloudKitSyncPaused</key>
+	<false/>
+	<key>initialSyncRecordHasBeenWritten</key>
+	<true/>
+	<key>oneTimeMOCAccountCheckV2</key>
+	<true/>
+</dict>
+</plist>

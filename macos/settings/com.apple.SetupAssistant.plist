@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DidSeeAccessibility</key>
+	<false/>
+	<key>DidSeeActivationLock</key>
+	<false/>
+	<key>DidSeeAppStore</key>
+	<false/>
+	<key>DidSeeAppearanceSetup</key>
+	<false/>
+	<key>DidSeeApplePaySetup</key>
+	<false/>
+	<key>DidSeeAvatarSetup</key>
+	<false/>
+	<key>DidSeeCloudSetup</key>
+	<false/>
+	<key>DidSeePrivacy</key>
+	<false/>
+	<key>DidSeeScreenTime</key>
+	<false/>
+	<key>DidSeeSiriSetup</key>
+	<false/>
+	<key>DidSeeSyncSetup</key>
+	<false/>
+	<key>DidSeeSyncSetup2</key>
+	<false/>
+	<key>DidSeeTermsOfAddress</key>
+	<false/>
+	<key>DidSeeTouchIDSetup</key>
+	<false/>
+	<key>DidSeeiCloudLoginForStorageServices</key>
+	<false/>
+	<key>MiniBuddyLaunchReason</key>
+	<integer>0</integer>
+	<key>MiniBuddyLaunchedPostMigration</key>
+	<false/>
+	<key>MiniBuddyShouldLaunchToResumeSetup</key>
+	<false/>
+	<key>PreviousBuildVersion</key>
+	<string>0</string>
+	<key>PreviousSystemVersion</key>
+	<string>0</string>
+	<key>SkipExpressSettingsUpdating</key>
+	<false/>
+	<key>SkipFirstLoginOptimization</key>
+	<false/>
+</dict>
+</plist>

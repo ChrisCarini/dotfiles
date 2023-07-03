@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMSDeviceBiometricsState</key>
+	<integer>1</integer>
+	<key>AMSDidSetUpServerDataCache</key>
+	<true/>
+	<key>AMSFPCertExpiration</key>
+	<date>2023-07-03T21:55:29Z</date>
+	<key>AMSIncludeFullRequestInHARLogging</key>
+	<false/>
+	<key>AMSIncludeFullResponseInHARLogging</key>
+	<false/>
+	<key>AMSJSVersionMap</key>
+	<dict>
+		<key>analytics</key>
+		<string>21.0.59</string>
+		<key>internal</key>
+		<string>21.2.7</string>
+		<key>journeys</key>
+		<string>22.37.0</string>
+	</dict>
+	<key>AMSSamplingSession-TLSSessionTickets</key>
+	<dict>
+		<key>date</key>
+		<date>2023-07-03T00:43:18Z</date>
+		<key>duration</key>
+		<real>1800</real>
+		<key>result</key>
+		<true/>
+	</dict>
+	<key>AMSSamplingSession-xp_amp_appstore_log:qJO7Vty2LO98sz+eud1os9HfnMs</key>
+	<dict>
+		<key>date</key>
+		<date>2023-06-30T18:23:00Z</date>
+		<key>duration</key>
+		<real>60000</real>
+		<key>result</key>
+		<false/>
+	</dict>
+	<key>AMSStorefrontSuffixes</key>
+	<dict/>
+</dict>
+</plist>

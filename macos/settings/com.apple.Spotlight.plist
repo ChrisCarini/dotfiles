@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSStatusItem Visible Item-0</key>
+	<true/>
+	<key>__NSEnableTSMDocumentWindowLevel</key>
+	<true/>
+	<key>engagementCount-com.apple.Spotlight</key>
+	<integer>50</integer>
+	<key>lastVisibleScreenRect</key>
+	<string>{{0, 55}, {1728, 1024}}</string>
+	<key>lastWindowPosition</key>
+	<string>{{526, 463}, {675, 430}}</string>
+	<key>showedFTE</key>
+	<true/>
+	<key>startTime</key>
+	<real>709836083.51244903</real>
+	<key>useCount</key>
+	<integer>2</integer>
+</dict>
+</plist>

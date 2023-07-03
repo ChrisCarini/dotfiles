@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LastHeartbeatDateString.daily</key>
+	<string>2023-07-03T03:34:27Z</string>
+	<key>NSStatusItem Preferred Position KeyboardBrightness</key>
+	<real>328</real>
+	<key>NSStatusItem Preferred Position NowPlaying</key>
+	<real>287</real>
+	<key>NSStatusItem Visible Battery</key>
+	<true/>
+	<key>NSStatusItem Visible BentoBox</key>
+	<true/>
+	<key>NSStatusItem Visible Clock</key>
+	<true/>
+	<key>NSStatusItem Visible Item-0</key>
+	<false/>
+	<key>NSStatusItem Visible Item-1</key>
+	<false/>
+	<key>NSStatusItem Visible Item-2</key>
+	<false/>
+	<key>NSStatusItem Visible Item-3</key>
+	<false/>
+	<key>NSStatusItem Visible Item-4</key>
+	<false/>
+	<key>NSStatusItem Visible Item-5</key>
+	<false/>
+	<key>NSStatusItem Visible KeyboardBrightness</key>
+	<false/>
+	<key>NSStatusItem Visible NowPlaying</key>
+	<false/>
+	<key>NSStatusItem Visible WiFi</key>
+	<true/>
+</dict>
+</plist>

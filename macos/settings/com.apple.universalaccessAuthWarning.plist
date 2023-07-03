@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/Applications/ActivityWatch.app</key>
+	<true/>
+	<key>/Applications/ActivityWatch.app/Contents/MacOS/aw-qt</key>
+	<true/>
+	<key>/Applications/Hammerspoon.app</key>
+	<true/>
+	<key>/Applications/Hammerspoon.app/Contents/MacOS/Hammerspoon</key>
+	<true/>
+	<key>net.activitywatch.ActivityWatch</key>
+	<true/>
+	<key>org.hammerspoon.Hammerspoon</key>
+	<true/>
+</dict>
+</plist>

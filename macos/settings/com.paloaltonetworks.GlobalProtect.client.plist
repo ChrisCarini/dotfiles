@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PanPortalList</key>
+	<array>
+		<string>svpn.corp.linkedin.com</string>
+		<string>gvpn.corp.linkedin.com</string>
+		<string>rvpn.corp.linkedin.com</string>
+	</array>
+	<key>User</key>
+	<string>ccarini@linkedin.biz</string>
+	<key>WebKitCacheModelPreferenceKey</key>
+	<false/>
+	<key>WebKitWebGLEnabled</key>
+	<false/>
+	<key>user-credential-saved</key>
+	<string>false</string>
+</dict>
+</plist>

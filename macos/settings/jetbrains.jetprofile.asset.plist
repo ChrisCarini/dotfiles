@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/jetbrains/jetprofile/asset/</key>
+	<dict>
+		<key>ii/</key>
+		<dict>
+			<key>period</key>
+			<string>15788987</string>
+			<key>stamp</key>
+			<string>1688394156620</string>
+		</dict>
+		<key>pcwmp/</key>
+		<dict>
+			<key>period</key>
+			<string>14993367</string>
+			<key>stamp</key>
+			<string>1688394474016</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

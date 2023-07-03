@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CKPerBootTasks</key>
+	<array>
+		<string>CKAcccountInfoCacheReset</string>
+	</array>
+	<key>CKStartupTime</key>
+	<integer>1688120267</integer>
+	<key>GKActiveEnvironmentKeyV2</key>
+	<integer>5</integer>
+	<key>GKLastProtocolVersionUsedKeyV2</key>
+	<string>5.14.22.5.13.19.5.5.2</string>
+	<key>GKLoginCancelled</key>
+	<integer>0</integer>
+	<key>GKPushEnvironmentKeyV2</key>
+	<integer>2</integer>
+	<key>GKPushTokenKeyV2</key>
+	<data>
+	BSO3oUkp2PnrUdhMEF1PkRIR3jHHA1J9CZdeKbWfGBA=
+	</data>
+	<key>GKURLPatternCacheBagURLUserDefaultsKey</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwTFFUkbnVsbNMNDg8QERJX
+	TlMuYmFzZVYkY2xhc3NbTlMucmVsYXRpdmWAAIADgAJfEEBodHRwczovL2luaXQuZ2Mu
+	YXBwbGUuY29tL1dlYk9iamVjdHMvR0tJbml0LndvYS93YS9nZXRCYWc/aXg9a2Zz0hUW
+	FxhaJGNsYXNzbmFtZVgkY2xhc3Nlc1VOU1VSTKIXGVhOU09iamVjdAgRGiQpMjdJTFFT
+	WF5lbXSAgoSGyc7Z4ujrAAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAAAPQ=
+	</data>
+	<key>GKURLPatternCacheExpirationDateUserDefaultsKey</key>
+	<date>2023-06-30T19:22:12Z</date>
+	<key>natType</key>
+	<integer>3</integer>
+	<key>natTypeCache</key>
+	<dict>
+		<key>172.20.160.60%utun3</key>
+		<dict>
+			<key>natFlags</key>
+			<integer>204</integer>
+			<key>natFlagsLastUpdated</key>
+			<date>2023-07-03T00:47:53Z</date>
+		</dict>
+		<key>IPv4.Router=192.168.50.1;IPv4.RouterHardwareAddress=00:0d:b9:37:ed:86</key>
+		<dict>
+			<key>natFlags</key>
+			<integer>204</integer>
+			<key>natFlagsLastUpdated</key>
+			<date>2023-06-30T18:23:13Z</date>
+		</dict>
+	</dict>
+</dict>
+</plist>

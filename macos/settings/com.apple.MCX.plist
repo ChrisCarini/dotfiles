@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>.GlobalPreferences</key>
+	<dict/>
+	<key>com.apple.MCX</key>
+	<dict/>
+	<key>com.apple.ScreenSaver</key>
+	<dict/>
+	<key>com.apple.SetupAssistant.managed</key>
+	<dict/>
+	<key>com.apple.TCC.configuration-profile-policy</key>
+	<dict/>
+	<key>com.apple.applicationaccess</key>
+	<dict/>
+	<key>com.apple.dnsProxy.managed</key>
+	<dict/>
+	<key>com.apple.font</key>
+	<dict/>
+	<key>com.apple.loginwindow</key>
+	<dict/>
+	<key>com.apple.notificationsettings</key>
+	<dict/>
+	<key>com.apple.screensaver</key>
+	<dict/>
+	<key>com.apple.security.FDERecoveryKeyEscrow</key>
+	<dict/>
+	<key>com.apple.servicemanagement</key>
+	<dict/>
+	<key>com.apple.system-extension-policy</key>
+	<dict/>
+	<key>com.apple.vpn.managed.applayer</key>
+	<dict/>
+	<key>com.apple.webcontent-filter</key>
+	<dict/>
+	<key>com.brave.Browser</key>
+	<dict/>
+	<key>com.brave.Browser.extensions.lbljkplhmhfacdanpmjemiehaohpijib</key>
+	<dict/>
+	<key>com.google.Chrome</key>
+	<dict/>
+	<key>com.google.Chrome.extensions.lbljkplhmhfacdanpmjemiehaohpijib</key>
+	<dict/>
+	<key>com.linkedin.cte.incache.token</key>
+	<dict/>
+	<key>com.linkedin.ese.bluejay</key>
+	<dict/>
+	<key>com.linkedin.ese.brew-engtools-svc</key>
+	<dict/>
+	<key>com.linkedin.ese.general</key>
+	<dict/>
+	<key>com.microsoft.Edge</key>
+	<dict/>
+	<key>com.microsoft.Edge.extensions.lbljkplhmhfacdanpmjemiehaohpijib</key>
+	<dict/>
+	<key>com.vivaldi.Vivaldi</key>
+	<dict/>
+	<key>com.vivaldi.Vivaldi.extensions.lbljkplhmhfacdanpmjemiehaohpijib</key>
+	<dict/>
+	<key>org.mozilla.firefox</key>
+	<dict/>
+	<key>us.zoom.config</key>
+	<dict/>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSReceiverBundleIdentifierState</key>
+	<dict>
+		<key>com.apple.AppStore</key>
+		<true/>
+		<key>com.apple.CalendarUI</key>
+		<true/>
+		<key>com.apple.Photos</key>
+		<true/>
+		<key>com.apple.fileprovider.fileproviderd</key>
+		<true/>
+		<key>com.apple.iCal</key>
+		<true/>
+		<key>com.apple.mobilecal</key>
+		<true/>
+		<key>com.apple.parsecd</key>
+		<true/>
+		<key>com.apple.remindd</key>
+		<true/>
+		<key>com.apple.reminders</key>
+		<true/>
+		<key>com.apple.shortcuts</key>
+		<true/>
+		<key>com.apple.systempreferences</key>
+		<true/>
+		<key>com.apple.tips</key>
+		<true/>
+		<key>com.microsoft.Outlook</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

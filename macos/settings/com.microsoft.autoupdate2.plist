@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AcknowledgedDataCollectionPolicy</key>
+	<string>RequiredDataOnly</string>
+	<key>AppVersions</key>
+	<dict>
+		<key>/Applications/Microsoft Excel.app</key>
+		<string>16.74.23061100</string>
+		<key>/Applications/Microsoft OneNote.app</key>
+		<string>16.74.23061100</string>
+		<key>/Applications/Microsoft Outlook.app</key>
+		<string>16.74.23062500</string>
+		<key>/Applications/Microsoft PowerPoint.app</key>
+		<string>16.74.23061100</string>
+		<key>/Applications/Microsoft Word.app</key>
+		<string>16.74.23061100</string>
+		<key>/Library/PrivilegedHelperTools/com.microsoft.office.licensingV2.helper</key>
+		<string>16.74.23061100</string>
+	</dict>
+	<key>Applications</key>
+	<dict>
+		<key>/Applications/Microsoft Excel.app</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>XCEL2019</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+		<key>/Applications/Microsoft OneNote.app</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>ONMC2019</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+		<key>/Applications/Microsoft Outlook.app</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>OPIM2019</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+		<key>/Applications/Microsoft PowerPoint.app</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>PPT32019</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+		<key>/Applications/Microsoft Word.app</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>MSWD2019</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+		<key>/Library/PrivilegedHelperTools/com.microsoft.office.licensingV2.helper</key>
+		<dict>
+			<key>App Domain</key>
+			<string>com.microsoft.office</string>
+			<key>Application ID</key>
+			<string>OLIC02</string>
+			<key>HideOnGUI</key>
+			<string>YES</string>
+			<key>LCID</key>
+			<string>1033</string>
+		</dict>
+	</dict>
+	<key>ApplicationsForcedUpdateSchedule</key>
+	<dict/>
+	<key>ChannelGroup</key>
+	<integer>2</integer>
+	<key>ChannelName</key>
+	<string>Internal</string>
+	<key>LastUpdate</key>
+	<date>2023-07-03T12:34:39Z</date>
+</dict>
+</plist>

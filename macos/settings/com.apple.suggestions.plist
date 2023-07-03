@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppCanShowSiriSuggestionsBlacklist</key>
+	<array/>
+	<key>CloudKitPersistedState</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwhIlUkbnVsbNoNDg8QERIT
+	FBUWFxcZFxccFxcXF18QD2hhc0RlZmVycmVkU3luY18QHmhhc0RlZmVycmVkUHJvY2Vz
+	c1N0YXRlQ2hhbmdlc1YkY2xhc3NfEBVzYWx0QXRvbWljUmVmZXJlbmNlSWRfEA9oYXNT
+	dWJzY3JpcHRpb25fEB1ldmVudHNXZXJlUmVtb3ZlZEZyb21FdmVudEtpdF8QHHByaW1h
+	cnlJQ2xvdWRDYWxlbmRhckFjY291bnRZc3luY1Rva2VuVHNhbHRfEA9zYWx0VXNlc01h
+	bmF0ZWWAAIAAgAOAAIAAgAKAAIAAgACAAAnSIyQlJlokY2xhc3NuYW1lWCRjbGFzc2Vz
+	XxAeX1NHRENsb3VkS2l0U3luY1BlcnNpc3RlZFN0YXRloicoXxAeX1NHRENsb3VkS2l0
+	U3luY1BlcnNpc3RlZFN0YXRlWE5TT2JqZWN0AAgAEQAaACQAKQAyADcASQBMAFEAUwBY
+	AF4AcwCFAKYArQDFANcA9wEWASABJQE3ATkBOwE9AT8BQQFDAUUBRwFJAUsBTAFRAVwB
+	ZQGGAYkBqgAAAAAAAAIBAAAAAAAAACkAAAAAAAAAAAAAAAAAAAGz
+	</data>
+	<key>SuggestionsAllowGeocode</key>
+	<false/>
+	<key>UserAccountsPersistedState</key>
+	<array/>
+	<key>findToShowMigrationPerformed</key>
+	<true/>
+	<key>spToLearnMigrationPerformed</key>
+	<true/>
+</dict>
+</plist>

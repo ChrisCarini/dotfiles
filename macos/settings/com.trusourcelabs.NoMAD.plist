@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ADDomainController</key>
+	<string>lmvc-adc04.linkedin.biz</string>
+	<key>ADSite</key>
+	<string></string>
+	<key>DisplayName</key>
+	<string>Chris Carini</string>
+	<key>Groups</key>
+	<array>
+		<string>EPS_Questions_Owners</string>
+		<string>SGP-CREW-14-MEMBERS</string>
+		<string>ina-github-active-employees</string>
+		<string>ina-github-eng-employees-dg</string>
+		<string>ike-team</string>
+		<string>CompanyConnect_Employees</string>
+		<string>Peter-Test-Mirror-AllEmployees</string>
+		<string>phase2migration</string>
+		<string>YPJNAMERLaunch</string>
+		<string>rstor-comms</string>
+		<string>github-actions-pilots</string>
+		<string>dg-vpn-notrestricted-amer-west</string>
+		<string>miro-users</string>
+		<string>lucidchart-licensed-users</string>
+		<string>EngEmployees</string>
+		<string>senshi_python_mp_owners</string>
+		<string>lidm-active-users</string>
+		<string>Range-itops-svn-users</string>
+		<string>sg-skkim-INFOSEC-56308</string>
+		<string>sg-skkim-us-empl</string>
+		<string>friends-of-oe</string>
+		<string>sg-all-mohak-shroff-org-lamabot</string>
+		<string>fleet-dm-sso</string>
+		<string>dg-globalprotect-users</string>
+		<string>Families Sunnyvale</string>
+		<string>ina-github-non-mp-sandbox-pilot-users</string>
+		<string>cfg2-mailing-conflict-profile</string>
+		<string>docin-code-yellow-core</string>
+		<string>SGP-ENG-april</string>
+		<string>dei-docs</string>
+		<string>SG-Okta-PPM-Workfront-PreviewSandbox</string>
+		<string>SG-Okta-PPM-Workfront-Prod</string>
+		<string>Tableau-Explorer</string>
+		<string>sg-okta-lgtm</string>
+		<string>sg-okta-stackoverflow</string>
+		<string>sg-okta-headspin</string>
+		<string>sg-okta-plus-engineeringuniversity</string>
+		<string>test-tableau</string>
+		<string>sonarqube-updates</string>
+		<string>ina-github-actions-eval-group</string>
+		<string>SG-AHA-Ideas-VCA-Okta-Users</string>
+		<string>DO_NOT_USE_Test</string>
+		<string>Test123</string>
+		<string>SG-Okta-monitoring-statuspage-dev</string>
+		<string>GWS_RideAmigos_HQ_FTE</string>
+		<string>SGP-ALL-NONCHINA-FTE-ENG</string>
+		<string>sg-okta-edassist</string>
+		<string>sg-okta-edassist-staff-us</string>
+		<string>sg-okta-edassist-employee-us</string>
+		<string>ina-github-eng-employees-test</string>
+		<string>MindTickle_Okta_Users_Smart</string>
+		<string>dph-ai</string>
+		<string>python-newsletter</string>
+		<string>java-newsletter</string>
+		<string>EdAssistApplication</string>
+		<string>PCCohort7</string>
+		<string>INA-IDE-TEAM</string>
+		<string>PEFTESwag</string>
+		<string>all-mohak-shroff-org-us</string>
+		<string>Persona-DI</string>
+		<string>SGP-ENG-pcx-flakiness-scheduler</string>
+		<string>dg-wpa-comms-namer-apac</string>
+		<string>CAMP_HQ</string>
+		<string>AllPEOrg</string>
+		<string>wpacomms1</string>
+		<string>AllPEOrgFTE</string>
+		<string>midgard-for-github-ramp</string>
+		<string>SGP-ENG-java-cli-mp-template-RA</string>
+		<string>SGP-ENG-mp-assistant-ticket-triager-RA</string>
+		<string>SGP-ENG-multiproduct-RA</string>
+		<string>SGP-ENG-bokeh-test-RA</string>
+		<string>SGP-ENG-dph-reliability-investigation-RA</string>
+		<string>SGP-ENG-docs-team-trellis-RA</string>
+		<string>TUG</string>
+		<string>ask_chris</string>
+		<string>oc4-early-pbi-access</string>
+		<string>ina-github-eng-employees</string>
+		<string>SCCM-ProdOpsUsers</string>
+		<string>Persona-DS</string>
+		<string>sg-all-sabry-tozin-org</string>
+		<string>midgard-scoping-ramp</string>
+		<string>SGP-ENG-dei-insights-reviewers</string>
+		<string>SGP-ENG-support-tools</string>
+		<string>lilchallenge-namer-west</string>
+		<string>Tableau-UAT-SSO</string>
+		<string>AtoS_Level_EngIC_NAMER</string>
+		<string>SG-VDI-VMIDEVWAZ</string>
+		<string>all-internal-inkwell-users</string>
+		<string>sg-li-employees-us-no-cn-crm-exp-sp</string>
+		<string>cq2so-wiki-links</string>
+		<string>sg-li-employees-us-stream</string>
+		<string>ejira_alias_admins</string>
+		<string>sg-all-mohak-shroff-org-lix</string>
+		<string>ina-github-pilot-users</string>
+		<string>INA-GITHUB-ENG-ALL</string>
+		<string>tmp-midgard-eng-no-fortress</string>
+		<string>midgard-eng-rollout-no-fortress</string>
+		<string>twal-allemployees</string>
+		<string>twal-allemployees-qdg</string>
+		<string>tools-resiliency-wg</string>
+		<string>li-moninfranewsletter</string>
+		<string>dei-lg</string>
+		<string>eng-tools-users</string>
+		<string>stackoverflow-beta</string>
+		<string>Merlin3-Default-Access-Users</string>
+		<string>Linuxusers</string>
+		<string>SG-Okta-AllSouthBayEmployee</string>
+		<string>dei-insights-reviewers</string>
+		<string>managed-ssh</string>
+		<string>remote-development-users</string>
+		<string>stackoverflow-kickstart</string>
+		<string>SG-Okta-Prod-Kickstart-Stackoverflow</string>
+		<string>foresight-users</string>
+		<string>midgard-rollout</string>
+		<string>dei-insights-team</string>
+		<string>dei-insights-staff</string>
+		<string>github-status</string>
+		<string>if-insights-eng</string>
+		<string>insights-eng</string>
+		<string>if-insights-reviewers</string>
+		<string>Persona-Web</string>
+		<string>Persona-Backend</string>
+		<string>Persona-SRE</string>
+		<string>Persona-iOS</string>
+		<string>Persona-Tools</string>
+		<string>Persona-Android</string>
+		<string>Persona-AI</string>
+		<string>IF-Managers_Leads</string>
+		<string>SG-ADP-Global-View-NAMER-Users</string>
+		<string>Insights_and_Feedback_Team</string>
+		<string>DPH-team</string>
+		<string>AllJaredGreenOrg</string>
+		<string>DG-LI-Employees-US</string>
+		<string>bot-users</string>
+		<string>pcalumni</string>
+		<string>supportal_1to5_pct</string>
+		<string>deadcode</string>
+		<string>SG-Simpli5-Employees-NoCLevel</string>
+		<string>5DTempGroup</string>
+		<string>blueshift-notifications</string>
+		<string>GWS_phase2_UAT</string>
+		<string>slj-owners</string>
+		<string>SG-Okta-Airtable</string>
+		<string>all-engineers</string>
+		<string>oc4-committee</string>
+		<string>Blueshift-updates</string>
+		<string>devtoolsx</string>
+		<string>jetty-users</string>
+		<string>ina-config-encryption-corp</string>
+		<string>darwin-users</string>
+		<string>SG-OKTA-RTB</string>
+		<string>DG-LNKDPROD-Users</string>
+		<string>supportal-beta-users</string>
+		<string>jira-service-users</string>
+		<string>EPE-USOrgFTE</string>
+		<string>SG-US-Employees-Okta-Group</string>
+		<string>ci-pipeline</string>
+		<string>CB-alumni</string>
+		<string>SG-Okta-AdobeCloud</string>
+		<string>DG-Bind-AAD-LI-Em</string>
+		<string>DG-AAD-LI-Bind-Em</string>
+		<string>CAMP-DistroList</string>
+		<string>WITInvest2018</string>
+		<string>allcompanyorg-amer</string>
+		<string>CAMP-Waiver</string>
+		<string>CAMP-DL</string>
+		<string>EPE_Zoom_Trials-QDG</string>
+		<string>LiX-Owners</string>
+		<string>SG-Iris-Okta</string>
+		<string>tooloftheweek</string>
+		<string>Slack-RnD-TestGroup</string>
+		<string>smownersdl</string>
+		<string>trex-users</string>
+		<string>ONLY-SN-MV-SF-EMP-AND-CW</string>
+		<string>ALL-US-EMP-AND-CW</string>
+		<string>PrivacyandGDPRTrainingEmployee</string>
+		<string>SG-Aha-Ideas-Waterbear-Okta-Users</string>
+		<string>SouthBayERT</string>
+		<string>slack-redesign</string>
+		<string>GHC_at_LI</string>
+		<string>CTF-Participants</string>
+		<string>AllSouthBayEmployees</string>
+		<string>womenconnect-invitelist-SV</string>
+		<string>SG-All-Mohak-Shroff-Org</string>
+		<string>Eng-Interview-Council-Modules-and-Tracks</string>
+		<string>SG-All-Ryan-Roslansky-Org</string>
+		<string>AllSabryTozinOrg</string>
+		<string>Q42017EVS</string>
+		<string>All-Mohak-Shroff-Org</string>
+		<string>All-Ryan-Roslansky-Org-ForOkta</string>
+		<string>MindfulChallengeParticipants</string>
+		<string>All-LinkedIn-Group-Biz-C</string>
+		<string>southbayinvitees</string>
+		<string>All-LinkedIn-Group</string>
+		<string>All-LinkedIn-Group-Biz</string>
+		<string>volleyball_li</string>
+		<string>Direct reports of Deep Majumder</string>
+		<string>o365-ea-amerwest</string>
+		<string>sre-o365-guides</string>
+		<string>Alation-users</string>
+		<string>o365-guides_li</string>
+		<string>Product Engineering</string>
+		<string>ligw-exchol</string>
+		<string>Inkwell Authors (Internal)</string>
+		<string>ump-tools-reviewers</string>
+		<string>Allmohakshrofforg</string>
+		<string>Lix Corp Activators</string>
+		<string>sre-trebuchet-planners</string>
+		<string>LinkedIn Dragons - Im Interested</string>
+		<string>SunnyvaleGoGreen</string>
+		<string>Annual Review-Non-GSO Employees</string>
+		<string>LinkedIn Tech Talks</string>
+		<string>SG-Coderpad-Okta-Users</string>
+		<string>Sunnyvale 580 Maude</string>
+		<string>HQ Social</string>
+		<string>SRE Halloween Party</string>
+		<string>SRE Enhanced Onboarding Core Group</string>
+		<string>R&amp;D Sunnyvale</string>
+		<string>sreincon-speakers</string>
+		<string>LinkedIn Dragons - 2016</string>
+		<string>LinkedInDragons-2015</string>
+		<string>LinkedIn Dragons - Capitans</string>
+		<string>SG-Tools-Sync</string>
+		<string>srsc-status-rpts</string>
+		<string>Home Location - Santa Clara County</string>
+		<string>audiophiles</string>
+		<string>Touch My Hand - LI Volleyball Team</string>
+		<string>LinkedIn Dragons</string>
+		<string>EVS-May2016</string>
+		<string>Boozed and Confused - Volleyball Team</string>
+		<string>tp16-reps-sre</string>
+		<string>T-Rex Beta Users</string>
+		<string>Product-Consumer</string>
+		<string>ump-users</string>
+		<string>All California Employees</string>
+		<string>SouthBay 580 Mary</string>
+		<string>Neptune-weekly-report</string>
+		<string>igotw</string>
+		<string>Eng &amp; Ops - All Bay Area</string>
+		<string>All US Employees</string>
+		<string>All North America Employees</string>
+		<string>All USA Employees</string>
+		<string>All Sunnyvale Employees</string>
+		<string>Tech Reading List</string>
+		<string>SG-JAMF-Tableau</string>
+		<string>INA-GRIDACCESS</string>
+		<string>SG-LD-Tableau</string>
+		<string>Annual Review All Employees 2015</string>
+		<string>Presto users</string>
+		<string>Slack LinkedIn-RnD</string>
+		<string>tools-partners-dev</string>
+		<string>DG-All-US-Employees-Okta</string>
+		<string>chris_li</string>
+		<string>INA-TOOLS</string>
+		<string>Eng-All</string>
+		<string>Invision Users</string>
+		<string>LinkedinVolleyBall</string>
+		<string>HipChat - Slack Users</string>
+		<string>mny-dark-canary</string>
+		<string>Slack LinkedIn-RandD</string>
+		<string>hadoop-announce</string>
+		<string>kscott-all</string>
+		<string>SG-GloboForce-Users</string>
+		<string>DG-Slack-Users-Phase1</string>
+		<string>All Streaming</string>
+		<string>DG-Yubikey-Okta-Users</string>
+		<string>dgrillo-all</string>
+		<string>Pushup Crew</string>
+		<string>Ask PASS-SRE</string>
+		<string>ina-wastin</string>
+		<string>SRE Interviewing Comittee</string>
+		<string>SRE Status Reports</string>
+		<string>SG-HIPCHATPOC</string>
+		<string>SLD Org</string>
+		<string>Tableau-Publishers</string>
+		<string>lucidchart-users</string>
+		<string>wiki-employees</string>
+		<string>kafka-users</string>
+		<string>BlueJeans Users</string>
+		<string>CalTrain</string>
+		<string>Tableau-Users</string>
+		<string>SG-NETACCESS-CORP</string>
+		<string>engrna-money</string>
+		<string>All Full-Time Employee Applications</string>
+		<string>Engineering-all</string>
+		<string>Site Issue (DG)</string>
+		<string>Linux Dev Announce</string>
+		<string>ACCESS-IST</string>
+		<string>ACCESS-ENG</string>
+		<string>intellij-users</string>
+		<string>eng</string>
+		<string>Exchange Self-Service Users</string>
+	</array>
+	<key>KerberosRealm</key>
+	<string>LINKEDIN.BIZ</string>
+	<key>LastPasswordExpireDate</key>
+	<date>2024-04-04T18:33:38Z</date>
+	<key>LastPasswordWarning</key>
+	<real>1296000</real>
+	<key>LastUser</key>
+	<string>ccarini</string>
+	<key>SignedIn</key>
+	<true/>
+	<key>UserAging</key>
+	<true/>
+	<key>UserEmail</key>
+	<string>ccarini@linkedin.com</string>
+	<key>UserHome</key>
+	<string></string>
+	<key>UserPasswordSetDates</key>
+	<dict>
+		<key>ccarini@LINKEDIN.BIZ</key>
+		<date>2023-04-05T18:33:38Z</date>
+	</dict>
+	<key>UserPrincipal</key>
+	<string>ccarini@LINKEDIN.BIZ</string>
+	<key>UserShortName</key>
+	<string>ccarini</string>
+	<key>UserUPN</key>
+	<string>ccarini@linkedin.biz</string>
+</dict>
+</plist>

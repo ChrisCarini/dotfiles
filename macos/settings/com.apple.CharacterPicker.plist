@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>State:com.apple.CharacterPaletteIM</key>
+	<dict>
+		<key>categories</key>
+		<dict>
+			<key>selectedIndex</key>
+			<integer>1</integer>
+		</dict>
+		<key>characters</key>
+		<dict>
+			<key>scrollPos</key>
+			<real>0.0</real>
+			<key>sectionFonts</key>
+			<dict>
+				<key>version</key>
+				<integer>2</integer>
+			</dict>
+			<key>selectedIndex</key>
+			<integer>9223372036854775807</integer>
+			<key>selectedSection</key>
+			<integer>9223372036854775807</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

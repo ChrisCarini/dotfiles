@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FaceAnalysisProgressPercentage</key>
+	<integer>100</integer>
+	<key>MediaAnalysisProgressPercentage</key>
+	<integer>100</integer>
+	<key>OCRAnalysisProgressPercentage</key>
+	<integer>100</integer>
+	<key>PhotoLibraries</key>
+	<array>
+		<string>/Users/ccarini/Pictures/Photos Library.photoslibrary</string>
+		<string>/Users/ccarini/Library/Photos/Libraries/Syndication.photoslibrary</string>
+	</array>
+	<key>PreheatAttempts</key>
+	<integer>0</integer>
+	<key>PreheatLastRun</key>
+	<date>2023-06-30T15:47:36Z</date>
+	<key>SceneAnalysisProgressPercentage</key>
+	<integer>100</integer>
+</dict>
+</plist>

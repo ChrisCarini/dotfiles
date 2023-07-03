@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSSplitView Subview Frames NavigationViewController-sidebarRoot-AutosaveName</key>
+	<array>
+		<string>0.000000, 0.000000, 180.000000, 500.000000, NO, NO</string>
+		<string>181.000000, 0.000000, 819.000000, 500.000000, NO, NO</string>
+	</array>
+	<key>NSToolbar Configuration 0E68B02D-B48B-490B-BE38-A408DDA6F09C</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSToolbar Configuration CF2FCB95-814C-4317-9EAA-00CFF195132B</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame Console-ReportWindowController</key>
+	<string>539 290 650 500 0 0 1728 1079 </string>
+</dict>
+</plist>

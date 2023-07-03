@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Item Preview Closed</key>
+	<false/>
+	<key>Keychain Item List Sort Descending</key>
+	<false/>
+	<key>Keychain Item List Sorting</key>
+	<string>name</string>
+	<key>Keychains List Closed</key>
+	<false/>
+	<key>Last Selected Category</key>
+	<string>All Items</string>
+	<key>Last Selected Keychain</key>
+	<string>/Users/ccarini/Library/Keychains/login-ccarini-mn6.keychain-db</string>
+	<key>NSNavLastRootDirectory</key>
+	<string>~/Library/Keychains</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{800, 448}</string>
+	<key>NSSplitView Subview Frames KeychainAccessMainWindowHostingView, SidebarNavigationView</key>
+	<array>
+		<string>0.000000, 0.000000, 197.500000, 533.000000, NO, NO</string>
+		<string>198.500000, 0.000000, 678.500000, 533.000000, NO, NO</string>
+	</array>
+	<key>NSTableView Columns v3 Item List Settings</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABrxAWCwwWISIjJCUmJy03ODlD
+	REVPUFpbXFUkbnVsbNINDg8VWk5TLm9iamVjdHNWJGNsYXNzpRAREhMUgAKACoANgBCA
+	EoAV0xcNDhgcIFdOUy5rZXlzoxkaG4ADgASABaMdHh+ABoAHgAiACVpJZGVudGlmaWVy
+	VVdpZHRoVkhpZGRlblExI0BrQAAAAAAACNIoKSorWiRjbGFzc25hbWVYJGNsYXNzZXNc
+	TlNEaWN0aW9uYXJ5oiosWE5TT2JqZWN00xcNDi4yIKMZGhuAA4AEgAWjMzQfgAuADIAI
+	gAlRMiNAXgAAAAAAANMXDQ46PiCjGRobgAOABIAFoz9AH4AOgA+ACIAJUTQjQGKAAAAA
+	AADTFw0ORkogoxkaG4ADgASABaNLQB+AEYAPgAiACVE10xcNDlFVIKMZGhuAA4AEgAWj
+	VlcfgBOAFIAIgAlRMyNAVIAAAAAAANIoKV1eXk5TTXV0YWJsZUFycmF5o11fLFdOU0Fy
+	cmF5AAgAEQAaACQAKQAyADcASQBMAFIAVABtAHMAeACDAIoAkACSAJQAlgCYAJoAnACj
+	AKsArwCxALMAtQC5ALsAvQC/AMEAzADSANkA2wDkAOUA6gD1AP4BCwEOARcBHgEiASQB
+	JgEoASwBLgEwATIBNAE2AT8BRgFKAUwBTgFQAVQBVgFYAVoBXAFeAWcBbgFyAXQBdgF4
+	AXwBfgGAAYIBhAGGAY0BkQGTAZUBlwGbAZ0BnwGhAaMBpQGuAbMBwgHGAAAAAAAAAgEA
+	AAAAAAAAYAAAAAAAAAAAAAAAAAAAAc4=
+	</data>
+	<key>NSTableView Sort Ordering v2 Item List Settings</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABowsMEVUkbnVsbNINDg8QWk5T
+	Lm9iamVjdHNWJGNsYXNzoIAC0hITFBVaJGNsYXNzbmFtZVgkY2xhc3Nlc15OU011dGFi
+	bGVBcnJheaMUFhdXTlNBcnJheVhOU09iamVjdAgRGiQpMjdJTFJUWF5jbnV2eH2IkaCk
+	rAAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
+	</data>
+	<key>NSTableView Supports v2 Item List Settings</key>
+	<true/>
+	<key>NSWindow Frame Certificate Viewer Window</key>
+	<string>79 143 513 438 0 0 1728 1079 </string>
+	<key>NSWindow Frame Keychain Access Window</key>
+	<string>805 102 877 533 0 0 1728 1079 </string>
+	<key>NSWindow Frame NSNavPanelAutosaveName</key>
+	<string>844 107 800 448 0 0 1728 1079 </string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppWindowGroupingBehavior</key>
+	<integer>1</integer>
+	<key>AutoHide</key>
+	<false/>
+	<key>GloballyEnabled</key>
+	<false/>
+	<key>HideDesktop</key>
+	<true/>
+	<key>LastDailyHeartbeatDateString</key>
+	<string>2023-07-03T03:34:44Z</string>
+</dict>
+</plist>

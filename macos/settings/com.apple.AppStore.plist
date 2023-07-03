@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ASAcknowledgedOnboardingVersion</key>
+	<integer>5</integer>
+	<key>AutoPlayVideoSetting</key>
+	<string>on</string>
+	<key>NSWindow Frame AppStoreMainWindow</key>
+	<string>274 287 1180 724 0 0 1728 1079 </string>
+	<key>UserSetAutoPlayVideoSetting</key>
+	<false/>
+	<key>lastBootstrapDate</key>
+	<real>710036989.64139497</real>
+	<key>lastBootstrapTimeZone</key>
+	<string>America/Los_Angeles</string>
+	<key>mostRecentTabIdentifier</key>
+	<string>search</string>
+</dict>
+</plist>

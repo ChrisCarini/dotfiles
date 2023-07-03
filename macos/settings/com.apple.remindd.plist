@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloudConfigurationPath</key>
+	<string>/System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/Resources/CloudConfigurations/Normal.plist</string>
+	<key>extraneousAlarmsCollectorContainerDeemedClean</key>
+	<true/>
+	<key>isDatabaseMigrated</key>
+	<true/>
+	<key>lastCloudConfigurationDownload</key>
+	<date>2023-07-03T09:28:17Z</date>
+	<key>lastDatabaseMigrationSystemBuildVersion</key>
+	<string>22F82</string>
+	<key>lastSuggestedAttributesAutoTrainingToken</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGtCwwRGxwdIScoLjM2PFUkbnVs
+	bNINDg8QViRjbGFzc18QF3BlcnNpc3RlbnRIaXN0b3J5VG9rZW5zgAyAAtMSEw0UFxpX
+	TlMua2V5c1pOUy5vYmplY3RzohUWgAOABKIYGYAFgAqACF8QJEFCRUZBNDA2LTkyOEUt
+	NERGRi05OERFLThFNTREMTg3NzE3Nl8QJDIwNTgyQzM1LTA2RUItNDAzRC1BRkVDLUE1
+	RDEyNTkwNzAzRNINHh8gXxAiTlNQZXJzaXN0ZW50SGlzdG9yeVRva2VuRGljdGlvbmFy
+	eYAJgAbTEhMNIiQaoRWAA6ElgAeACBAC0ikqKyxaJGNsYXNzbmFtZVgkY2xhc3Nlc1xO
+	U0RpY3Rpb25hcnmiKy1YTlNPYmplY3TSKSovMF8QGV9OU1BlcnNpc3RlbnRIaXN0b3J5
+	VG9rZW6jMTItXxAZX05TUGVyc2lzdGVudEhpc3RvcnlUb2tlbl8QGE5TUGVyc2lzdGVu
+	dEhpc3RvcnlUb2tlbtINHh81gAmAC9MSEw03ORqhFoAEoSWAB4AI0ikqPT5fEBNSRU1G
+	ZXRjaFJlc3VsdFRva2Vuoj8tXxATUkVNRmV0Y2hSZXN1bHRUb2tlbgAIABEAGgAkACkA
+	MgA3AEkATABRAFMAYQBnAGwAcwCNAI8AkQCYAKAAqwCuALAAsgC1ALcAuQC7AOIBCQEO
+	ATMBNQE3AT4BQAFCAUQBRgFIAUoBTwFaAWMBcAFzAXwBgQGdAaEBvQHYAd0B3wHhAegB
+	6gHsAe4B8AHyAfcCDQIQAAAAAAAAAgEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAiY=
+	</data>
+	<key>lastSyncPoll</key>
+	<date>2023-06-30T10:45:55Z</date>
+	<key>preferredDefaultListID</key>
+	<string>x-apple-reminderkit://REMCDList/3C8C2A71-84BF-4C87-8EFD-BB4827650D15</string>
+	<key>preferredDefaultListObjectIDUrl</key>
+	<string>x-coredata://ABEFA406-928E-4DFF-98DE-8E54D1877176/REMCDList/p2</string>
+	<key>spotlightIndexVersion</key>
+	<integer>6</integer>
+	<key>staledFileAttachmentCleanupLastExecutionDate</key>
+	<date>2023-07-03T03:39:39Z</date>
+</dict>
+</plist>

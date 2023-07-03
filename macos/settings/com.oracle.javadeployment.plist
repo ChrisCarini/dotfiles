@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/com/oracle/javadeployment/</key>
+	<dict>
+		<key>deployment.expired.version</key>
+		<string>11.5.2</string>
+		<key>deployment.modified.timestamp</key>
+		<string>1688144985635</string>
+		<key>deployment.version</key>
+		<string>8</string>
+	</dict>
+</dict>
+</plist>

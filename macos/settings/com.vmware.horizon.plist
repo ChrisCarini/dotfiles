@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LINKEDIN</key>
+	<dict>
+		<key>cn=indesktop_migrate,ou=applications,dc=vdi,dc=vmware,dc=int</key>
+		<dict>
+			<key>desktopIsFullScreen</key>
+			<false/>
+			<key>viewFrameWithDesktop</key>
+			<string>{{  0, 0},{1920, 1080}}  </string>
+			<key>windowFrameOriginWithDesktop</key>
+			<string>{0, 0}</string>
+		</dict>
+		<key>domain</key>
+		<string>LINKEDIN</string>
+		<key>username</key>
+		<string>ccarini</string>
+	</dict>
+	<key>broker-history</key>
+	<array>
+		<string>https://vdi-us.linkedin.biz:443/broker/xml</string>
+	</array>
+	<key>https://vdi-us.linkedin.biz:443/broker/xml</key>
+	<string>LINKEDIN</string>
+	<key>promptedUSBPrintingServicesInstall</key>
+	<true/>
+	<key>trustedServers</key>
+	<array>
+		<string>https://vdi-us.linkedin.biz:443/broker/xml</string>
+	</array>
+</dict>
+</plist>

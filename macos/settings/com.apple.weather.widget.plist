@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wdsAuthToken</key>
+	<string>eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJzdWIiOiJBcHBsZSIsImlhdCI6MTY4ODEyMTk4MCwibmJmIjoxNjg4MTIxOTgwLCJpc3MiOiJBcHBsZSIsImV4cCI6MTY5MDcxMzk4MH0.vn1uhzR3Oro19kFWZX8NnrWCDKKKEyuVmZUu-Jk1NJ0D1LWOL8XCrLB3Pp0SleOhgXRhCoVa0XRRdlHM-YZUiw</string>
+	<key>wdsCacheCleanupState</key>
+	<dict>
+		<key>com.apple.weather.widget</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

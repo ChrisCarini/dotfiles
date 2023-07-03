@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AutoFillCreditCardData</key>
+	<false/>
+	<key>AutoFillFromAddressBook</key>
+	<false/>
+	<key>AutoFillMiscellaneousForms</key>
+	<false/>
+	<key>AutoFillPasswords</key>
+	<false/>
+	<key>IncludeDevelopMenu</key>
+	<true/>
+	<key>InstallExtensionUpdatesAutomatically</key>
+	<true/>
+	<key>SendDoNotTrackHTTPHeader</key>
+	<true/>
+	<key>ShowFullURLInSmartSearchField</key>
+	<true/>
+	<key>SuppressSearchSuggestions</key>
+	<true/>
+	<key>UniversalSearchEnabled</key>
+	<false/>
+	<key>WarnAboutFraudulentWebsites</key>
+	<true/>
+	<key>WebKitDeveloperExtrasEnabledPreferenceKey</key>
+	<true/>
+	<key>WebKitJavaEnabled</key>
+	<false/>
+	<key>WebKitJavaScriptCanOpenWindowsAutomatically</key>
+	<false/>
+	<key>WebKitPluginsEnabled</key>
+	<false/>
+	<key>com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled</key>
+	<true/>
+	<key>com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled</key>
+	<false/>
+	<key>com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically</key>
+	<false/>
+	<key>com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled</key>
+	<false/>
+</dict>
+</plist>

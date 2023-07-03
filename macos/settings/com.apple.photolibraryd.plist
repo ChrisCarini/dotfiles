@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeD</key>
+	<array/>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeH</key>
+	<array>
+		<string>/Users/ccarini/Library/Photos/Libraries/Syndication.photoslibrary</string>
+		<string>/Users/ccarini/Pictures/Photos Library.photoslibrary</string>
+	</array>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeM</key>
+	<array/>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeN</key>
+	<array/>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeR</key>
+	<array/>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeS</key>
+	<array/>
+	<key>PLBackgroundJobServiceBundleRecordsKeyWithShortCodeU</key>
+	<array/>
+	<key>PLIncompleteMaintenanceTaskPaths.curatedlibraryprocessing</key>
+	<array/>
+	<key>PLIncompleteMaintenanceTaskPaths.periodicmaintenance</key>
+	<array/>
+	<key>PLLibraryBookmarkManagerBookmarksByPath</key>
+	<dict>
+		<key>/Users/ccarini/Library/Photos/Libraries/Syndication.photoslibrary</key>
+		<data>
+		Ym9vaxwDAAAAAAQQMAAAAFz00htF1icGzbCMSOWtyLJk6yWRrPWeieOGOYjl
+		yMhYGAIAAAQAAAADAwAAAAgAKAUAAAABAQAAVXNlcnMAAAAHAAAAAQEAAGNj
+		YXJpbmkABwAAAAEBAABMaWJyYXJ5AAYAAAABAQAAUGhvdG9zAAAJAAAAAQEA
+		AExpYnJhcmllcwAAABkAAAABAQAAU3luZGljYXRpb24ucGhvdG9zbGlicmFy
+		eQAAABgAAAABBgAAEAAAACAAAAAwAAAAQAAAAFAAAABkAAAACAAAAAQDAAD6
+		QwAAAAAAAAgAAAAEAwAAfKoCAAAAAAAIAAAABAMAAIOqAgAAAAAACAAAAAQD
+		AAB2aUcAAAAAAAgAAAAEAwAAd2lHAAAAAAAIAAAABAMAAHhpRwAAAAAAGAAA
+		AAEGAACoAAAAuAAAAMgAAADYAAAA6AAAAPgAAAAIAAAAAAQAAEHFKOscJT+G
+		GAAAAAECAAACAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMAAAQAAAAA
+		AAAABAAAAAMDAABOPQAACAAAAAEJAABmaWxlOi8vLwwAAAABAQAATWFjaW50
+		b3NoIEhECAAAAAQDAAAAkIKW5wAAAAgAAAAABAAAQcUdjU6AAAAkAAAAAQEA
+		ADUyOUI5RjVFLTE0MDgtNEE3NC1BMjQwLTcxQkQ4MjE0MjU5QxgAAAABAgAA
+		gQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAADM
+		AAAA/v///wEAAAAAAAAAEAAAAAQQAACIAAAAAAAAAAUQAAAIAQAAAAAAABAQ
+		AAA4AQAAAAAAAEAQAAAoAQAAAAAAAAIgAAAEAgAAAAAAAAUgAAB0AQAAAAAA
+		ABAgAACEAQAAAAAAABEgAAC4AQAAAAAAABIgAACYAQAAAAAAABMgAACoAQAA
+		AAAAACAgAADkAQAAAAAAADAgAAAQAgAAAAAAAAHAAABYAQAAAAAAABHAAAAg
+		AAAAAAAAABLAAABoAQAAAAAAABDQAAAEAAAAAAAAAA==
+		</data>
+		<key>/Users/ccarini/Pictures/Photos Library.photoslibrary</key>
+		<data>
+		Ym9va8gCAAAAAAQQMAAAAF6wQE0dkwxu6Dz+1PFACmyRcRozVKO53kpbaWNh
+		lDoPxAEAAAQAAAADAwAAAAgAKAUAAAABAQAAVXNlcnMAAAAHAAAAAQEAAGNj
+		YXJpbmkACAAAAAEBAABQaWN0dXJlcxwAAAABAQAAUGhvdG9zIExpYnJhcnku
+		cGhvdG9zbGlicmFyeRAAAAABBgAAEAAAACAAAAAwAAAAQAAAAAgAAAAEAwAA
+		+kMAAAAAAAAIAAAABAMAAHyqAgAAAAAACAAAAAQDAAB/qgIAAAAAAAgAAAAE
+		AwAAUWhHAAAAAAAQAAAAAQYAAHwAAACMAAAAnAAAAKwAAAAIAAAAAAQAAEHF
+		KOcvAAAAGAAAAAECAAACAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMA
+		AAIAAAAAAAAABAAAAAMDAABOPQAACAAAAAEJAABmaWxlOi8vLwwAAAABAQAA
+		TWFjaW50b3NoIEhECAAAAAQDAAAAkIKW5wAAAAgAAAAABAAAQcUdjU6AAAAk
+		AAAAAQEAADUyOUI5RjVFLTE0MDgtNEE3NC1BMjQwLTcxQkQ4MjE0MjU5QxgA
+		AAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAA
+		AAEFAADMAAAA/v///wEAAAAAAAAAEAAAAAQQAABkAAAAAAAAAAUQAAC8AAAA
+		AAAAABAQAADkAAAAAAAAAEAQAADUAAAAAAAAAAIgAACwAQAAAAAAAAUgAAAg
+		AQAAAAAAABAgAAAwAQAAAAAAABEgAABkAQAAAAAAABIgAABEAQAAAAAAABMg
+		AABUAQAAAAAAACAgAACQAQAAAAAAADAgAAC8AQAAAAAAAAHAAAAEAQAAAAAA
+		ABHAAAAgAAAAAAAAABLAAAAUAQAAAAAAABDQAAAEAAAAAAAAAA==
+		</data>
+	</dict>
+	<key>PLSyndicationLastUpdateDate</key>
+	<date>2023-07-03T16:23:19Z</date>
+	<key>SystemLibraryPath</key>
+	<string>/Users/ccarini/Pictures/Photos Library.photoslibrary</string>
+	<key>com.apple.photolibraryd.purgeNotification.3.purge_markers</key>
+	<dict>
+		<key>529B9F5E-1408-4A74-A240-71BD8214259C</key>
+		<array>
+			<string>7AA938F0-8CDE-42D5-9408-436AD1E005B6</string>
+			<integer>101042723</integer>
+		</array>
+	</dict>
+	<key>kPLPhotoStreamMPSStateNextCheckDateKey</key>
+	<date>2023-07-04T03:35:49Z</date>
+	<key>search.coreSpotlight.universalSearchEligibility</key>
+	<dict>
+		<key>search.coreSpotlight.lastKnownEligibility</key>
+		<true/>
+		<key>search.coreSpotlight.lastKnownSPLDatabaseUUID</key>
+		<string>3E4F5ED4-84C1-433E-9E5E-356ACC8FCCFE</string>
+		<key>search.coreSpotlight.lastKnownSPLPath</key>
+		<string>/Users/ccarini/Pictures/Photos Library.photoslibrary</string>
+		<key>search.coreSpotlight.needsSpotlightIndexDrop</key>
+		<false/>
+		<key>search.coreSpotlight.needsSpotlightIndexRebuild</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

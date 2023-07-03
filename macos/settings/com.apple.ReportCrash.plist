@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TrialCache</key>
+	<dict>
+		<key>experiments</key>
+		<array>
+			<dict>
+				<key>deploymentId</key>
+				<integer>400000001</integer>
+				<key>experimentId</key>
+				<string>648b5a581b04c12d4127bbb6</string>
+				<key>treatmentId</key>
+				<string>8ca8349c-e2bc-482c-9ca7-3907b48a5341</string>
+			</dict>
+		</array>
+		<key>lastCheckTime</key>
+		<real>710094575.71726799</real>
+		<key>rollouts</key>
+		<array>
+			<dict>
+				<key>deploymentId</key>
+				<integer>240000023</integer>
+				<key>factorPackIds</key>
+				<dict>
+					<key>SIRI_FIND_MY_CONFIGURATION_FILES</key>
+					<string>631f72d1de559130376df1fb</string>
+				</dict>
+				<key>rolloutId</key>
+				<string>62699e1ec1ff2978b47f6c3b</string>
+			</dict>
+			<dict>
+				<key>deploymentId</key>
+				<integer>240000002</integer>
+				<key>factorPackIds</key>
+				<dict/>
+				<key>rolloutId</key>
+				<string>63582c5f8a53461413999550</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

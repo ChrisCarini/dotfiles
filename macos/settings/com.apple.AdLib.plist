@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>adprivacydMaxSegmentSendInterval</key>
+	<string>259200</string>
+	<key>adprivacydSegmentInterval</key>
+	<string>68977</string>
+	<key>allowApplePersonalizedAdvertising</key>
+	<false/>
+	<key>allowIdentifierForAdvertising</key>
+	<true/>
+	<key>partiality-segment</key>
+	<string>https://partiality.itunes.apple.com/WebObjects/MZPartiality.woa/wa/IAD/segment</string>
+	<key>personalizedAdsMigrated</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppExitGraceful</key>
+	<true/>
+	<key>CrashActionServiceUrlKey</key>
+	<string>https://officeci.azurewebsites.net/api/</string>
+	<key>OSLocale</key>
+	<string>en_US</string>
+	<key>OSVersion</key>
+	<string>13.4.1</string>
+	<key>SessionBuildNumber</key>
+	<string>230611</string>
+	<key>SessionDuration</key>
+	<real>16704.647657990456</real>
+	<key>SessionId</key>
+	<string>4555B21D-38D8-41B6-B174-0AB3CFFCD97B</string>
+	<key>SessionLongBuildNumber</key>
+	<string>23061100</string>
+	<key>SessionVersion</key>
+	<string>4.60</string>
+	<key>TerminationDuration</key>
+	<real>710097181.59039903</real>
+	<key>kAppBootTimeForUAE</key>
+	<date>2023-07-03T12:34:36Z</date>
+</dict>
+</plist>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DLDBSearchList</key>
+	<array>
+		<dict>
+			<key>DbName</key>
+			<string>~/Library/Keychains/login.keychain</string>
+			<key>GUID</key>
+			<string>{87191ca3-0fc9-11d4-849a-000502b52122}</string>
+			<key>SubserviceType</key>
+			<integer>6</integer>
+		</dict>
+		<dict>
+			<key>DbName</key>
+			<string>~/Library/Keychains/okta.keychain</string>
+			<key>GUID</key>
+			<string>{87191ca3-0fc9-11d4-849a-000502b52122}</string>
+			<key>SubserviceType</key>
+			<integer>6</integer>
+		</dict>
+		<dict>
+			<key>DbName</key>
+			<string>~/Downloads/login-ccarini-mn6.keychain-db</string>
+			<key>GUID</key>
+			<string>{87191ca3-0fc9-11d4-849a-000502b52122}</string>
+			<key>SubserviceType</key>
+			<integer>6</integer>
+		</dict>
+		<dict>
+			<key>DbName</key>
+			<string>~/Library/Keychains/login-ccarini-mn6.keychain</string>
+			<key>GUID</key>
+			<string>{87191ca3-0fc9-11d4-849a-000502b52122}</string>
+			<key>SubserviceType</key>
+			<integer>6</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

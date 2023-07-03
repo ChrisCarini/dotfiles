@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>closeViewHotkeysEnabled</key>
+	<false/>
+	<key>closeViewZoomDisplayID</key>
+	<integer>0</integer>
+	<key>closeViewZoomFactor</key>
+	<real>1</real>
+	<key>grayscale</key>
+	<false/>
+	<key>grayscaleMigrated</key>
+	<true/>
+	<key>hoverTextEnabled</key>
+	<false/>
+	<key>hudNotifiedConstrast</key>
+	<real>0.0</real>
+	<key>keyboardAccessCommandMap</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwRVSRudWxs0g0ODxBfEBNj
+	b21tYW5kc1RvS2V5Q2hvcmRzViRjbGFzc4AAgALSEhMUFVokY2xhc3NuYW1lWCRjbGFz
+	c2VzXxAWQVhTU0tleWJvYXJkQ29tbWFuZE1hcKIWF18QFkFYU1NLZXlib2FyZENvbW1h
+	bmRNYXBYTlNPYmplY3QIERokKTI3SUxRU1ddYnh/gYOIk5y1uNEAAAAAAAABAQAAAAAA
+	AAAYAAAAAAAAAAAAAAAAAAAA2g==
+	</data>
+	<key>keyboardAccessFocusRingTimeout</key>
+	<real>15</real>
+	<key>login</key>
+	<false/>
+	<key>reduceTransparency</key>
+	<true/>
+	<key>sessionChange</key>
+	<false/>
+</dict>
+</plist>
