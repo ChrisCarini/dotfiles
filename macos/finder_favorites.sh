@@ -10,7 +10,7 @@ if [ -x "$(command -v mysides)" ]; then
   echo "'mysides' is installed."
 
   echo "Removing all existing folders from favorites menu..."
-  mysides list | awk -F" ->" '{printf("\"%s\"\n", $1);}' | xargs -n1 -I{} mysides remove "{}"
+  mysides remove all
 
   echo "Adding folders to Finder favorites menu..."
 
