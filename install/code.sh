@@ -40,6 +40,7 @@ repos=(
     manojVivek/medium-unlimited
 # n
 # o
+    ChrisCarini/openvpn-configs
     ChrisCarini/organizedPhotos
 # p
 # q
