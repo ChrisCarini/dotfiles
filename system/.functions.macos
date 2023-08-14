@@ -130,6 +130,19 @@ open-ports() {
   listening $1
 }
 
+function countdown() {
+  local now=$(date +%s)
+  local end=$((now + $1))
+  local now_fmt=$(date -u -j -f %s "$now" +"%Y-%m-%d %H:%M:%S")
+  local end_fmt=$(date -u -j -f %s "$end" +"%Y-%m-%d %H:%M:%S")
+  while ((now < end)); do
+    printf "[start: %s | end: %s] %s\r" "${now_fmt}" "${end_fmt}" "$(date -u -j -f %s $((end - now)) +%T)"
+    sleep 0.5
+    now=$(date +%s)
+  done
+  echo
+}
+
 make-hdr() {
   ##
   # Requires installation of Luminance version 2.6.1 (downloaded from https://github.com/LuminanceHDR/LuminanceHDR/issues/192#issuecomment-1194372488 )
