@@ -197,6 +197,11 @@ if is-macos; then
   title "Installing brew, packages, and casks"
   ############################################
   . "$DOTFILES_DIR/install/brew.sh"
+
+  # Configure pinentry for gpg - https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-gpg-key
+  echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+  killall gpg-agent
+
   . "$DOTFILES_DIR/install/brew-cask.sh"
   . "$DOTFILES_DIR/install/hammerspoon.sh"
   . "$DOTFILES_DIR/install/intellij-plugins.sh"

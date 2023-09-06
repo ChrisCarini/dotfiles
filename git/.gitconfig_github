@@ -1,3 +1,7 @@
 [user]
     name = ChrisCarini
     email = 6374067+ChrisCarini@users.noreply.github.com
+    signingkey = EE9A157DBD0CFCB7
+
+[commit]
+    gpgsign = true
