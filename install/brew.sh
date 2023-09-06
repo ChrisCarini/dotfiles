@@ -46,9 +46,9 @@ apps=(
   #  docker-machine-completion  # This causes failure due to completion already being installed.
   # dockutil # See temporary cask in brew-cask.sh
   displayplacer # `brew tap jakehilborn/jakehilborn` is the tap run above in order to make this a
+  fd # https://github.com/sharkdp/fd#installation
   gcc
-  # GitHub CLI
-  gh
+  gh # GitHub CLI
   git
   git-extras
   go # https://go.dev/
