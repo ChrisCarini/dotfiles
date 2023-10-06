@@ -3,5 +3,9 @@
     email = 6374067+ChrisCarini@users.noreply.github.com
     signingkey = EE9A157DBD0CFCB7
 
+[alias]
+    # Personal alias'
+    gh = "!open \"https://github.com/ChrisCarini/$(basename -s .git $(git config remote.origin.url))\""
+
 [commit]
     gpgsign = true
