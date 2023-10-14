@@ -15,4 +15,7 @@ _dotfiles_completions() {
   COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
 }
 
+# `gh` CLI completions for bash -> https://cli.github.com/manual/gh_completion
+eval "$(gh completion -s bash)"
+
 complete -o default -F _dotfiles_completions dotfiles
