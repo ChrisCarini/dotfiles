@@ -117,6 +117,14 @@ header "-" "Disable press-and-hold for keys in favor of key repeat"
 # -----------------------------------------------------------------
 defaults write -globalDomain ApplePressAndHoldEnabled -bool false
 
+## TODO(ChrisCarini) - Unsure if this even works...
+# -------------------------------------------------------------------
+header "-" "Clear key bindings (prevents [opt]+[i] from becoming 'ˆ')"
+# -------------------------------------------------------------------
+# FROM: https://superuser.com/a/942256
+mkdir ~/Library/KeyBindings
+echo '{ "~a" = (); "~b" = (); "~c" = (); "~d" = (); "~e" = (); "~f" = (); "~g" = (); "~h" = (); "~i" = (); "~j" = (); "~k" = (); "~l" = (); "~m" = (); "~n" = (); "~o" = (); "~p" = (); "~q" = (); "~r" = (); "~s" = (); "~t" = (); "~u" = (); "~v" = (); "~w" = (); "~x" = (); "~y" = (); "~z" = (); }' >~/Library/KeyBindings/DefaultKeyBinding.dict
+
 # ------------------------------------------
 header "-" "Set a fast keyboard repeat rate"
 # ------------------------------------------
