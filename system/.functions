@@ -44,6 +44,42 @@ git-full-clone-to-shallow() {
   git reset --mixed $COMMIT
 }
 
+mark_pr_ready_and_auto_merge_on_checks_complete() {
+  PR="$1"
+
+  RESULT_CODE="0"
+  while [[ "$RESULT_CODE" -ne 1 ]]; do
+    RESULTS=$(gh pr view --json statusCheckRollup "$PR" --template '{{range .statusCheckRollup}}{{$x := ""}}{{if eq .conclusion "SUCCESS"}}{{$x = "✓"}}{{else if eq .conclusion "NEUTRAL"}}{{$x = "-"}}{{else}}{{$x = "*"}}{{end}}{{tablerow $x .name .status .conclusion "\033[0K"}}{{end}}{{tablerender}}')
+    LENGTH=$(echo "$RESULTS" | wc -l)
+    STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "SUCCESS" | \grep -v "NEUTRAL") # We don't want the results itself, just the status code
+    RESULT_CODE=$?
+    echo "$RESULTS"
+    if [[ "$RESULT_CODE" -ne 1 ]]; then
+      echo "                                                                       " # lots of spaces to clear the line
+      echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR #$PR..."
+      sleep 5
+      tput cuu "$((LENGTH + 2))" # move the cursor up N+1 lines to overwrite the previous output
+    fi
+  done
+
+  echo 'All checks passed!'
+
+  echo "Marking PR Ready For Review & enabling Auto-Merge"
+  gh pr ready "$PR"
+  gh pr merge --auto --squash "$PR"
+}
+
+is_pr_merged() {
+  PR_NUM=$1
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checking if PR #${PR_NUM} is merged..."
+  until [[ "$(gh pr view "${PR_NUM}" --json state --jq .state)" == "MERGED" ]]; do
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR #${PR_NUM} to be merged..."
+    sleep 1
+    tput cuu 1 # move the cursor up 1 line to overwrite the previous output
+  done
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #${PR_NUM} is merged!                         " # extra space to clear prev line
+}
+
 ##
 # Misc
 ##
