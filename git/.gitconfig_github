@@ -9,3 +9,6 @@
 
 [commit]
     gpgsign = true
+
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa_GitHub_chris@chriscarini.com"
