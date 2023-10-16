@@ -58,3 +58,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Set GPG_TTY for gpg-agent - https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-gpg-key
 export GPG_TTY=$(tty)
+
+
+# To link `~/.gradle/` directory properly: https://stackoverflow.com/a/28304823
+export USER_HOME=$HOME
