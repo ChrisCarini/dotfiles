@@ -37,6 +37,7 @@ plugins=(
   com.jetbrains.plugins.ini4idea                                 # `Ini` - https://plugins.jetbrains.com/plugin/6981-ini
   org.jetbrains.kotlin                                           # `Kotlin` - https://plugins.jetbrains.com/plugin/6954-kotlin
   name.kropp.intellij.makefile                                   # `Makefile Language` - https://plugins.jetbrains.com/plugin/9333-makefile-language
+  com.intellij.mermaid                                           # `Mermaid` - https://plugins.jetbrains.com/plugin/20146-mermaid
   com.firsttimeinforever.intellij.pdf.viewer.intellij-pdf-viewer # `PDF Viewer` - https://plugins.jetbrains.com/plugin/14494-pdf-viewer
   com.jetbrains.php                                              # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
   com.jetbrains.intellij.code.search.polaris                     # `Polaris` - https://plugins.jetbrains.com/plugin/18568-polaris
