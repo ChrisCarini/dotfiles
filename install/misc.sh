@@ -13,3 +13,11 @@
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
 go install github.com/syncfast/clockwise@master
+
+
+#####################
+# `gh` CLI extensions
+# -------------------
+gh extension install rsese/gh-actions-status
+gh extension install kawarimidoll/gh-graph
+gh extension install gabe565/gh-profile
