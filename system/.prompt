@@ -1,5 +1,9 @@
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  local branch="$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')"
+  local res="${branch}"
+  local profile="$(gh profile show 2>/dev/null)"
+  [[ -n "$profile" ]] && res="$branch - @${profile}"
+  echo "$res"
 }
 
 # READ THIS!!!! https://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command
