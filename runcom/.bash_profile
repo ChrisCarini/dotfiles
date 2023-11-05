@@ -62,3 +62,6 @@ export GPG_TTY=$(tty)
 
 # To link `~/.gradle/` directory properly: https://stackoverflow.com/a/28304823
 export USER_HOME=$HOME
+
+# Setup direnv - https://direnv.net/docs/hook.html
+eval "$(direnv hook bash)"
