@@ -58,6 +58,8 @@ alias cgwf='cgw --fetch'
 alias cgj='cg --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/ --exclude "jetbrains/JB_intellij-community"'
 alias cgjp='cgj --pull'
 alias cgjf='cgj --fetch'
+alias cgjpp='cg --dir ~/GitHub/jetbrains/plugins/ --pull'
+alias cgjpf='cg --dir ~/GitHub/jetbrains/plugins/ --fetch'
 
 # URL-encode & decode
 alias urldecode='python3 -c "import sys, urllib.parse as ul;print(ul.unquote_plus(sys.argv[1]))"'
