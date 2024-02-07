@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Starting IntelliJ IDEA Ultimate (OSS License)..."
+echo "Args: $@"
+open -na "IntelliJ IDEA Ultimate (OSS License).app" --args "$@"
