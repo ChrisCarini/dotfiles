@@ -20,6 +20,7 @@ repos=(
     ChrisCarini/crypto-to-influxdb
     mnagel/clustergit
 # d
+    ChrisCarini/daily-jail-population
 # e
 # f
     ChrisCarini/fitbit-data-extract
