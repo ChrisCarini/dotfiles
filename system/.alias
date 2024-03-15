@@ -39,6 +39,10 @@ alias space-to-comma="sed -e 's/[ ]\{1,\}/,/g'"
 alias space-to-line='sed -e :a -e $'\''s/[ ]\{1,\}/\\\n/g;ta'\'''
 alias comma-to-line='sed -e :a -e $'\''s/[,]\{1,\}/\\\n/g;ta'\'''
 
+# date / time
+alias iso-date='date +"%Y-%m-%dT%H:%M:%S"'
+alias date-isofmt='date +"%Y-%m-%dT%H:%M:%S"'
+
 # git
 alias gp='git pull'
 alias gf='git fetch --prune'
