@@ -169,6 +169,7 @@ function mkvenv() {
   ln -s venv/bin/activate activate
   source activate
   pip install --upgrade pip
+  pip install setuptools
   pip install pip-chill
   if [[ -f requirements.txt ]]; then
     pip install -r requirements.txt
