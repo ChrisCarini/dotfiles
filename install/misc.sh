@@ -18,6 +18,10 @@ go install github.com/syncfast/clockwise@master
 #####################
 # `gh` CLI extensions
 # -------------------
+gh extension install CallMeGreg/gh-language
+gh extension install HaywardMorihara/gh-tidy
+gh extension install hectcastro/gh-metrics
 gh extension install rsese/gh-actions-status
 gh extension install kawarimidoll/gh-graph
-gh extension install gabe565/gh-profile
+gh extension install seachicken/gh-poi
+gh extension install vilmibm/gh-screensaver
