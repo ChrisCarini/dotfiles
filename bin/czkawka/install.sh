@@ -11,6 +11,7 @@ brew list $BREW_PACKAGES &>/dev/null || brew install $BREW_PACKAGES
 binaries=(
   "czkawka_gui"
   "czkawka_cli"
+  "krokiet"
 )
 
 arch=$(uname -m)
@@ -21,7 +22,7 @@ if [ "$arch" == "arm64" ]; then
 
   echo "Determining latest version of czkawka..."
   LATEST_VERSION=$(cat czkawka_gui/Cargo.toml | \grep '^version = ' | cut -d ' ' -f 3 | xargs)
-  echo "${LATEST_VERSION}" >LATEST_VERSION
+  echo "${LATEST_VERSION}" >../LATEST_VERSION
 
   for binary in "${binaries[@]}"; do
     echo "Building binary: ${binary}"
