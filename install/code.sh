@@ -26,6 +26,7 @@ repos=(
     ChrisCarini/fitbit-data-extract
 # g
     ChrisCarini/GitJournal
+    ChrisCarini/github-contribution-calendar
     ChrisCarini/github-repo-files-sync
     ChrisCarini/google-apps-scripts
 # h
