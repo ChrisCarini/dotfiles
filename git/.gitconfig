@@ -72,8 +72,10 @@
 [includeIf "gitdir:~/GitHub/"]
 	path = ~/dotfiles/git/.gitconfig_github
 
+# Work dotfiles
 [includeIf "gitdir:~/dotfiles/work/"]
 	path = ~/dotfiles/work/git/.gitconfig
+# Where work code is stored
 [includeIf "gitdir:~/code/"]
 	path = ~/dotfiles/work/git/.gitconfig
 [filter "lfs"]
