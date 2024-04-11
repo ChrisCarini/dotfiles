@@ -84,3 +84,6 @@ alias urlencode='python3 -c "import sys, urllib.parse as ul;print(ul.quote_plus(
 
 # Docker
 alias kali-shell="docker run --tty --interactive kalilinux/kali-rolling"
+
+# gmailctl - https://github.com/mbrt/gmailctl
+alias gmailctl-git='gmailctl --config=$HOME/GitHub/gmail-filters/.gmailctl'
