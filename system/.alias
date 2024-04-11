@@ -62,7 +62,7 @@ function gunwipall() {
 
 # clustergit - https://github.com/mnagel/clustergit
 alias clustergit='~/GitHub/clustergit/clustergit'
-alias cg='clustergit --align 94 --workers 3'
+alias cg='clustergit --align 94 --workers 2'
 alias cga='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/ --dir ~/code/ --dir ~/tmp/ --exclude "jetbrains/JB_intellij-community"'
 alias cgap='cga --pull'
 alias cgaf='cga --fetch'
