@@ -1,6 +1,14 @@
 # OSX Capture Wifi Signal Strength
 Captures the wifi signal strength and logs to a file.
 
+### NOTE: This requires adding the below line via `sudo visudo`
+
+```
+<username>         ALL = (ALL) NOPASSWD: /usr/bin/wdutil
+```
+
+You MUST do ^ before running this script.
+
 ## Install to crontab:
 ```
 ┌─(ccarini@ccarini-mn1)──(2020-08-18 @ 14:21:53)──( ~  ) 
