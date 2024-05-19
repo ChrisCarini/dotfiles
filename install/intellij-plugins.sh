@@ -25,6 +25,7 @@ plugins=(
   com.intellij.apacheConfig                                      # `Apache config (.htaccess)` - https://plugins.jetbrains.com/plugin/6834-apache-config--htaccess-
   com.intellij.bigdatatools                                      # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
   net.codestats.plugin.atom.intellij                             # `Code::Stats` - https://plugins.jetbrains.com/plugin/8393-code-stats
+  dev.turingcomplete.intellijdevelopertoolsplugins               # `Developer Tools` - https://plugins.jetbrains.com/plugin/21904-developer-tools
   org.jetbrains.completion.full.line                             # `Full Line Code Completion` - https://plugins.jetbrains.com/plugin/14823-full-line-code-completion
   com.github.copilot                                             # `GitHub Copilot - https://plugins.jetbrains.com/plugin/17718-github-copilot
   zielu.gittoolbox                                               # `GitToolBox` - https://plugins.jetbrains.com/plugin/7499-gittoolbox
@@ -45,6 +46,7 @@ plugins=(
   izhangzhihao.rainbow.brackets                                  # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
   ru.meanmail.plugin.requirements                                # `Requirements` - https://plugins.jetbrains.com/plugin/10837-requirements
   com.intellij.properties.bundle.editor                          # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
+  com.jetbrains.rust                                             # `Rust` - https://plugins.jetbrains.com/plugin/22407-rust
   org.intellij.scala                                             # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
   String Manipulation                                            # `String Manipulation` - https://plugins.jetbrains.com/plugin/2162-string-manipulation
   com.wakatime.intellij.plugin                                   # `WakaTime` - https://plugins.jetbrains.com/plugin/7425-wakatime
