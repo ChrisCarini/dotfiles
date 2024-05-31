@@ -54,6 +54,8 @@ plugins=(
 )
 
 # Install Python plugins for both CE and IU
+echo "============================="
+echo "Installing [Python] ..."
 open -Wa "IntelliJ IDEA CE.app" --args installPlugins "PythonCore" # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
 open -Wa "IntelliJ IDEA.app" --args installPlugins "Pythonid"      # `Python (IU)` - https://plugins.jetbrains.com/plugin/631-python
 
