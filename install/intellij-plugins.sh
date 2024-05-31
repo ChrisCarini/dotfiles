@@ -24,6 +24,7 @@ plugins=(
   # Other Plugins
   com.intellij.apacheConfig                                      # `Apache config (.htaccess)` - https://plugins.jetbrains.com/plugin/6834-apache-config--htaccess-
   com.intellij.bigdatatools                                      # `Big Data Tools` - https://plugins.jetbrains.com/plugin/12494-big-data-tools
+  com.intellij.bigdatatools.core                                 # `Big Data Tools Core` - https://plugins.jetbrains.com/plugin/21713-big-data-tools-core
   net.codestats.plugin.atom.intellij                             # `Code::Stats` - https://plugins.jetbrains.com/plugin/8393-code-stats
   dev.turingcomplete.intellijdevelopertoolsplugins               # `Developer Tools` - https://plugins.jetbrains.com/plugin/21904-developer-tools
   org.jetbrains.completion.full.line                             # `Full Line Code Completion` - https://plugins.jetbrains.com/plugin/14823-full-line-code-completion
