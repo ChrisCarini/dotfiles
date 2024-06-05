@@ -173,7 +173,24 @@ function img-data() {
 }
 
 function mkvenv() {
-  python3 -m venv venv
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: mkvenv [python_version]"
+    echo
+    echo "Creates a Python virtual environment and installs dependencies."
+    echo
+    echo "Arguments:"
+    echo "  python_version  (optional) The version of Python to use (e.g., 3.11)."
+    echo "                  If not provided, defaults to the system's python3."
+    echo
+    echo "Example:"
+    echo "  mkvenv 3.11"
+    return
+  fi
+
+  PYTHON_VERSION=${1:-3}
+
+  # Create the virtual environment
+  python"$PYTHON_VERSION" -m venv venv
   ln -s venv/bin/activate activate
   source activate
   pip install --upgrade pip
