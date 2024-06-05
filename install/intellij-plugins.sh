@@ -8,6 +8,20 @@ if ! is-macos -o ! is-executable wget -o ! is-executable unzip; then
   return
 fi
 
+function install_ij_plugin_to_app() {
+  #  - https://www.jetbrains.com/help/idea/install-plugins-from-the-command-line.html#macos
+  #  - https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#b2db7cc1
+  local APP_NAME="$1"
+  local PLUGINS=("${@:2}") # Capture all arguments starting from the second one as an array
+  echo "================================="
+  echo "Installing the following plugins to [${APP_NAME}]:"
+  for PLUGIN in "${PLUGINS[@]}"; do
+    echo "  - $PLUGIN"
+  done
+  open -Wa "$APP_NAME" --args installPlugins "${PLUGINS[@]}"
+  echo "================================="
+}
+
 # Install plugins
 plugins=(
   # My Plugins
@@ -53,17 +67,20 @@ plugins=(
   com.wakatime.intellij.plugin                                   # `WakaTime` - https://plugins.jetbrains.com/plugin/7425-wakatime
 )
 
-# Install Python plugins for both CE and IU
-echo "============================="
-echo "Installing [Python] ..."
-open -Wa "IntelliJ IDEA CE.app" --args installPlugins "PythonCore" # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
-open -Wa "IntelliJ IDEA.app" --args installPlugins "Pythonid"      # `Python (IU)` - https://plugins.jetbrains.com/plugin/631-python
+# INSTALL IC
+IDEA_CE="IntelliJ IDEA CE.app"
+community_plugins=( 
+  "PythonCore"     # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
+  "${plugins[@]}"  # All the plugins from above
+)
+install_ij_plugin_to_app "${IDEA_CE}" "${community_plugins[@]}"
 
-for PLUGIN in "${plugins[@]}"; do
-  echo "============================="
-  echo "Installing [$PLUGIN] ..."
-  #  - https://www.jetbrains.com/help/idea/install-plugins-from-the-command-line.html#macos
-  #  - https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#b2db7cc1
-  open -Wa "IntelliJ IDEA CE.app" --args installPlugins "${PLUGIN}"
-  open -Wa "IntelliJ IDEA.app" --args installPlugins "${PLUGIN}"
+
+# INSTALL ALL IU
+ultimate_plugins=( 
+  "Pythonid"       # `Python (IU)` - https://plugins.jetbrains.com/plugin/631-python
+  "${plugins[@]}"  # All the plugins from above
+)
+ls /Applications/ | \grep -E "^IntelliJ IDEA .*.app$" | \grep -v "${IDEA_CE}" | while IFS= read -r ide ; do
+  install_ij_plugin_to_app "${ide}" "${ultimate_plugins[@]}"
 done
