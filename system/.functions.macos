@@ -156,6 +156,7 @@ function countdown() {
 make-hdr() {
   ##
   # Requires installation of Luminance version 2.6.1 (downloaded from https://github.com/LuminanceHDR/LuminanceHDR/issues/192#issuecomment-1194372488 )
+  # AS OF 2024-04-21, above is not working (dead link), so I installed via macports: `sudo port install luminance-hdr`
   ##
   FILE_EXTENSION=NEF
 
@@ -165,7 +166,7 @@ make-hdr() {
   fi
   echo "Creating High Dynamic Range photo for [$(pwd)] directory..."
 
-  /Applications/Luminance\ HDR\ 2.6.1.app/Contents/MacOS/luminance-hdr-cli \
+  /Applications/MacPorts/Luminance\ HDR.app/Contents/MacOS/luminance-hdr-cli \
     --align AIS \
     --gamma 1 \
     --saturation 1 \
