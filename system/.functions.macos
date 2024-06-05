@@ -198,3 +198,10 @@ make-all-hdr() {
     popd >/dev/null
   done
 }
+
+
+function idea-format() {
+#  /Applications/IntelliJ\ IDEA\ Ultimate\ \(OSS\ License\).app/Contents/bin/format.sh -s "$BASE/lnkd_style.xml" "${@}" &
+  /Applications/IntelliJ\ IDEA\ CE.app/Contents/bin/format.sh -s "$BASE/lnkd_style.xml" "${@}" &
+  sleep 10 ; ps aux | \grep "idea format" | awk '{print $2}' | xargs kill -9 > /dev/null 2>&1 &
+}
