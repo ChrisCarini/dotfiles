@@ -80,6 +80,14 @@ is_pr_merged() {
   echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #${PR_NUM} is merged!                         " # extra space to clear prev line
 }
 
+# TODO(ChrisCarini) - Turn this into a `gh extension` command. See `GitJournal/Projects/PROJECT_IDEAS.md` for more info.
+ship() {
+  URL=$1
+  echo -n "[$(date +"%Y-%m-%d %H:%M:%S")] Approving PR: ${URL}..."
+  gh pr review --approve $URL
+  echo "Done."
+}
+
 ##
 # Misc
 ##
