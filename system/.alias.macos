@@ -11,6 +11,9 @@ alias pytest-for-code-review="pytest --disable-warnings test/ | tee >(pbcopy)"
 # Copy pwd to clipboard
 alias cpwd="pwd|tr -d '\n'|pbcopy"
 
+# Copy last command to clipboard - ref: Mammadu Diallo in #oneliners -> https://linkedin-randd.slack.com/archives/C1N8C9SRJ/p1717012058637589
+alias copylast="fc -ln -1 | pbcopy"
+
 # Shortcuts
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
 alias canary="open -a ~/Applications/Google\ Chrome\ Canary.app"
