@@ -1,11 +1,10 @@
 #!/bin/bash
 # Check if the configuration file exists in either location.
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-echo $SCRIPT_DIR
-if test -e "$SCRIPT_DIR/backup_to_nas.config"; then
-  source "$SCRIPT_DIR/backup_to_nas.config"
-elif test -e ~/.backup_to_nas.config; then
-  source ~/.backup_to_nas.config
+if test -e "${SCRIPT_DIR}/rclone.conf"; then
+  CONFIG="${SCRIPT_DIR}/rclone.conf"
+elif test -e ~/.config/rclone/rclone.conf; then
+  CONFIG=~/.config/rclone/rclone.conf
 else
   echo "###############################################"
   echo "##     _____  ____   ____    ___   ____      ##"
@@ -17,18 +16,19 @@ else
   echo "###############################################"
   echo "##"
   echo "##  This script expects a configuration file to exist. Two options below:"
-  echo "##      - './backup_to_nas.config' (config file in same dir as this script)"
-  echo "##      - '~/.backup_to_nas.config' (hidden config file in home directory)"
+  echo "##      - './rclone.conf' (config file in same dir as this script)"
+  echo "##      - '~/.config/rclone/rclone.conf' (hidden config file in home directory)"
   echo "##"
   echo "##  The config file should have the below contents:"
   echo "##"
-  echo "##      REMOTE_USERNAME=<username>"
-  echo "##      REMOTE_HOSTNAME=<hostname>"
-  echo "##      REMOTE_PATHNAME=<pathname>"
+  echo "##      [rackstation]"
+  echo "##      type = smb"
+  echo "##      host = <hostname>"
+  echo "##      pass = <password>"
   echo "##"
   echo "##  These parameters are used as below when connecting:"
   echo "##"
-  echo "##    rsync \$REMOTE_USERNAME@\$REMOTE_HOSTNAME:\$REMOTE_PATHNAME"
+  echo "##    rclone --config="\$\{CONFIG\}" sync ... \$dir_to_backup rackstation:<share>"
   echo "##"
   echo "###############################################"
   exit 1
@@ -40,20 +40,18 @@ echo "##    Using the below configuration     ##"
 echo "##                                      ##"
 echo "##########################################"
 echo "##"
-echo "##      REMOTE_USERNAME=$REMOTE_USERNAME"
-echo "##      REMOTE_HOSTNAME=$REMOTE_HOSTNAME"
-echo "##      REMOTE_PATHNAME=$REMOTE_PATHNAME"
+echo "##      CONFIG=${CONFIG}"
 echo "#/"
 echo "/"
 
 # Check is Lock File exists, if not create it and set trap on exit
-if ! ( set -o noclobber ; echo > ~/backup_to_nas.lock); then
+if ! ( set -o noclobber ; echo > ~/backup_to_nas_full_user.lock); then
   echo "Lock file exists... exiting without backup."
   exit 1
 fi
 
 echo 'Lockfile created successfully, backing up...'
-trap "echo 'Exiting successfully, cleaning up lock file...' ; rm -f ~/backup_to_nas.lock" EXIT
+trap "echo 'Exiting successfully, cleaning up lock file...' ; rm -f ~/backup_to_nas_full_user.lock" EXIT
 
 ##
 # Mirror to storage and back
@@ -62,21 +60,20 @@ dir=~/
 echo "======================================="
 echo "BACKING UP: ${dir}"
 echo "======================================="
-# Remote directory name; replace '/' with '_'
-remote_dir_name=${dir//\//_}
-
-#  # For Debugging..
-#  echo "rsync -auvz --exclude=\"*@eaDir/\" --progress \"$dir/\" \"$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name\""
-#  echo "rsync -auvz --exclude=\"*@eaDir/\" --progress \"$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_$HOSTNAME/$remote_dir_name/\" \"$dir\""
 
 echo "---------------------------"
 echo "Push This machine -> Remote"
 echo "---------------------------"
-#      --list-only \
-#      --info=progress2 \
-#      --no-inc-recursive \
-rsync -auvz \
+rclone --config="${CONFIG}" \
+      sync \
       --progress \
+      --skip-links \
+      --smb-user=shiba \
+      --transfers=8 \
+      --checkers=64 \
+      --retries-sleep=500ms \
+      --stats-file-name-length=0 \
+      --exclude="*.sock" \
       --exclude="*/build/" \
       --exclude="*/config/external/" \
       --exclude="*/node_modules/" \
@@ -84,39 +81,38 @@ rsync -auvz \
       --exclude="*/venv/" \
       --exclude="*@eaDir/" \
       --exclude=".DS_Store" \
+      --exclude=".android/" \
       --exclude=".bash_sessions/" \
-      --exclude=".midguard/" \
+      --exclude=".bw/" \
       --exclude=".cache/" \
       --exclude=".cargo/" \
-      --exclude=".docker/buildx/" \
+      --exclude=".docker/" \
       --exclude=".gem/" \
+      --exclude=".gnupg/S.*" \
       --exclude=".gradle/" \
+      --exclude=".ivy2/" \
+      --exclude=".local/" \
       --exclude=".m2/" \
+      --exclude=".midgard/" \
+      --exclude=".mypy_cache/" \
       --exclude=".npm/" \
+      --exclude=".ollama/" \
       --exclude=".rustup/" \
       --exclude=".shiv/" \
       --exclude=".volta/" \
-      --exclude="Library/Group Containers/group.com.apple.secure-control-center-preferences/" \
-      --exclude="Library/Caches/Google/Chrome/**/Cache/Cache_Data/" \
-      --exclude="Library/Application Support/Google/Chrome/component_crx_cache/" \
-      --exclude="Library/Preferences/.GlobalPreferences_m.plist" \
-      --exclude="Library/Caches/JetBrains/**/caches/" \
-      --exclude="Library/Caches/JetBrains/**/index/" \
-      --exclude="Library/Caches/JetBrains/**/jcef_cache/" \
-      --exclude="Library/Caches/JetBrains/**/tmp/" \
-      --exclude="Library/Containers/com.docker.docker/Data/vms/" \
-      --exclude="Library/Application Support/JetBrains/**/system/index/" \
-      --delete-excluded \
-      "$dir/" "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_${HOSTNAME}_full_user_dir/$remote_dir_name"
-#echo "---------------------------"
-#echo "Push Remote -> This machine"
-#echo "---------------------------"
-#rsync -auvz \
-#      --progress \
-#      --list-only \
-#      --exclude=".DS_Store" \
-#      --exclude="*@eaDir/" \
-#      --exclude="*/build/" \
-#      --exclude="*/node_modules/" \
-#      --exclude="*/venv/" \
-#      "$REMOTE_USERNAME@$REMOTE_HOSTNAME:$REMOTE_PATHNAME/2_way_sync_${HOSTNAME}_full_user_dir/$remote_dir_name/" "$dir"
+      --exclude=".yarn/" \
+      --exclude="IdeaProjects/" \
+      --exclude="Library/Application Support/" \
+      --exclude="Library/Caches/" \
+      --exclude="Library/Containers/" \
+      --exclude="Library/Group Containers/" \
+      --exclude="Library/Java/" \
+      --exclude="Library/Logs/" \
+      --exclude="Library/Preferences/" \
+      --exclude="fsmonitor--daemon.ipc" \
+      --exclude="go/" \
+      --exclude="local-repo/" \
+      --exclude="miniconda3/" \
+      --exclude="tmp/" \
+      --exclude="wifi_rssi.csv" \
+      "${dir}" rackstation:Important_Backups/2_way_sync_${HOSTNAME}_full_user_dir
