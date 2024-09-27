@@ -37,6 +37,7 @@ brew tap jakehilborn/jakehilborn
 
 apps=(
   bash-completion
+  basictex  # for converting Markdown to PDF via `pandoc` in `GitJournal/Work/Self\ Assessment/markdown2pdf.sh`
   brew-cask-completion
   coreutils
   #  docker          # This is installed as part of `brew-cask.sh` `docker` installation
