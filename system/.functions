@@ -27,9 +27,12 @@ git-config-repo-github() {
 }
 
 git-sync-fork() {
+  # Assumes you've locally added an `upstream` remote to your fork; eg below:
+  #
+  #   git remote add upstream git@github.com:JetBrains/intellij-community.git
   git fetch upstream
-  git checkout master
-  git merge upstream/master
+  git checkout $(git remote show origin | grep 'HEAD branch:' | awk '{print $4}')
+  git merge upstream/$(git remote show upstream | grep 'HEAD branch:' | awk '{print $4}')
 }
 
 # From https://stackoverflow.com/a/60303161/21599954
