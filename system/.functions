@@ -57,7 +57,7 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
   while true; do
     RESULTS=$(gh pr view --json statusCheckRollup "$PR" --template '{{range .statusCheckRollup}}{{$x := ""}}{{if eq .conclusion "SUCCESS"}}{{$x = "✓"}}{{else if eq .conclusion "NEUTRAL"}}{{$x = "-"}}{{else}}{{$x = "*"}}{{end}}{{tablerow $x .name .status .conclusion "\033[0K"}}{{end}}{{tablerender}}')
     LENGTH=$(echo "$RESULTS" | wc -l)
-    STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "SUCCESS" | \grep -v "NEUTRAL" | \grep -Ev "COMPLETED \s* SKIPPED") # We don't want the results itself, just the status code
+    STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "Code Ownership" | \grep -v "SUCCESS" | \grep -v "NEUTRAL" | \grep -Ev "COMPLETED \s* SKIPPED" | \grep -Ev "SonarQube Code Analysis \s* COMPLETED \s* FAILURE") # We don't want the results itself, just the status code
     RESULT_CODE=$?
     echo "$RESULTS"
     # If this status check passed, decrement the checks passed count; otherwise reset to 3
