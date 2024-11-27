@@ -38,18 +38,23 @@ notify() {
 # See `.functions` for non-MacOS specific (ie, generic)
 dingdingding() {
     local PREV_COMMAND_IN_PIPE_SUCCESS=$?
-    local PREVIOUS_COMMAND=$(history 1 | head -n 1 | cut -d":" -f 4- | xargs)
+    local PREVIOUS_COMMAND=$(history 1 | head -n 1 | cut -d":" -f 4- | xargs | sed 's/[[:space:]]*&&[[:space:]]*dingdingding[[:space:]]*//')
+
     if [ $PREV_COMMAND_IN_PIPE_SUCCESS -eq 0 ]; then
+      RESULT_NOTIFY="Successful"
+      RESULT_SAY="successfully"
       SOUND_NAME="Glass" # Pass
       HA_COLOR="lime green"
     else
+      RESULT_NOTIFY="Error"
+      RESULT_SAY="with an error"
       SOUND_NAME="Basso" # Fail
       HA_COLOR="red"
     fi
     # SOUND_NAME="Submarine" # We should never be in a submarine.
     # NOTE: Suppress "[0] <job_pid>" output via: https://stackoverflow.com/a/24844613
-    { notify 'Ding Ding Ding!' "Finished (${PREV_COMMAND_IN_PIPE_SUCCESS}): ${PREVIOUS_COMMAND}" '' "${SOUND_NAME}" 2>&3 & disown ; } 3>&2 2>/dev/null
-    { say "Ding Ding Ding! Finished running ${PREVIOUS_COMMAND}" 2>&3 & disown ; } 3>&2 2>/dev/null
+    { notify 'Ding Ding Ding!' "Finished (${RESULT_NOTIFY}): ${PREVIOUS_COMMAND}" '' "${SOUND_NAME}" 2>&3 & disown ; } 3>&2 2>/dev/null
+    { say "Ding Ding Ding! Finished running ${PREVIOUS_COMMAND} ${RESULT_SAY}" 2>&3 & disown ; } 3>&2 2>/dev/null
 
     tput bel;sleep 0.5;
     tput bel;sleep 0.5;
