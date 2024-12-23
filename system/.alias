@@ -62,7 +62,12 @@ function gunwipall() {
 
 # clustergit - https://github.com/mnagel/clustergit
 alias clustergit='~/GitHub/clustergit/clustergit'
-alias cg='clustergit --align 94 --workers 1 --delay 1'
+
+# TRYING 16 WORKERS AFTER CHANGING ~/.ssh/config.custom TO USE `ControlMaster auto` FROM
+# RECOMMENDATION HERE: https://github.com/mnagel/clustergit/issues/50#issuecomment-2183208542
+#alias cg='clustergit --align 94 --workers 1 --delay 1'
+alias cg='clustergit --align 94 --workers 16'
+
 alias cga='cg --dir ~ --dir ~/dotfiles/ --dir ~/GitHub/ --dir ~/GitHub/jetbrains/ --dir ~/GitHub/jetbrains/plugins/ --dir ~/code/ --dir ~/tmp/ --exclude "jetbrains/JB_intellij-community"'
 alias cgap='cga --pull'
 alias cgaf='cga --fetch'
