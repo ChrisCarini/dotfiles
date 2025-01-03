@@ -177,6 +177,7 @@ fi
 title "Symlink core dotfiles"
 #############################
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
+ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
 for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
   [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
