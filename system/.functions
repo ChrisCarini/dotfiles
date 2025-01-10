@@ -86,6 +86,29 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
   gh pr merge --auto --squash "$PR"
 }
 
+is_pr_published() {
+  PR="$1"
+
+  RESULT_CODE="0"
+  
+  while true; do
+    RESULTS=$(gh pr view --json comments "$PR" | jq '.comments | max_by(.createdAt) | {author: .author.login, body: .body}' | jq -r .body | \grep -E "Published version\: (.*)")
+    RESULT_CODE=$?
+    
+    # if RESULT_CODE is 0, then the PR has been published
+    if [[ "$RESULT_CODE" -eq 0 ]]; then
+      echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #$PR has been published!"
+      echo "[$(date +"%Y-%m-%d %H:%M:%S")] ${RESULTS}                            " # extra space to clear prev line
+      break
+    fi
+    
+    echo "                                                                       " # lots of spaces to clear the line
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR #$PR to be published..."
+    sleep 5
+    tput cuu 2 # move the cursor up 2 lines to overwrite the previous output
+  done
+}
+
 is_pr_merged() {
   PR_NUM=$1
   echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checking if PR #${PR_NUM} is merged..."
