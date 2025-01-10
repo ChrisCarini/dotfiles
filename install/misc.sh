@@ -25,3 +25,4 @@ gh extension install kawarimidoll/gh-graph
 gh extension install rsese/gh-actions-status
 gh extension install seachicken/gh-poi
 gh extension install vilmibm/gh-screensaver
+gh extension install github/gh-skyline
