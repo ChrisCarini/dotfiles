@@ -37,6 +37,7 @@ repos=(
     ChrisCarini/jupyter-docker
 # k
 # l
+    ChrisCarini/levelsfyi-top-pay-by-level
     ChrisCarini/little-snitch-rule-groups
 # m
     manojVivek/medium-unlimited
