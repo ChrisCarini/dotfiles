@@ -146,6 +146,10 @@ open-ports() {
 }
 
 function countdown() {
+  # Run as `countdown <seconds_to_countdown>`
+  #  countdown 10    # 10 seconds
+  #  countdown 60    # 1 minute
+  #  countdown 300   # 5 minutes
   local now=$(date +%s)
   local end=$((now + $1))
   local now_fmt=$(date -u -j -f %s "$now" +"%Y-%m-%d %H:%M:%S")
