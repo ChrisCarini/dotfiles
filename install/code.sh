@@ -23,6 +23,7 @@ repos=(
     ChrisCarini/daily-jail-population
 # e
 # f
+    ChrisCarini/firefly-iii-hide-sidebar-by-default-userscript
     ChrisCarini/fitbit-data-extract
 # g
     ChrisCarini/GitJournal
