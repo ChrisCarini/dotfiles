@@ -68,6 +68,7 @@ repos=(
     ChrisCarini/trivia-box
 # u
     ChrisCarini/upptime
+    ChrisCarini/user-metrics-dashboard
 # v
 # w
 # x
