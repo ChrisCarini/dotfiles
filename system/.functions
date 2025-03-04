@@ -92,7 +92,7 @@ is_pr_published() {
   RESULT_CODE="0"
   
   while true; do
-    RESULTS=$(gh pr view --json comments "$PR" | jq '.comments | max_by(.createdAt) | {author: .author.login, body: .body}' | jq -r .body | \grep -E "Published version\: (.*)")
+    RESULTS=$(gh pr view --json comments "$PR" | jq '.comments | max_by(.createdAt) | {author: .author.login, body: .body}' | jq -r .body | \grep -E "(Published version\:|published version) (.*)")
     RESULT_CODE=$?
     
     # if RESULT_CODE is 0, then the PR has been published
