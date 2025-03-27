@@ -50,6 +50,7 @@ plugins=(
   com.dmarcotte.handlebars                                       # `Handlebars / Mustache` - https://plugins.jetbrains.com/plugin/6884-handlebars-mustache
   com.intellij.ideolog                                           # `Ideolog` - https://plugins.jetbrains.com/plugin/9746-ideolog
   indent-rainbow.indent-rainbow                                  # `Indent Rainbow` - https://plugins.jetbrains.com/plugin/13308-indent-rainbow
+  com.jetbrains.hackathon.indices.viewer                         # `Index Viewer` - https://plugins.jetbrains.com/plugin/13029-index-viewer
   com.jetbrains.plugins.ini4idea                                 # `Ini` - https://plugins.jetbrains.com/plugin/6981-ini
   org.jetbrains.kotlin                                           # `Kotlin` - https://plugins.jetbrains.com/plugin/6954-kotlin
   name.kropp.intellij.makefile                                   # `Makefile Language` - https://plugins.jetbrains.com/plugin/9333-makefile-language
@@ -58,6 +59,7 @@ plugins=(
   com.jetbrains.php                                              # `PHP` - https://plugins.jetbrains.com/plugin/6610-php
   com.jetbrains.intellij.code.search.polaris                     # `Polaris` - https://plugins.jetbrains.com/plugin/18568-polaris
   org.nik.presentation-assistant                                 # `Presentation Assistant` - https://plugins.jetbrains.com/plugin/7345-presentation-assistant
+  PsiViewer                                                      # `PsiViewer` - https://plugins.jetbrains.com/plugin/227-psiviewer
   izhangzhihao.rainbow.brackets                                  # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
   ru.meanmail.plugin.requirements                                # `Requirements` - https://plugins.jetbrains.com/plugin/10837-requirements
   com.intellij.properties.bundle.editor                          # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
