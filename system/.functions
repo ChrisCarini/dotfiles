@@ -165,6 +165,33 @@ perf() {
   curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
 }
 
+# Better `dig` command - My own unique idea...(I'm sure someone else thought of this before)
+dig() {
+  # function that calls `dig` but will first strip of `http` or `https` from the URL
+  # and any trailing slashes, then calling `dig` with the stripped URL
+  # Example: dig https://www.google.com/ -> dig www.google.com  
+  local args=()
+  local domain_found=false
+
+  for arg in "$@"; do
+    if [[ "$arg" == -* || "$arg" == +* || "$arg" == @* || "$domain_found" == true ]]; then
+      # Flags or already handled domain — pass through
+      args+=("$arg")
+    else
+      # First non-flag argument — sanitize it
+      domain="${arg#http://}"
+      domain="${domain#https://}"
+      domain="${domain%%/*}"
+      args+=("$domain")
+      domain_found=true
+    fi
+  done
+
+  # Call the real dig
+#  echo "Calling: dig "${args[@]}""
+  command dig "${args[@]}"
+}
+
 genpasswd() {
    local l=$1
    [ "$l" == "" ] && l=16
