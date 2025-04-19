@@ -111,6 +111,7 @@ rclone --config="${CONFIG}" \
       --exclude="Library/Group Containers/" \
       --exclude="Library/Java/" \
       --exclude="Library/Logs/" \
+      --exclude="Library/Metadata/CoreSpotlight/" \
       --exclude="Library/Preferences/" \
       --exclude="fsmonitor--daemon.ipc" \
       --exclude="go/" \
