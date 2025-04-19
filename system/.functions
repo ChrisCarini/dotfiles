@@ -128,6 +128,51 @@ ship() {
   echo "Done."
 }
 
+# Thank you ChatGPT
+find_repos_with_no_branches() {
+    ORG="${1:-ChrisCarini}"
+    LIMIT=${2:-100}
+
+    echo "Looking for up to ${LIMIT} repos with no branches under org: ${ORG}..."
+
+    # Get repo list
+    REPOS=$(gh repo list "$ORG" --limit "$LIMIT" --json name --jq '.[].name' | sort)
+
+    # Convert to array (portable, Bash-compatible)
+    IFS=$'\n' read -r -d '' -a repos_array <<<"$(printf '%s\0' "$REPOS")"
+
+    TOTAL=${#repos_array[@]}
+    PAD_WIDTH=${#TOTAL}
+    echo "Found $TOTAL repos."
+
+    EMPTY_REPOS=()
+    INDEX=1
+
+    for REPO in "${repos_array[@]}"; do
+        # Pad index with leading spaces
+        PADDED_INDEX=$(printf "%${PAD_WIDTH}d" "$INDEX")
+        echo "[${PADDED_INDEX}/${TOTAL}] Checking: $REPO"
+
+        BRANCH_COUNT=$(gh api "/repos/$ORG/$REPO/branches" --jq 'length' 2>/dev/null)
+
+        if [ "$BRANCH_COUNT" -eq 0 ]; then
+            EMPTY_REPOS+=("$ORG/$REPO")
+        fi
+
+        INDEX=$((INDEX + 1))
+    done
+
+    echo ""
+    echo "✅ Repositories with no branches:"
+    if [ "${#EMPTY_REPOS[@]}" -eq 0 ]; then
+        echo "None found 🎉"
+    else
+        for EMPTY in "${EMPTY_REPOS[@]}"; do
+            echo "$EMPTY"
+        done
+    fi
+}
+
 ##
 # Misc
 ##
