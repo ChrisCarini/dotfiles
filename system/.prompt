@@ -1,8 +1,23 @@
 parse_git_branch() {
-  local branch="$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')"
+  local branch="$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/' | xargs)"
   local res="${branch}"
-  local profile="$(gh profile show 2>/dev/null)"
-  [[ -n "$profile" ]] && res="$branch - @${profile}"
+  # Using `git config -l` instead of `git config user.name` because it's much faster.
+  #
+  #   $ > hyperfine --warmup 10 "git config -l | \grep 'user.name' | tail -n1 | cut -d= -f2-" "gh auth status --active 2>/dev/null | \grep 'Logged in' | awk '{print $7}'"
+  #   Benchmark 1: git config -l | \grep 'user.name' | tail -n1 | cut -d= -f2-
+  #     Time (mean ± σ):       8.6 ms ±  30.7 ms    [User: 4.0 ms, System: 5.6 ms]
+  #     Range (min … max):     3.2 ms … 453.1 ms    214 runs
+  #    
+  #   Benchmark 2: gh auth status --active 2>/dev/null | \grep 'Logged in' | awk '{print }'
+  #     Time (mean ± σ):     346.8 ms ±   9.2 ms    [User: 77.6 ms, System: 34.1 ms]
+  #     Range (min … max):   332.9 ms … 366.4 ms    10 runs
+  #    
+  #   Summary
+  #     git config -l | \grep 'user.name' | tail -n1 | cut -d= -f2- ran
+  #      40.55 ± 145.58 times faster than gh auth status --active 2>/dev/null | \grep 'Logged in' | awk '{print }'
+  #
+  [[ -n "$res" ]] && local git_user_dot_name="$(git config -l | \grep 'user.name' | tail -n1 | cut -d= -f2-)"
+  [[ -n "$git_user_dot_name" ]] && res="${branch} - @${git_user_dot_name}"
   echo "$res"
 }
 
@@ -13,8 +28,10 @@ prompt_command() {
 
   # Parse Git branch name
   P_GIT=$(parse_git_branch)
+  
+  [[ -n "$P_GIT" ]] && local space=" " || local space=""
 
-  PS1="\n┌─(${P_USER}@${P_HOST})──(${P_DATE})──( ${P_GREEN}${P_CUR_DIR}${P_RESET} ${P_YELLOW}${P_GIT}${P_RESET} ) \n└─$ ${RTN_COLOR}>${P_RESET} "
+  PS1="\n┌─(${P_USER}@${P_HOST})──(${P_DATE})──( ${P_GREEN}${P_CUR_DIR}${P_RESET}${space}${P_YELLOW}${P_GIT}${P_RESET} ) \n└─$ ${RTN_COLOR}>${P_RESET} "
   history -a
 }
 
@@ -41,3 +58,23 @@ unset _bash_prompt_config
 
 # Set custom command prompt
 export PROMPT_COMMAND=prompt_command
+
+temp_prompt_command () 
+{ 
+  function tmp_cmd() {
+    local EXIT_CODE=$?;
+    if [[ $EXIT_CODE != 0 ]]; then
+        RTN_COLOR=$P_RED;
+    else
+        RTN_COLOR=$P_GREEN;
+    fi;
+    P_GIT=$(parse_git_branch);
+    PS1="\n┌─(ChrisCarini)──(${P_DATE})──( ${P_GREEN}${P_CUR_DIR}${P_RESET} ) \n└─$ ${RTN_COLOR}>${P_RESET} ";
+    history -a
+  }
+  export PROMPT_COMMAND=tmp_cmd
+}
+
+reset_prompt_command() {
+  export PROMPT_COMMAND=prompt_command
+}
