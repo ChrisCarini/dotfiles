@@ -87,5 +87,6 @@ fi
 # Clone JetBrains IntelliJ Community repo
 # NOTE: Making use of blobless clones: https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/#user-content-blobless-clones
 git clone --filter=blob:none https://github.com/JetBrains/intellij-community.git JB_intellij-community
+git clone --filter=blob:none git@github.com:JetBrains/intellij-plugins.git JB_intellij-plugins
 
 popd
