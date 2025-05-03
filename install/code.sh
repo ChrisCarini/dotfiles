@@ -25,6 +25,7 @@ repos=(
     ChrisCarini/dreamhost-fastapi-served-via-fastcgi
     ChrisCarini/dreamhost-flask-served-via-apache-mod-rewrite
     ChrisCarini/dreamhost-flask-served-via-fastcgi
+    ChrisCarini/dreamhost-golang-net-http-via-fastcgi
 # e
 # f
     ChrisCarini/firefly-iii-hide-sidebar-by-default-userscript
