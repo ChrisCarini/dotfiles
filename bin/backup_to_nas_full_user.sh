@@ -87,6 +87,7 @@ rclone --config="${CONFIG}" \
       --exclude=".bw/" \
       --exclude=".cache/" \
       --exclude=".cargo/" \
+      --exclude=".config/github-copilot/" \
       --exclude=".docker/" \
       --exclude=".gem/" \
       --exclude=".gnupg/S.*" \
