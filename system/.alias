@@ -87,6 +87,10 @@ alias cgjpf='cg --dir ~/GitHub/jetbrains/plugins/ --fetch'
 alias urldecode='python3 -c "import sys, urllib.parse as ul;print(ul.unquote_plus(sys.argv[1]))"'
 alias urlencode='python3 -c "import sys, urllib.parse as ul;print(ul.quote_plus(sys.argv[1]))"'
 
+# SSH
+alias dsma="mosh --server=/usr/local/bin/mosh-server shiba@diskstation -- /usr/local/bin/tmux attach || /usr/local/bin/tmux new"
+alias rsma="mosh --server=/usr/local/bin/mosh-server shiba@rackstation -- /usr/local/bin/tmux attach || /usr/local/bin/tmux new"
+
 # Docker
 alias kali-shell="docker run --tty --interactive kalilinux/kali-rolling"
 
