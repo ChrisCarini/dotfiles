@@ -34,6 +34,7 @@ repos=(
 # g
     ChrisCarini/GitJournal
     ChrisCarini/github-contribution-calendar
+    ChrisCarini/github-git-sizer-action
     ChrisCarini/github-repo-files-sync
     ChrisCarini/google-apps-scripts
 # h
