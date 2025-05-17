@@ -47,6 +47,102 @@ git-full-clone-to-shallow() {
   git reset --mixed $COMMIT
 }
 
+function git-recon() {
+  # ============ What? ============
+  # This script checks the status of a local git repository, and can delete the directory if desired/'safe'.
+  #
+  # ======== Instructions: ========
+  #   1. Run this script in a git repository.
+  #   2. It will check the following:
+  #      - If the current directory is a git repository
+  #      - If the remote repository still exists
+  #      - If there are any local branches that are not master or main
+  #      - If the git status is clean
+  #   3. If all checks are OK, it will remove the directory if `--remove` is passed.
+  #   4. If any checks fail, it will print the relevant information and exit with a non-zero status.
+  #
+  # ============ Usage: ===========
+  #   git-recon [--remove|--delete] [directory]
+  #
+  local all_checks_ok=1
+  local remove_flag=0
+  local dir=""
+  # Parse arguments
+  for arg in "$@"; do
+    if [ "$arg" = "--remove" ] || [ "$arg" = "--delete" ]; then
+      remove_flag=1
+    else
+      dir="$arg"
+    fi
+  done
+
+  # if dir is not empty, use it as the directory
+  if [ -n "$dir" ]; then
+    pushd "$dir" 2>&1 > /dev/null || {
+      echo -e "\033[0;31m❌ Failed to change directory to $dir\033[0m"
+      return 1
+    }
+  fi
+
+  # check: if the current directory is not a git repository, return
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo -e "\033[0;31m❌ Not a git repository. Exiting.\033[0m"
+    [ -n "$dir" ] && popd 2>&1 > /dev/null
+    return 1
+  fi
+
+  # check: if the remote repo still exists
+  remote_url=$(git config --get remote.origin.url)
+  if [ -z "$remote_url" ]; then
+    echo -e "\033[0;31m❌ No remote repository found\033[0m"
+    return 1
+  else
+    echo -e "\033[0;32m✅ Remote repository found: $remote_url\033[0m"
+    echo -ne "\033[0;33m⚠️  Checking remote repository...\033[0m"
+    remote_status=$(timeout 5 git ls-remote "$remote_url" HEAD 2>&1)
+    echo -ne "\033[2K\r"
+    if [[ $remote_status != *"fatal"* ]]; then
+      echo -e "\033[0;32m✅ Remote repository is reachable: $remote_url\033[0m"
+    else
+      echo -e "\033[0;31m❌ Remote repository not found: $remote_url\033[0m"
+      all_checks_ok=0
+    fi
+  fi
+
+  # check: if there exist any local branches that are not master or main
+  branches=$(git branch | \grep -Ev '^\*?\s*(master|main)$' | sed 's/^[ *]*//')
+  if [ -z "$branches" ]; then
+    echo -e "\033[0;32m✅ No branches other than master or main\033[0m"
+  else
+    echo -e "\033[0;31m❌ The following branches are not master or main:\033[0m"
+    echo "$branches"
+    all_checks_ok=0
+  fi
+
+  # check: if git status is clean
+  status=$(git status --porcelain)
+  if [ -z "$status" ]; then
+    echo -e "\033[0;32m✅ Git status is clean\033[0m"
+  else
+    echo -e "\033[0;31m❌ Git status is not clean:\033[0m"
+    echo "$status"
+    git diff --color=always | cat
+    all_checks_ok=0
+  fi
+
+  # If all checks are OK and --remove is set, remove the directory
+  if [ "$all_checks_ok" -eq 1 ] && [ "$remove_flag" -eq 1 ] && [ -n "$dir" ]; then
+    echo -ne "\033[0;33m⚠️  Removing directory: $dir\033[0m"
+    popd 2>&1 > /dev/null
+    rm -rf "$dir"
+    echo -ne "\033[2K\r"
+    echo -e "\033[0;32m✅ Removed directory: $dir\033[0m"
+    return 0
+  fi
+
+  [ -n "$dir" ] && popd 2>&1 > /dev/null
+}
+
 mark_pr_ready_and_auto_merge_on_checks_complete() {
   PR="$1"
 
