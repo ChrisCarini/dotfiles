@@ -32,6 +32,7 @@ repos=(
     ChrisCarini/firefly-iii-hide-sidebar-by-default-userscript
     ChrisCarini/fitbit-data-extract
 # g
+    ChrisCarini/gh-copilot-review
     ChrisCarini/GitJournal
     ChrisCarini/github-contribution-calendar
     ChrisCarini/github-git-sizer-action
