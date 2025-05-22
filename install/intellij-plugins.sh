@@ -72,11 +72,14 @@ plugins=(
 
 # INSTALL IC
 IDEA_CE="IntelliJ IDEA CE.app"
-community_plugins=( 
-  "PythonCore"     # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
-  "${plugins[@]}"  # All the plugins from above
-)
-install_ij_plugin_to_app "${IDEA_CE}" "${community_plugins[@]}"
+# Check if the app is installed before proceeding below
+if [ -d "/Applications/${IDEA_CE}" ]; then
+  community_plugins=(
+    "PythonCore"     # `Python (IC)` - https://plugins.jetbrains.com/plugin/7322-python-community-edition
+    "${plugins[@]}"  # All the plugins from above
+  )
+  install_ij_plugin_to_app "${IDEA_CE}" "${community_plugins[@]}"
+fi
 
 
 # INSTALL ALL IU
