@@ -38,7 +38,7 @@ notify() {
 # See `.functions` for non-MacOS specific (ie, generic)
 dingdingding() {
     local PREV_COMMAND_IN_PIPE_SUCCESS=$?
-    local PREVIOUS_COMMAND=$(history 1 | head -n 1 | cut -d":" -f 4- | xargs | sed 's/[[:space:]]*&&[[:space:]]*dingdingding[[:space:]]*//')
+    local PREVIOUS_COMMAND=$(history 1 | head -n 1 | cut -d":" -f 4- | xargs | sed -E 's/[[:space:]]*((&&)|;)[[:space:]]*dingdingding[[:space:]]*//')
 
     if [ $PREV_COMMAND_IN_PIPE_SUCCESS -eq 0 ]; then
       RESULT_NOTIFY="Successful"
