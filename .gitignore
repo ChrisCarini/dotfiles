@@ -9,3 +9,4 @@ work/*
 tmp/*
 venv/
 backup_to_nas.config
+work_dotfiles_location

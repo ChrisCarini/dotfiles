@@ -118,8 +118,12 @@ fi
 ###################################
 title "Gather all inputs from user"
 ###################################
-# We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
-read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL </dev/tty
+if [[ ! -e ~/dotfiles/work_dotfiles_location ]]; then
+  # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
+  read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL </dev/tty
+else
+  WORK_DOTFILES_REPO_URL=$(cat ~/dotfiles/work_dotfiles_location)
+fi
 
 if is-macos; then
   ####################################################################

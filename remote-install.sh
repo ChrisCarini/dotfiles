@@ -5,6 +5,13 @@ function echo_ri() {
 }
 
 function clone_git_repo() {
+  # If we are on OSX, install XCode first
+  # Note: We can not use `is-macos` for the `if`, as the dotfiles are not cloned yet.
+  if [[ "$OSTYPE" =~ ^darwin ]]; then
+    echo_ri "Updating Software and Installing XCode..."
+    sudo softwareupdate --install --all --restart && xcode-select --install
+  fi
+
   # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
   read -p "Enter previous machine hostname (for SSH keys): " PREVIOUS_HOSTNAME </dev/tty
   # Export the prev hostname so that it can be used/'seen' in install.sh invocation below.
@@ -21,15 +28,11 @@ function clone_git_repo() {
   echo_ri "Adding GitHub SSH key to SSH Agent..."
   ssh-add $(find ~/.ssh -not -name "*.pub" -type f -name "*GitHub*")
 
-  # If we are on OSX, install XCode first
-  # Note: We can not use `is-macos` for the `if`, as the dotfiles are not cloned yet.
-  if [[ "$OSTYPE" =~ ^darwin ]]; then
-    echo_ri "Updating Software and Installing XCode..."
-    sudo softwareupdate --install --all --restart && xcode-select --install
-  fi
-
   echo_ri "Cloning dotfiles repo..."
   git clone git@github.com:ChrisCarini/dotfiles.git ~/dotfiles
+
+  echo_ri "Copying Work Dotfiles Location from old host..."
+  scp -r $PREVIOUS_HOSTNAME:~/dotfiles/work_dotfiles_location ~/dotfiles/ || true
 }
 
 function download_repo_as_tarball() {
