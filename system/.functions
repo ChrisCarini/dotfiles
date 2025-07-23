@@ -143,6 +143,71 @@ function git-recon() {
   [ -n "$dir" ] && popd 2>&1 > /dev/null
 }
 
+# FUNCTION-IFY BELOW
+#     - https://stackoverflow.com/questions/43489303/how-can-i-delete-all-git-branches-which-have-been-squash-and-merge-via-github/56026209#56026209
+# FROM
+#     - https://linkedin-randd.slack.com/archives/C01N7STS16V/p1722366836259019?thread_ts=1722365830.626219&cid=C01N7STS16V
+# TODO(ChrisCarini) - Make functions from the aliases in above link.
+git-delete-local-branches-squash-merged-into-master-dryrun() {
+  git checkout -q master && \
+  git for-each-ref refs/heads/ "--format=%(refname:short)" | \
+  while read branch; do \
+    mergeBase=$(git merge-base master $branch) && \
+    [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && \
+    echo "$branch is merged into master and can be deleted";
+  done
+}
+git-delete-local-branches-squash-merged-into-master() {
+  git checkout -q master && \
+  git for-each-ref refs/heads/ "--format=%(refname:short)" | \
+  while read branch; do \
+    mergeBase=$(git merge-base master $branch) && \
+    [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && \
+    git branch -D $branch;
+  done
+}
+prune-local() {
+  for branch in $(git branch --format="%(refname:short)"); do
+    if [ "$branch" != "master" ] && [ "$branch" != "main" ]; then
+      if git config --get branch.$branch.merge >/dev/null 2>&1; then
+        if ! git ls-remote --exit-code --heads origin $branch >/dev/null 2>&1; then
+          echo "Deleting $branch - was tracked but no longer exists on remote" && \
+          git branch -D $branch;
+        fi
+      else
+        echo "Keeping $branch - local-only branch (never pushed to remote)";
+      fi;
+    fi;
+  done
+}
+# cleans up old git branches - from Mathew Teoh (mteoh@linkedin.com) on Slack: https://linkedin-randd.slack.com/archives/C06BYNN2Y/p1744391216438719
+git-delete-local-branches-squash-merged-into-master-with-dry-run-flag() {
+  local run_mode=0
+  local found=0
+  if [[ $1 == "--run" ]]; then
+    run_mode=1
+  fi
+  git checkout -q master || return 1
+  branches=$(git for-each-ref refs/heads/ "--format=%(refname:short)")
+  for branch in $branches; do
+    mergeBase=$(git merge-base master "$branch") &&
+    if [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]]; then
+      found=1
+      if [[ $run_mode -eq 1 ]]; then
+        git branch -D "$branch"
+      else
+        echo "$branch is merged into master and can be deleted"
+      fi
+    fi
+  done
+  if [[ $found -eq 0 ]]; then
+    echo "no branches to clean up"
+  fi
+  if [[ $found -eq 1 && $run_mode -eq 0 ]]; then
+    echo "run 'cleanup --run' to run the cleanup"
+  fi
+}
+
 mark_pr_ready_and_auto_merge_on_checks_complete() {
   PR="$1"
 
