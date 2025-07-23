@@ -91,15 +91,33 @@ else
   echo "Default shell for $USER is $SHELL, proceeding..."
 fi
 
+########################################################
+title "Copy ~/.ssh directory over from previous machine"
+########################################################
+# If ~/.ssh exists and is not empty, assume we copied over the SSH directory earlier.
+if [[ -d ~/.ssh ]] && [[ -n "$(ls -A ~/.ssh)" ]]; then
+  echo "[INFO] ~/.ssh directory already exists and has contents, assuming it was copied earlier."
+else
+  echo "[INFO] Nothing exists in ~/.ssh directory. Prompt for previous hostname..."
+
+  if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+    # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
+    read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME </dev/tty
+  else
+    echo "Previous machine hostname already set to: $PREVIOUS_HOSTNAME"
+  fi
+
+  echo "[INFO] Copying from $PREVIOUS_HOSTNAME..."
+  if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
+    echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
+  else
+    scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
+  fi
+fi
+
 ###################################
 title "Gather all inputs from user"
 ###################################
-if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
-  # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
-  read -p "Enter previous machine hostname (for SSH directory copy): " PREVIOUS_HOSTNAME </dev/tty
-else
-  echo "Previous machine hostname already set to: $PREVIOUS_HOSTNAME"
-fi
 # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
 read -p "Enter work dotfiles git repo: " WORK_DOTFILES_REPO_URL </dev/tty
 
@@ -121,21 +139,6 @@ if is-macos; then
   open "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles"
 
   read -n 1 -s -r -p "Press any key when permission has been granted."
-fi
-
-########################################################
-title "Copy ~/.ssh directory over from previous machine"
-########################################################
-# If ~/.ssh exists and is not empty, assume we copied over the SSH directory earlier.
-if [[ -d ~/.ssh ]] && [[ -n "$(ls -A ~/.ssh)" ]]; then
-  echo "[INFO] ~/.ssh directory already exists and has contents, assuming it was copied earlier."
-else
-  echo "[INFO] Nothing exists in ~/.ssh directory. Copying from $PREVIOUS_HOSTNAME..."
-  if [[ -z ${PREVIOUS_HOSTNAME+x} ]]; then
-    echo "WARNING: No hostname set; skipping copying SSH directory from previous machine."
-  else
-    scp -r $PREVIOUS_HOSTNAME:~/.ssh ~/
-  fi
 fi
 
 # TODO(ChrisCarini) - Move this out of personal dotfiles, and into a script that's pulled before `git clone` is run below.
