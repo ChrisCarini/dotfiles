@@ -44,6 +44,7 @@ apps=(
     OmniDiskSweeper  # https://www.omnigroup.com/more
 #    shiftit  # On 2022-01-31 this stopped working when in Zoom and/or MS Teams VCs. Switching to Hammerspoon.
     slack
+    snagit
 #    spotify
 #    sublime-text
     microsoft-teams
