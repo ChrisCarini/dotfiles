@@ -20,6 +20,7 @@ jetbrains_plugin_repos=(
   ChrisCarini/environment-variable-settings-summary-intellij-plugin
   ChrisCarini/example-loc-plugin-config-plugin
   ChrisCarini/git-push-reminder-jetbrains-plugin
+  ChrisCarini/ide-feature-usage-tracker-intellij-plugin
   ChrisCarini/intellij-code-exfiltration
   ChrisCarini/intellij-notification-sample
   ChrisCarini/iris-jetbrains-plugin
@@ -27,6 +28,8 @@ jetbrains_plugin_repos=(
   ChrisCarini/jetbrains-sdk-cleaner
   ChrisCarini/loc-change-count-detector-jetbrains-plugin
   ChrisCarini/logshipper-intellij-plugin
+  ChrisCarini/rubber-duck-debugger-intellij-plugin
+  ChrisCarini/rust-analyzer-lsp-intellij-plugin
   ChrisCarini/sample-intellij-plugin
 )
 pushd "${BASE_JB_PLUGINS_CODE_PATH}"
@@ -48,10 +51,13 @@ popd
 # Checkout Misc JetBrains Repos
 ##
 jetbrains_misc_repos=(
+  ChrisCarini/JetBrains-IntelliJ-Platform-Plugin-SDK-Expert-Custom-GPT
+  ChrisCarini/data.services.jetbrains.com-openapi-schema
 #  ChrisCarini/intellij-community # 2021-10-15 - ChrisCarini - Commenting out, because I do not currently have / need a fork of IC.
   ChrisCarini/intellij-platform-plugin-verifier-action
   ChrisCarini/jetbrains-error-utils
   ChrisCarini/jetbrains-ide-release-dates
+  ChrisCarini/jetbrains-marketplace-plugins-downloads-count
   ChrisCarini/jetbrains-plugin-scripts
   ChrisCarini/jetbrains.chriscarini.com
 )
