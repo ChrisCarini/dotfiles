@@ -165,6 +165,7 @@ title "Checkout work dotfiles"
 if [ -z $WORK_DOTFILES_REPO_URL ]; then
   echo "WARNING: No work dotfiles repo url set; skipping cloning work dotfiles directory."
 else
+  echo "Cloning ${WORK_DOTFILES_REPO_URL} into [~/dotfiles/work]..."
   git clone $WORK_DOTFILES_REPO_URL ~/dotfiles/work
 fi
 
@@ -172,7 +173,7 @@ if is-macos; then
   ##############################################
   title "Updating Software and Installing XCode"
   ##############################################
-  sudo softwareupdate -i -a && xcode-select --install
+  sudo softwareupdate --install --all && xcode-select --install
 fi
 
 ##
@@ -197,7 +198,7 @@ if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
   ###########################################
   . "$DOTFILES_DIR/work/install/apps.sh"
 else
-  echo "No work/install/apps.sh exists; not bootstrapping work applications!"
+  echo "No [$DOTFILES_DIR/work/install/apps.sh] exists; not bootstrapping work applications!"
 fi
 
 if is-macos; then
