@@ -24,6 +24,9 @@ alias gidea="./gradlew idea"
 alias gbuild="./gradlew build"
 alias gclean="./gradlew clean"
 
+# Tail
+alias tail-idea="tail -F /Users/ccarini/Library/Application\ Support/JetBrains/IntelliJIdea**/system/log/idea.log"
+
 # Quickly get the system's IP addresses (that aren't localhost)
 alias ip="ifconfig | grep -v \"127.0.0.1\" | grep -E -o \"inet ([0-9]{1,3}[\.]){3}[0-9]{1,3}\""
 
