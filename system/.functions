@@ -3,12 +3,30 @@
 ##
 
 # Add to end of path
+#append_path() {
+#    # Trim any whitespace from the input - xargs is easy trick for this (ref: https://stackoverflow.com/a/12973694 )
+#    NEW_PATH=$(/bin/echo $1 | /usr/bin/xargs )
+#
+#    # Remove any newlines from path before appending the new path. This seems to happen from time-to-time after exporting.
+#    [ -d $NEW_PATH ] && PATH="$(/bin/echo $PATH | /usr/bin/tr -d '\n'):$NEW_PATH"
+#}
 append_path() {
-    # Trim any whitespace from the input - xargs is easy trick for this (ref: https://stackoverflow.com/a/12973694 )
+    # Trim whitespace using xargs
     NEW_PATH=$(/bin/echo $1 | /usr/bin/xargs )
 
-    # Remove any newlines from path before appending the new path. This seems to happen from time-to-time after exporting.
-    [ -d $NEW_PATH ] && PATH="$(/bin/echo $PATH | /usr/bin/tr -d '\n'):$NEW_PATH"
+    # Check if NEW_PATH is non-empty and is a directory
+    if [ -n "$NEW_PATH" ] && [ -d "$NEW_PATH" ]; then
+        # Remove newlines from PATH
+        CLEANED_PATH="$(/bin/echo "$PATH" | /usr/bin/tr -d '\n')"
+
+        # Only append if it's not already in the PATH
+        case ":$CLEANED_PATH:" in
+            *":$NEW_PATH:"*) ;;  # Already in PATH; do nothing
+            *) PATH="${CLEANED_PATH}:$NEW_PATH" ;;
+        esac
+    else
+        echo "Warning: '$NEW_PATH' is not a valid directory. Skipping." >&2
+    fi
 }
 # Add to beginning of path
 prepend_path() {
