@@ -82,6 +82,7 @@ rclone --config="${CONFIG}" \
       --exclude="*/venv/" \
       --exclude="*@eaDir/" \
       --exclude=".DS_Store" \
+      --exclude=".Trash" \
       --exclude=".android/" \
       --exclude=".bash_sessions/" \
       --exclude=".bw/" \
