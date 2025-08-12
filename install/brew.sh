@@ -68,7 +68,7 @@ apps=(
   nano
   nmap
   p7zip
-  packer
+#  packer  # Disabling; they changed the license to BUSL and brew disabled this on 2024-09-27.
   pinentry-mac # For nicer GPG pin prompting
   pv
   ssh-copy-id
