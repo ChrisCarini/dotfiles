@@ -9,6 +9,11 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ..  && pwd )"
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 ##
+# Install `dockutil` (just in case it is not already installed)
+##
+brew install dockutil
+
+##
 # Remove all Dock Icons
 ##
 dockutil --no-restart --remove all
@@ -24,7 +29,7 @@ dockutil --no-restart --add "/Applications/Microsoft Outlook.app"
 dockutil --no-restart --add "/Applications/Google Chrome.app"
 
 # LI IDEA
-dockutil --no-restart --add "$(ls -trd /Applications/LI\ IntelliJ\ IDEA\ 20* | head -n1)"
+dockutil --no-restart --add "$(ls -trd /Applications/LI\ IntelliJ\ IDEA* | head -n1)"
 
 # Term
 if is-macos-catalina-or-later ; then
