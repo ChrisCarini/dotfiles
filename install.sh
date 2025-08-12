@@ -208,6 +208,7 @@ if is-macos; then
   . "$DOTFILES_DIR/install/brew.sh"
 
   # Configure pinentry for gpg - https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-gpg-key
+  mkdir -p ~/.gnupg
   echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
   killall gpg-agent
 
