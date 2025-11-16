@@ -64,6 +64,7 @@ plugins=(
   izhangzhihao.rainbow.brackets                                  # `Rainbow Brackets` - https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
   ru.meanmail.plugin.requirements                                # `Requirements` - https://plugins.jetbrains.com/plugin/10837-requirements
   com.intellij.properties.bundle.editor                          # `Resource Bundle Editor` - https://plugins.jetbrains.com/plugin/17035-resource-bundle-editor
+  org.jvmlet.intellij.reveal-dependency-plugin                   # `Reveal gradle dependency in external libraries tree.` - https://plugins.jetbrains.com/plugin/11236-reveal-gradle-dependency-in-external-libraries-tree-
   com.jetbrains.rust                                             # `Rust` - https://plugins.jetbrains.com/plugin/22407-rust
   org.intellij.scala                                             # `Scala` - https://plugins.jetbrains.com/plugin/1347-scala
   String Manipulation                                            # `String Manipulation` - https://plugins.jetbrains.com/plugin/2162-string-manipulation
