@@ -2,6 +2,8 @@
 #  Common Alias' Files
 ##
 
+alias ctf="cd /Users/ccarini/GitHub/GitJournal/CTF/2025-10-20\ -\ LinkedIn\ CTF\ -\ IC\ Career\ Development\ Week;echo -e \"\n🧑‍💻Hack it, crack it! \n\n    📦  Send out a nasty packet! \n\n       🎯  Hunt the system, then \033[1mattack it! \033[0m\n\n\t\t 🤖  \033[3m\033[1mLet's GOOOO! \033[0m 🤖\""
+
 # Show me color!
 alias less='less -r'
 alias tree='tree -C'
