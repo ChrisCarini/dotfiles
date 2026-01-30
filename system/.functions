@@ -22,7 +22,7 @@ append_path() {
         # Only append if it's not already in the PATH
         case ":$CLEANED_PATH:" in
             *":$NEW_PATH:"*) ;;  # Already in PATH; do nothing
-            *) PATH="${CLEANED_PATH}:$NEW_PATH" ;;
+            *) PATH="${CLEANED_PATH:+$CLEANED_PATH:}$NEW_PATH" ;;
         esac
     else
         echo "Warning: '$NEW_PATH' is not a valid directory. Skipping." >&2
@@ -230,7 +230,7 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
   PR="$1"
 
   RESULT_CODE="0"
-  
+
   REQ_CHECKS_PASSED_COUNT=3
   CHECKS_PASSED_COUNT=$REQ_CHECKS_PASSED_COUNT
   while true; do
@@ -244,10 +244,10 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
       CHECKS_PASSED_COUNT=$((CHECKS_PASSED_COUNT - 1))
       echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checks passed $((REQ_CHECKS_PASSED_COUNT - CHECKS_PASSED_COUNT)) times..."
       LENGTH=$((LENGTH + 1))
-    else 
+    else
       CHECKS_PASSED_COUNT=$REQ_CHECKS_PASSED_COUNT
     fi
-    
+
     # If all checks have passed 3 times in a row, break out of the loop
     if [[ "$CHECKS_PASSED_COUNT" -eq 0 ]]; then
       break
@@ -269,18 +269,18 @@ is_pr_published() {
   PR="$1"
 
   RESULT_CODE="0"
-  
+
   while true; do
     RESULTS=$(gh pr view --json comments "$PR" | jq '.comments | max_by(.createdAt) | {author: .author.login, body: .body}' | jq -r .body | \grep -E "(Published version\:|published version) (.*)")
     RESULT_CODE=$?
-    
+
     # if RESULT_CODE is 0, then the PR has been published
     if [[ "$RESULT_CODE" -eq 0 ]]; then
       echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #$PR has been published!"
       echo "[$(date +"%Y-%m-%d %H:%M:%S")] ${RESULTS}                            " # extra space to clear prev line
       break
     fi
-    
+
     echo "                                                                       " # lots of spaces to clear the line
     echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR #$PR to be published..."
     sleep 5
@@ -393,7 +393,7 @@ perf() {
 dig() {
   # function that calls `dig` but will first strip of `http` or `https` from the URL
   # and any trailing slashes, then calling `dig` with the stripped URL
-  # Example: dig https://www.google.com/ -> dig www.google.com  
+  # Example: dig https://www.google.com/ -> dig www.google.com
   local args=()
   local domain_found=false
 
