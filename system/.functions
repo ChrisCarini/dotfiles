@@ -296,10 +296,10 @@ is_pr_published() {
 }
 
 is_pr_merged() {
-  PR_NUM=$1
-  echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checking if PR #${PR_NUM} is merged..."
-  until [[ "$(gh pr view "${PR_NUM}" --json state --jq .state)" == "MERGED" ]]; do
-    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR #${PR_NUM} to be merged..."
+  PR=$1
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checking if PR ${PR} is merged..."
+  until [[ "$(gh pr view "${PR}" --json state --jq .state)" == "MERGED" ]]; do
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR ${PR} to be merged..."
     sleep 5
     tput cuu 1 # move the cursor up 1 line to overwrite the previous output
   done
