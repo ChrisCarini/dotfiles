@@ -259,15 +259,15 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
     if [[ "$CHECKS_PASSED_COUNT" -eq 0 ]]; then
       break
     fi
-    echo "                                                                       " # lots of spaces to clear the line
-    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR #$PR..."
+    printf "%*s\n" "$(tput cols)" "" # full terminal width of spaces to clear the line
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR $PR..."
     sleep 5
     tput cuu "$((LENGTH + 2))" # move the cursor up N+1 lines to overwrite the previous output
   done
 
   echo "All checks passed (confirmed $REQ_CHECKS_PASSED_COUNT times)!"
 
-  echo "Marking PR Ready For Review & enabling Auto-Merge"
+  printf "%-*s\n" "$(tput cols)" "Marking PR Ready For Review & enabling Auto-Merge on ${PR}" # pad to full terminal width to clear prev line
   gh pr ready "$PR"
   gh pr merge --auto --squash "$PR"
 }
@@ -283,13 +283,13 @@ is_pr_published() {
 
     # if RESULT_CODE is 0, then the PR has been published
     if [[ "$RESULT_CODE" -eq 0 ]]; then
-      echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #$PR has been published!"
+      echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR $PR has been published!"
       echo "[$(date +"%Y-%m-%d %H:%M:%S")] ${RESULTS}                            " # extra space to clear prev line
       break
     fi
 
-    echo "                                                                       " # lots of spaces to clear the line
-    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR #$PR to be published..."
+    printf "%*s\n" "$(tput cols)" "" # full terminal width of spaces to clear the line
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for PR $PR to be published..."
     sleep 5
     tput cuu 2 # move the cursor up 2 lines to overwrite the previous output
   done
@@ -303,7 +303,7 @@ is_pr_merged() {
     sleep 5
     tput cuu 1 # move the cursor up 1 line to overwrite the previous output
   done
-  echo "[$(date +"%Y-%m-%d %H:%M:%S")] PR #${PR_NUM} is merged!                         " # extra space to clear prev line
+  printf "%-*s\n" "$(tput cols)" "[$(date +"%Y-%m-%d %H:%M:%S")] PR ${PR} is merged!" # pad to full terminal width to clear prev line
 }
 
 # TODO(ChrisCarini) - Turn this into a `gh extension` command. See `GitJournal/Projects/PROJECT_IDEAS.md` for more info.
