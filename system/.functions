@@ -238,7 +238,14 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
     LENGTH=$(echo "$RESULTS" | wc -l)
     STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "Code Ownership" | \grep -v "SUCCESS" | \grep -v "NEUTRAL" | \grep -Ev "COMPLETED \s* SKIPPED" | \grep -Ev "SonarQube Code Analysis \s* COMPLETED \s* FAILURE") # We don't want the results itself, just the status code
     RESULT_CODE=$?
-    echo "$RESULTS"
+    echo "$RESULTS" | sed \
+        -e $'s/COMPLETED/\033[32mCOMPLETED\033[0m/g' \
+        -e $'s/QUEUED/\033[33mQUEUED\033[0m/g' \
+        -e $'s/SUCCESS/\033[32mSUCCESS\033[0m/g' \
+        -e $'s/SKIPPED/\033[94mSKIPPED\033[0m/g' \
+        -e $'s/NEUTRAL/\033[33mNEUTRAL\033[0m/g' \
+        -e $'s/FAILURE/\033[31mFAILURE\033[0m/g' \
+        -e $'s/IN_PROGRESS/\033[36mIN_PROGRESS\033[0m/g';
     # If this status check passed, decrement the checks passed count; otherwise reset to 3
     if [[ -z "$STATUS" ]]; then
       CHECKS_PASSED_COUNT=$((CHECKS_PASSED_COUNT - 1))
