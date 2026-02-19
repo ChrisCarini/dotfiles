@@ -238,6 +238,7 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
     LENGTH=$(echo "$RESULTS" | wc -l)
     STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "Code Ownership" | \grep -v "SUCCESS" | \grep -v "NEUTRAL" | \grep -Ev "COMPLETED \s* SKIPPED" | \grep -Ev "SonarQube Code Analysis \s* COMPLETED \s* FAILURE") # We don't want the results itself, just the status code
     RESULT_CODE=$?
+    printf '%0.s=' $(seq 1 "$(tput cols)") && echo # full terminal width of '=' to visually separate iterations
     echo "$RESULTS" | sed \
         -e $'s/COMPLETED/\033[32mCOMPLETED\033[0m/g' \
         -e $'s/QUEUED/\033[33mQUEUED\033[0m/g' \
@@ -260,9 +261,12 @@ mark_pr_ready_and_auto_merge_on_checks_complete() {
       break
     fi
     printf "%*s\n" "$(tput cols)" "" # full terminal width of spaces to clear the line
-    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR $PR..."
+    WAITING_MSG="[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR $PR..."
+    echo "$WAITING_MSG"
+    printf '%0.s=' $(seq 1 "$(tput cols)") && echo # full terminal width of '=' to visually separate iterations
     sleep 5
-    tput cuu "$((LENGTH + 2))" # move the cursor up N+1 lines to overwrite the previous output
+    WAITING_MSG_LINES=$(( (${#WAITING_MSG} + $(tput cols) - 1) / $(tput cols) )) # ceiling division to account for line wrap
+    tput cuu "$((LENGTH + 3 + WAITING_MSG_LINES))" # move the cursor up to overwrite the previous output
   done
 
   echo "All checks passed (confirmed $REQ_CHECKS_PASSED_COUNT times)!"
