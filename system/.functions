@@ -229,6 +229,14 @@ git-delete-local-branches-squash-merged-into-master-with-dry-run-flag() {
 mark_pr_ready_and_auto_merge_on_checks_complete() {
   PR="$1"
 
+  # Check if PR is already marked ready (i.e., not in draft state) and auto-merge is enabled
+  IS_DRAFT=$(gh pr view "$PR" --json isDraft --jq .isDraft)
+  AUTO_MERGE=$(gh pr view "$PR" --json autoMergeRequest --jq '.autoMergeRequest != null')
+  if [[ "$IS_DRAFT" == "false" && "$AUTO_MERGE" == "true" ]]; then
+    echo "PR ${PR} is already marked as ready and has auto-merge enabled. Skipping..."
+    return
+  fi
+
   RESULT_CODE="0"
 
   REQ_CHECKS_PASSED_COUNT=3
