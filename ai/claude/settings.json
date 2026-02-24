@@ -1,8 +1,73 @@
 {
   "model": "opus",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"' && say \"Claude wants your attention on $(basename $(pwd))\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/ccarini/.claude/workflow-tracker/scripts/session-start.js\"",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/ccarini/.claude/workflow-tracker/scripts/session-end.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/ccarini/.claude/workflow-tracker/scripts/track-commit.js\"",
+            "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/ccarini/.claude/workflow-tracker/scripts/track-activity.js\"",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
+  },
+  "enabledPlugins": {
+    "library-specs@linkedin-plugins": true,
+    "linkedin-cli-tools@linkedin-plugins": true,
+    "linkedin-dev-workflow@linkedin-plugins": true,
+    "linkedin-framework@linkedin-plugins": true,
+    "linkedin-plugin-creator@linkedin-plugins": true,
+    "mae-core@linkedin-plugins": true,
+    "mp-rules@linkedin-plugins": true,
+    "observe-agent@linkedin-plugins": true
   }
 }

@@ -191,6 +191,11 @@ for DOTFILE in "$DOTFILES_DIR"/git/.{gitconfig,gitignore_global}; do
   [[ -f "$DOTFILE" ]] && ln -sfv "$DOTFILE" ~
 done
 
+#############################
+title "Install AI files"
+#############################
+. "$DOTFILES_DIR/ai/claude_install.sh"
+
 # Install work applications, should any exist. Do this before installing IntelliJ plugins, as the apps need to exist first.
 if [[ -f "$DOTFILES_DIR/work/install/apps.sh" ]]; then
   ###########################################

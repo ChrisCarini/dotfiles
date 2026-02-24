@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# NOTES:
+# See more customizations here: https://www.reddit.com/r/ClaudeAI/comments/1qc72yz/built_a_statusline_for_claude_code_that_shows/
+
+
 # Read all of stdin into a variable
 input=$(cat)
 
@@ -8,6 +13,15 @@ DIR=$(echo "$input" | jq -r '.workspace.current_dir')
 DURATION_MS=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 MODEL=$(echo "$input" | jq -r '.model.display_name')
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
+
+## Cache
+CACHE_FILE="/tmp/statusline-git-cache_${DIR##*/}"
+CACHE_MAX_AGE=15  # seconds
+cache_is_stale() {
+    # stat -f %m is macOS, stat -c %Y is Linux
+    [ ! -f "$CACHE_FILE" ] || \
+    [ $(($(date +%s) - $(stat -f %m "$CACHE_FILE" 2>/dev/null || stat -c %Y "$CACHE_FILE" 2>/dev/null || echo 0))) -gt $CACHE_MAX_AGE ]
+}
 
 # Colors
 RED='\033[31m'
@@ -21,19 +35,20 @@ RESET='\033[0m'
 ##
 
 # $BRANCH - Compute branch
-DIR_AND_BRANCH="${DIR##*/}"
-if git rev-parse --git-dir > /dev/null 2>&1; then
-    BRANCH=$(git branch --show-current 2>/dev/null)
-    STAGED=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
-    MODIFIED=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
+if cache_is_stale; then
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+      BRANCH=$(git branch --show-current 2>/dev/null)
+      STAGED=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
+      MODIFIED=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
 
-    GIT_STATUS=""
-    [ "$STAGED" -gt 0 ] && GIT_STATUS="${GREEN}+${STAGED}${RESET}"
-    [ "$MODIFIED" -gt 0 ] && GIT_STATUS="${GIT_STATUS}${YELLOW}~${MODIFIED}${RESET}"
+      GIT_STATUS=""
+      [ "$STAGED" -gt 0 ] && GIT_STATUS="${GREEN}+${STAGED}${RESET}"
+      [ "$MODIFIED" -gt 0 ] && GIT_STATUS="${GIT_STATUS}${YELLOW}~${MODIFIED}${RESET}"
 
-    DIR_AND_BRANCH="${DIR_AND_BRANCH} | 🌿 $BRANCH $GIT_STATUS"
+      echo -e "${DIR##*/} | 🌿 $BRANCH $GIT_STATUS" > "$CACHE_FILE"
+  fi
 fi
-
+read -r DIR_AND_BRANCH < "$CACHE_FILE"
 
 # ${BAR_COLOR} - Pick bar color based on context usage
 if [ "$PCT" -ge 90 ]; then BAR_COLOR="$RED"
