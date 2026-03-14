@@ -1,0 +1,111 @@
+##
+#  Weather functions (NWS API)
+##
+
+# Fetch and display the current weather for your location.
+# Uses ipinfo.io for geolocation and the National Weather Service API for forecast data.
+# Usage: weather
+weather() {
+  local bold reset cyan yellow white dim
+  bold=$(tput bold)
+  reset=$(tput sgr0)
+  cyan=$(tput setaf 6)
+  yellow=$(tput setaf 3)
+  white=$(tput setaf 7)
+  dim=$(tput dim)
+
+  # 1. Geolocate via IP
+  local geo
+  geo=$(curl -sf "https://ipinfo.io/json")
+  if [[ -z "$geo" ]]; then
+    echo "${bold}$(tput setaf 1)Error:${reset} Could not determine location."
+    return 1
+  fi
+
+  local city loc
+  city=$(echo "$geo" | python3 -c "import sys,json; d=json.load(sys.stdin); print(f\"{d['city']}, {d['region']}\")")
+  loc=$(echo "$geo" | python3 -c "import sys,json; print(json.load(sys.stdin)['loc'])")
+  local lat lon
+  lat=${loc%,*}
+  lon=${loc#*,}
+
+  # 2. Resolve NWS grid point
+  local points
+  points=$(curl -sf "https://api.weather.gov/points/${lat},${lon}")
+  if [[ -z "$points" ]]; then
+    echo "${bold}$(tput setaf 1)Error:${reset} Could not resolve NWS grid point for ${city}."
+    return 1
+  fi
+
+  local forecast_url
+  forecast_url=$(echo "$points" | python3 -c "import sys,json; print(json.load(sys.stdin)['properties']['forecast'])")
+
+  # 3. Fetch forecast
+  local forecast
+  forecast=$(curl -sf "$forecast_url")
+  if [[ -z "$forecast" ]]; then
+    echo "${bold}$(tput setaf 1)Error:${reset} Could not fetch forecast."
+    return 1
+  fi
+
+  # 4. Parse periods
+  local weather_data
+  weather_data=$(echo "$forecast" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+periods = data['properties']['periods']
+for p in periods[:6]:
+    name = p['name']
+    temp = p['temperature']
+    unit = p['temperatureUnit']
+    short = p['shortForecast']
+    wind = p['windSpeed']
+    wind_dir = p['windDirection']
+    precip = p.get('probabilityOfPrecipitation', {}).get('value', 0) or 0
+    detail = p['detailedForecast']
+    print(f'{name}|{temp}|{unit}|{short}|{wind}|{wind_dir}|{precip}|{detail}')
+")
+
+  # 5. Display
+  echo ""
+  echo "  ${bold}${cyan}Weather for ${city}${reset}"
+  echo "  ${dim}$(date '+%A, %B %d %Y  %I:%M %p')${reset}"
+  echo ""
+
+  local first_detail=""
+  local first_name="" first_temp="" first_unit="" first_short=""
+  while IFS='|' read -r name temp unit short wind wind_dir precip detail; do
+    if [[ -z "$first_detail" ]]; then
+      first_name="$name"
+      first_temp="$temp"
+      first_unit="$unit"
+      first_short="$short"
+      first_detail="$detail"
+    fi
+
+    local temp_color="$white"
+    if [[ "$unit" == "F" ]]; then
+      if (( temp >= 80 )); then temp_color=$(tput setaf 1)   # red
+      elif (( temp >= 60 )); then temp_color=$(tput setaf 3)  # yellow
+      elif (( temp >= 40 )); then temp_color=$(tput setaf 6)  # cyan
+      else temp_color=$(tput setaf 4)                          # blue
+      fi
+    fi
+
+    local precip_str=""
+    if (( precip > 0 )); then
+      precip_str=" ${dim}| Rain: ${precip}%${reset}"
+    fi
+
+    printf "  ${bold}%-17s${reset} ${temp_color}%3d°%s${reset}  %-22s ${dim}Wind: %s %s${reset}%s\n" \
+      "$name" "$temp" "$unit" "$short" "$wind" "$wind_dir" "$precip_str"
+  done <<< "$weather_data"
+
+  echo ""
+  echo "  ${dim}${first_detail}${reset}"
+  echo ""
+
+  # 6. Speak the current conditions
+  speak_set "Weather for ${city} - ${first_detail}"
+  { speak > /dev/null 2>&1 & } 2>/dev/null
+}
