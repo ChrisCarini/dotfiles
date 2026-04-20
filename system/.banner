@@ -16,35 +16,35 @@ unset _banner_config
 
 
 CAFlag() {
-  echo -e " __________________________________________________________________________________________"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}              ${B_RED_TX}╣▌${B_WHITE}                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}            ${B_RED_TX}╙▀██▌Γ${B_WHITE}                                                                        ${B_RESET}|"
-  echo -e "|${B_WHITE}             ${B_RED_TX}▀Γ╙▀µ${B_WHITE}                                                                        ${B_RESET}|"
-  echo -e "|${B_WHITE}                                     ${B_BROWN},▄▄▒▒▒▄,${B_WHITE}    ${B_BROWN},,▄▄▄,,${B_WHITE}                                  ${B_RESET}|"
-  echo -e "|${B_WHITE}                                 ${B_BROWN},▄▒▓▓█▌▒▒▒▒▒███▌██▓▓▓▓█▓█▄╕${B_WHITE}                              ${B_RESET}|"
-  echo -e "|${B_WHITE}                            ${B_BROWN}ƒ▄╬▌▓▓▒╣▓▌▒█▒▒╣█▒▒▒▒▒▒▒█▓▓▓▒█▒▒╣▓╕${B_WHITE}                            ${B_RESET}|"
-  echo -e "|${B_WHITE}                           ${B_BROWN}▄▌▌▒██▓▓▓▓▓▓▌▒▒▓█▓▌▒▒╣▌▒▓▓▓▒▌▒╣▌▓▓▓▌${B_WHITE}                           ${B_RESET}|"
-  echo -e "|${B_WHITE}                          ${B_BROWN},██▓▓▒▒▒▓▓▓▓▓▌▒▓▓▒▒▒▒▒█▓▓▓█▒█▒▒▓▓▓▒▓▓${B_WHITE}                           ${B_RESET}|"
-  echo -e "|${B_WHITE}                         ${B_BROWN}╨██▓▓▓▌▒▀▀Γ╟█▒▒█▓▓▌▌▒▌▓▓▓▓▓█▒▒▓▓█▒▒▓▓▓µ${B_WHITE}                          ${B_RESET}|"
-  echo -e "|${B_WHITE}                           ${B_BROWN}^▀Γ└Γ${B_WHITE}    ${B_BROWN}▌▌▓▓▓▀█▓▓█▓▄${B_WHITE} ${B_BROWN}└║█╣▒▓▓▓▓▓▓█▒╫▌${B_WHITE}                          ${B_RESET}|"
-  echo -e "|${B_WHITE}                                  ${B_BROWN}╗▌▌▓▓█${B_WHITE}   ${B_BROWN}╙▀▌▓▓${B_WHITE}  ${B_BROWN}▐▒▓▓▓█Γ${B_RESET} ${B_BROWN}╙███▓▓▄${B_WHITE}                         ${B_RESET}|"
-  echo -e "|${B_WHITE}                               ${B_BROWN}▄▄▓▓▓▓${B_GREEN}▓▓▓▓▓▓${B_BROWN}▓▓▓▓${B_GREEN}▓▒${B_BROWN}▄▓▓▓▓${B_GREEN}▓▓▓▓▌▒${B_BROWN}▄▄▓▓▓▄╦${B_WHITE}                       ${B_RESET}|"
-  echo -e "|${B_WHITE}                    ${B_GREEN},▄▄▌▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▄${B_WHITE}                  ${B_RESET}|"
-  echo -e "|${B_WHITE}                  ${B_GREEN}└ ΓΓΓΓΓΓΓΓ${B_RESET}   ${B_GREEN}ΓΓΓΓΓ▀▀▀▀▀ΓΓΓΓ${B_WHITE}  ${B_GREEN}.${B_WHITE}              ${B_GREEN}.${B_WHITE} ${B_GREEN}...${B_WHITE}                       ${B_RESET}|"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_WHITE}               ${B_BROWN}▓Γ▀ ╬█ █  █j▓▄,▓ ▓▐▌▄▌█▌╫µ▌ ▓▌     ▓▄█╟▌▄]▓▄▌╫µ╟µ▓▄▓▐▌ ╠▌▓Γ▀${B_WHITE}               ${B_RESET}|"
-  echo -e "|${B_WHITE}               ${B_BROWN}▓,▄]█▀▌█▄,█j▌  ▓,▓▐▌╙▌█╨▓µ▌╫▀█µ    ▌ ▓╟▌▄j▌  ╫▄▄m▓▄▓▐▌,╠▌▓,▄${B_WHITE}               ${B_RESET}|"
-  echo -e "|${B_WHITE}                                                                                          ${B_RESET}|"
-  echo -e "|${B_RED_SB},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${B_RESET}|"
-  echo -e "|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}"
-  echo -e "|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}"
-  echo -e "|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}"
-  echo -e "|${B_UNDERLINE}${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}${B_NO_UNDERLINE}|${B_RESET}"
-  echo -e ""
+  echo -e " __________________________________________________________________________________________
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_WHITE}              ${B_RED_TX}╣▌${B_WHITE}                                                                          ${B_RESET}|
+|${B_WHITE}            ${B_RED_TX}╙▀██▌Γ${B_WHITE}                                                                        ${B_RESET}|
+|${B_WHITE}             ${B_RED_TX}▀Γ╙▀µ${B_WHITE}                                                                        ${B_RESET}|
+|${B_WHITE}                                     ${B_BROWN},▄▄▒▒▒▄,${B_WHITE}    ${B_BROWN},,▄▄▄,,${B_WHITE}                                  ${B_RESET}|
+|${B_WHITE}                                 ${B_BROWN},▄▒▓▓█▌▒▒▒▒▒███▌██▓▓▓▓█▓█▄╕${B_WHITE}                              ${B_RESET}|
+|${B_WHITE}                            ${B_BROWN}ƒ▄╬▌▓▓▒╣▓▌▒█▒▒╣█▒▒▒▒▒▒▒█▓▓▓▒█▒▒╣▓╕${B_WHITE}                            ${B_RESET}|
+|${B_WHITE}                           ${B_BROWN}▄▌▌▒██▓▓▓▓▓▓▌▒▒▓█▓▌▒▒╣▌▒▓▓▓▒▌▒╣▌▓▓▓▌${B_WHITE}                           ${B_RESET}|
+|${B_WHITE}                          ${B_BROWN},██▓▓▒▒▒▓▓▓▓▓▌▒▓▓▒▒▒▒▒█▓▓▓█▒█▒▒▓▓▓▒▓▓${B_WHITE}                           ${B_RESET}|
+|${B_WHITE}                         ${B_BROWN}╨██▓▓▓▌▒▀▀Γ╟█▒▒█▓▓▌▌▒▌▓▓▓▓▓█▒▒▓▓█▒▒▓▓▓µ${B_WHITE}                          ${B_RESET}|
+|${B_WHITE}                           ${B_BROWN}^▀Γ└Γ${B_WHITE}    ${B_BROWN}▌▌▓▓▓▀█▓▓█▓▄${B_WHITE} ${B_BROWN}└║█╣▒▓▓▓▓▓▓█▒╫▌${B_WHITE}                          ${B_RESET}|
+|${B_WHITE}                                  ${B_BROWN}╗▌▌▓▓█${B_WHITE}   ${B_BROWN}╙▀▌▓▓${B_WHITE}  ${B_BROWN}▐▒▓▓▓█Γ${B_RESET} ${B_BROWN}╙███▓▓▄${B_WHITE}                         ${B_RESET}|
+|${B_WHITE}                               ${B_BROWN}▄▄▓▓▓▓${B_GREEN}▓▓▓▓▓▓${B_BROWN}▓▓▓▓${B_GREEN}▓▒${B_BROWN}▄▓▓▓▓${B_GREEN}▓▓▓▓▌▒${B_BROWN}▄▄▓▓▓▄╦${B_WHITE}                       ${B_RESET}|
+|${B_WHITE}                    ${B_GREEN},▄▄▌▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▄${B_WHITE}                  ${B_RESET}|
+|${B_WHITE}                  ${B_GREEN}└ ΓΓΓΓΓΓΓΓ${B_RESET}   ${B_GREEN}ΓΓΓΓΓ▀▀▀▀▀ΓΓΓΓ${B_WHITE}  ${B_GREEN}.${B_WHITE}              ${B_GREEN}.${B_WHITE} ${B_GREEN}...${B_WHITE}                       ${B_RESET}|
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_WHITE}               ${B_BROWN}▓Γ▀ ╬█ █  █j▓▄,▓ ▓▐▌▄▌█▌╫µ▌ ▓▌     ▓▄█╟▌▄]▓▄▌╫µ╟µ▓▄▓▐▌ ╠▌▓Γ▀${B_WHITE}               ${B_RESET}|
+|${B_WHITE}               ${B_BROWN}▓,▄]█▀▌█▄,█j▌  ▓,▓▐▌╙▌█╨▓µ▌╫▀█µ    ▌ ▓╟▌▄j▌  ╫▄▄m▓▄▓▐▌,╠▌▓,▄${B_WHITE}               ${B_RESET}|
+|${B_WHITE}                                                                                          ${B_RESET}|
+|${B_RED_SB},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${B_RESET}|
+|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}
+|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}
+|${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}|${B_RESET}
+|${B_UNDERLINE}${B_RED_SB}██████████████████████████████████████████████████████████████████████████████████████████${B_RESET}${B_NO_UNDERLINE}|${B_RESET}
+"
 }
 
 

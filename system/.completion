@@ -1,21 +1,82 @@
-# Bash
-BREW_PREFIX=$(brew --prefix)
-BASH_COMPLETION_LOC="$BREW_PREFIX/etc/bash_completion"
-
-if is-executable brew && [ -f "$BASH_COMPLETION_LOC" ]; then
-  . "$BASH_COMPLETION_LOC"
+# Bash completion (v2 lazy-loading; requires bash 4.2+ and bash-completion@2)
+#
+# bash-completion@2 has two loading mechanisms:
+#   1. LAZY (fast): completions in share/bash-completion/completions/ are loaded
+#      on first tab-press for each command. This is the main win.
+#   2. EAGER (slow): files in BASH_COMPLETION_COMPAT_DIR are sourced at startup
+#      for tools that only ship v1-style completions.
+#
+# Homebrew's default compat dir has ~38 files (~400ms). We point to a managed
+# dir with only the ~13 we actually use (~130ms). To update the managed dir:
+#
+#   update-bash-completion-compat          # rebuild symlinks
+#   update-bash-completion-compat --diff   # see what's excluded
+#
+# Install: brew install bash-completion@2
+# Requires: /opt/homebrew/bin/bash (5.x) as your shell
+if [[ ${BASH_VERSINFO[0]} -ge 4 ]] && [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]]; then
+    # Use managed compat dir (curated subset of Homebrew's compat files).
+    # Falls back to Homebrew's default dir if managed dir doesn't exist yet.
+    _managed_compat="${HOME}/.local/share/bash-completion-compat"
+    if [[ -d "$_managed_compat" ]]; then
+        export BASH_COMPLETION_COMPAT_DIR="$_managed_compat"
+    else
+        export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d"
+    fi
+    unset _managed_compat
+    . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+elif is-executable brew; then
+    # Fallback for bash 3.2: eager-load bash-completion v1
+    BREW_PREFIX=$(brew --prefix)
+    BASH_COMPLETION_LOC="$BREW_PREFIX/etc/bash_completion"
+    [ -f "$BASH_COMPLETION_LOC" ] && . "$BASH_COMPLETION_LOC"
+    unset BREW_PREFIX BASH_COMPLETION_LOC
 fi
-
-unset BREW_PREFIX BASH_COMPLETION_LOC
-
 
 # Dotfiles
 _dotfiles_completions() {
   local cur="${COMP_WORDS[COMP_CWORD]}"
   COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
 }
-
-# `gh` CLI completions for bash -> https://cli.github.com/manual/gh_completion
-eval "$(gh completion -s bash)"
-
 complete -o default -F _dotfiles_completions dotfiles
+
+# `gh` CLI completions — cached for speed, regenerates when binary changes or weekly
+#
+# Regeneration triggers (checked with zero subprocesses):
+#   - Cache file missing
+#   - gh binary is newer than cache (e.g., after brew upgrade)
+#   - Cache is older than 7 days (find is the only subprocess, and only in this path)
+#
+# To force regeneration: rm ~/.cache/gh_bash_completion
+_gh_completion_cache="$HOME/.cache/gh_bash_completion"
+_gh_needs_regen=false
+
+if [[ ! -f "$_gh_completion_cache" ]]; then
+    _gh_needs_regen=true
+else
+    # Check if gh binary was updated (mtime newer than cache) — pure bash, no subprocess
+    _gh_binary=$(type -P gh 2>/dev/null)
+    if [[ -n "$_gh_binary" && "$_gh_binary" -nt "$_gh_completion_cache" ]]; then
+        _gh_needs_regen=true
+    fi
+    unset _gh_binary
+
+    # Weekly freshness check as a fallback
+    if [[ "$_gh_needs_regen" == false ]]; then
+        _gh_stale=$(find "$_gh_completion_cache" -mtime +7 2>/dev/null)
+        [[ -n "$_gh_stale" ]] && _gh_needs_regen=true
+        unset _gh_stale
+    fi
+fi
+
+if [[ "$_gh_needs_regen" == true ]]; then
+    _gh_binary=$(type -P gh 2>/dev/null)
+    if [[ -n "$_gh_binary" ]]; then
+        mkdir -p "$HOME/.cache"
+        gh completion -s bash > "$_gh_completion_cache" 2>/dev/null
+    fi
+    unset _gh_binary
+fi
+
+[[ -r "$_gh_completion_cache" ]] && . "$_gh_completion_cache"
+unset _gh_completion_cache _gh_needs_regen

@@ -36,7 +36,8 @@ brew upgrade
 brew tap jakehilborn/jakehilborn
 
 apps=(
-  bash-completion
+  bash  # Homebrew Bash 5.x (required for bash-completion@2 lazy-loading)
+  bash-completion@2  # Lazy-loads completions on demand; requires Bash 4.2+
   basictex  # for converting Markdown to PDF via `pandoc` in `GitJournal/Work/Self\ Assessment/markdown2pdf.sh`
   brew-cask-completion
   coreutils

@@ -17,13 +17,19 @@ append_path "/usr/local/sbin"
 export GOPATH="$HOME/go"
 append_path "$GOPATH/bin"
 
-# # Remove duplicates (preserving prepended items)
-# # Source: http://unix.stackexchange.com/a/40755
-# PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
-
-# remove duplicates in PATH:
-PATH=$(echo ${PATH} | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
-PATH="${PATH%:}"    # remove trailing colon
+# Remove duplicates in PATH (pure bash, no subprocesses)
+_dedup_path() {
+    local IFS=: new_path="" seen="" p
+    for p in $PATH; do
+        case ":$seen:" in
+            *":$p:"*) ;;
+            *) new_path="${new_path:+$new_path:}$p"; seen="$seen:$p" ;;
+        esac
+    done
+    PATH="$new_path"
+}
+_dedup_path
+unset -f _dedup_path
 
 # Wrap up
 export PATH

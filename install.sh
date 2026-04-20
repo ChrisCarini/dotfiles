@@ -81,15 +81,19 @@ sudo --validate || exit 1
 echo "${USER_SUDOER}" | /usr/bin/sudo -E -- /usr/bin/tee -a "${TMP_SUDOERS_D_FILE}" >/dev/null
 /usr/bin/sudo chmod 644 "${TMP_SUDOERS_D_FILE}"
 
-########################################
-title "Ensure shell is set to /bin/bash"
-########################################
-if [[ "$SHELL" != "/bin/bash" ]]; then
-  echo "Default shell for $USER is $SHELL and NOT /bin/bash, changing to /bin/bash..."
-  sudo chsh -s /bin/bash $USER
-else
-  echo "Default shell for $USER is $SHELL, proceeding..."
-fi
+####################################
+title "Ensure shell is set to bash"
+####################################
+# Ensure we're on bash (not zsh/fish/etc.) before proceeding.
+# After Homebrew installs Bash 5.x, we'll switch to /opt/homebrew/bin/bash
+# for bash-completion@2 lazy-loading support.
+case "$SHELL" in
+  */bash) echo "Default shell for $USER is $SHELL (bash), proceeding..." ;;
+  *)
+    echo "Default shell for $USER is $SHELL and NOT bash, changing to /bin/bash temporarily..."
+    sudo chsh -s /bin/bash "$USER"
+    ;;
+esac
 
 ########################################################
 title "Copy ~/.ssh directory over from previous machine"
@@ -224,6 +228,49 @@ if is-macos; then
     . "$DOTFILES_DIR/work/install/intellij-plugins.sh"
   fi
   . "$DOTFILES_DIR/install/misc.sh"
+
+  ########################################################
+  title "Switch default shell to Homebrew Bash 5.x"
+  ########################################################
+  # bash-completion@2 requires Bash 4.2+; Homebrew provides Bash 5.x.
+  HOMEBREW_BASH="/opt/homebrew/bin/bash"
+  if [[ -x "$HOMEBREW_BASH" ]]; then
+    # Add Homebrew bash to allowed login shells if not already present
+    if ! grep -qxF "$HOMEBREW_BASH" /etc/shells; then
+      echo "Adding $HOMEBREW_BASH to /etc/shells..."
+      echo "$HOMEBREW_BASH" | sudo tee -a /etc/shells >/dev/null
+    fi
+    # Set as default shell
+    if [[ "$SHELL" != "$HOMEBREW_BASH" ]]; then
+      echo "Changing default shell to $HOMEBREW_BASH..."
+      sudo chsh -s "$HOMEBREW_BASH" "$USER"
+    else
+      echo "Default shell is already $HOMEBREW_BASH."
+    fi
+  else
+    echo "WARNING: $HOMEBREW_BASH not found; keeping current shell ($SHELL)."
+    echo "         bash-completion@2 lazy-loading requires Bash 4.2+."
+  fi
+  unset HOMEBREW_BASH
+
+  ########################################################
+  title "Build managed bash-completion compat directory"
+  ########################################################
+  # bash-completion@2 eagerly sources BASH_COMPLETION_COMPAT_DIR at startup.
+  # Homebrew's default has ~38 files (~400ms). We build a managed dir with
+  # symlinks to only the tools we use (~130ms). See: update-bash-completion-compat
+  "$DOTFILES_DIR/bin/update-bash-completion-compat"
+
+  ########################################################
+  title "Generate gh CLI completion cache"
+  ########################################################
+  # Pre-generate so the first interactive shell starts fast.
+  if is-executable gh; then
+    mkdir -p "$HOME/.cache"
+    gh completion -s bash > "$HOME/.cache/gh_bash_completion" 2>/dev/null
+    gh --version 2>/dev/null | head -1 > "$HOME/.cache/gh_bash_completion_version"
+    echo "Cached gh bash completion."
+  fi
 fi
 
 ##########################

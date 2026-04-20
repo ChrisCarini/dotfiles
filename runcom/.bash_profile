@@ -64,4 +64,16 @@ export GPG_TTY=$(tty)
 export USER_HOME=$HOME
 
 # Setup direnv - https://direnv.net/docs/hook.html
-eval "$(direnv hook bash)"
+# Cached to avoid spawning direnv on every shell start (~30ms). The hook output
+# is stable — it only changes when direnv itself is upgraded.
+# To force regeneration: rm ~/.cache/direnv_bash_hook
+_direnv_hook_cache="$HOME/.cache/direnv_bash_hook"
+_direnv_binary=$(type -P direnv 2>/dev/null)
+if [[ -n "$_direnv_binary" ]]; then
+    if [[ ! -f "$_direnv_hook_cache" || "$_direnv_binary" -nt "$_direnv_hook_cache" ]]; then
+        mkdir -p "$HOME/.cache"
+        direnv hook bash > "$_direnv_hook_cache" 2>/dev/null
+    fi
+    [[ -r "$_direnv_hook_cache" ]] && . "$_direnv_hook_cache"
+fi
+unset _direnv_hook_cache _direnv_binary
