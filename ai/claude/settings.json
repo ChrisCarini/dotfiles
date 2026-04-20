@@ -1,5 +1,5 @@
 {
-  "model": "opus",
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -68,6 +68,19 @@
     "linkedin-plugin-creator@linkedin-plugins": true,
     "mae-core@linkedin-plugins": true,
     "mp-rules@linkedin-plugins": true,
-    "observe-agent@linkedin-plugins": true
+    "observe-agent@linkedin-plugins": true,
+    "superpowers@claude-plugins-official": true,
+    "li-plugin-tool@linkedin-plugins": true,
+    "unit-tests@linkedin-plugins": true,
+    "bpi-oncall@linkedin-plugin-sandbox": true
+  },
+  "extraKnownMarketplaces": {
+    "linkedin-plugin-sandbox": {
+      "source": {
+        "source": "github",
+        "repo": "linkedin-multiproduct/linkedin-plugin-sandbox"
+      },
+      "autoUpdate": true
+    }
   }
 }
