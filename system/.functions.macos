@@ -75,6 +75,37 @@ is_host_up() {
 	notify 'Host is Up!' "Host $1 is responding to pings." '' 'Glass'
 }
 
+# Poll a host until SSH (TCP port 22 by default) is accepting connections.
+# MacOS variant: fires a notification when SSH becomes ready.
+# Usage: is_host_ssh <host> [port]
+is_host_ssh() {
+	local host="$1"
+	local port="${2:-22}"
+	if [[ -z "$host" ]]; then
+		echo "Usage: is_host_ssh <host> [port]"
+		return 1
+	fi
+	echo "Polling $host:$port until SSH is ready..."
+	local ssh_cancelled=false
+	until \
+		nc -z -G 2 -w 2 "$host" "$port" &>/dev/null && \
+		ssh -o BatchMode=yes \
+		    -o StrictHostKeyChecking=no \
+		    -o UserKnownHostsFile=/dev/null \
+		    -o ConnectTimeout=5 \
+		    -o PreferredAuthentications=none \
+		    -p "$port" \
+		    "$host" true 2>&1 | grep -qE "Permission denied|Host key verification|Authenticated|Connection to .* closed"; do
+		echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for SSH on $host:$port..."
+		sleep 1
+	done &
+	trap "kill $!; ssh_cancelled=true" SIGINT
+	wait $!
+	trap - SIGINT
+	echo "Done polling SSH, cancelled=$ssh_cancelled"
+	notify 'SSH is Up!' "SSH on $host:$port is accepting connections." '' 'Glass'
+}
+
 gource_me() {
   if [ ! -z $1 ] ;  then
       # --user-image-dir ~/path/to/images/formatted/developer/name/from/git/commit/log/dot/png/example/Chris Carini.png

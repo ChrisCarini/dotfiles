@@ -446,6 +446,39 @@ is_host_up() {
 	echo "Done pinging, cancelled=$ping_cancelled"
 }
 
+# Poll a host until SSH (TCP port 22 by default) is accepting connections.
+# Usage: is_host_ssh <host> [port]
+is_host_ssh() {
+	local host="$1"
+	local port="${2:-22}"
+	if [[ -z "$host" ]]; then
+		echo "Usage: is_host_ssh <host> [port]"
+		return 1
+	fi
+	echo "Polling $host:$port until SSH is ready..."
+	local ssh_cancelled=false
+	# Use ssh with BatchMode to check if the SSH banner is served / a connection can be established.
+	# Exit codes of 0 (success) or 255 with auth-related failure still indicate SSH is up; we treat
+	# any successful TCP+SSH banner exchange as "up". We use `nc -z` first for a quick TCP check,
+	# then confirm with ssh that the SSH service is actually responding.
+	until \
+		nc -z -G 2 -w 2 "$host" "$port" &>/dev/null && \
+		ssh -o BatchMode=yes \
+		    -o StrictHostKeyChecking=no \
+		    -o UserKnownHostsFile=/dev/null \
+		    -o ConnectTimeout=5 \
+		    -o PreferredAuthentications=none \
+		    -p "$port" \
+		    "$host" true 2>&1 | grep -qE "Permission denied|Host key verification|Authenticated|Connection to .* closed"; do
+		echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for SSH on $host:$port..."
+		sleep 1
+	done &
+	trap "kill $!; ssh_cancelled=true" SIGINT
+	wait $!
+	trap - SIGINT
+	echo "Done polling SSH, cancelled=$ssh_cancelled"
+}
+
 # Got from SO -> https://stackoverflow.com/a/29655125
 perf() {
   curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
