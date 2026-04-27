@@ -48,8 +48,18 @@ def _validate_repo_part(value: str) -> str:
 
 def create_app(store: Store | None = None, watcher: Watcher | None = None) -> Flask:
     app = Flask(__name__)
+
+    @app.template_filter("datetime")
+    def _format_datetime(value: float | None) -> str:
+        if not value:
+            return ""
+        from datetime import datetime, timezone
+        return datetime.fromtimestamp(float(value), tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
     db_path = os.environ.get("PR_WATCHER_DB", "/data/pr-watcher.sqlite3")
-    os.makedirs(os.path.dirname(db_path), exist_ok=True) if os.path.dirname(db_path) else None
+    db_dir = os.path.dirname(db_path)
+    if db_dir:
+        os.makedirs(db_dir, exist_ok=True)
     app.store = store or Store(db_path)  # type: ignore[attr-defined]
     app.watcher = watcher or Watcher(app.store)  # type: ignore[attr-defined]
     if os.environ.get("PR_WATCHER_DISABLE_BACKGROUND") != "1":

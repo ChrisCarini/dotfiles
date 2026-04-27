@@ -80,7 +80,7 @@
                             checks green {{ pr.consecutive_ok }}× in a row
                         {% endif %}
                         {% if pr.last_checked %}
-                            · last checked {{ pr.last_checked|int }}
+                            · last checked {{ pr.last_checked|datetime }}
                         {% endif %}
                     </div>
                     {% if pr.last_message %}
