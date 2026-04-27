@@ -1,0 +1,22 @@
+services:
+  pr-watcher:
+    build: .
+    image: pr-watcher:latest
+    container_name: pr-watcher
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # A GitHub PAT (classic or fine-grained) with `repo` scope so the
+      # service can read PR check status, mark PRs ready for review and
+      # enable auto-merge.
+      GITHUB_TOKEN: ${GITHUB_TOKEN:?set GITHUB_TOKEN in your environment or .env}
+      PR_WATCHER_POLL_INTERVAL: "30"
+      PR_WATCHER_REQUIRED_PASSES: "3"
+      PR_WATCHER_MERGE_METHOD: "SQUASH"
+      LOG_LEVEL: "INFO"
+    volumes:
+      - pr-watcher-data:/data
+
+volumes:
+  pr-watcher-data:

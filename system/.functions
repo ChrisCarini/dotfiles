@@ -227,42 +227,63 @@ git-delete-local-branches-squash-merged-into-master-with-dry-run-flag() {
 }
 
 mark_pr_ready_and_auto_merge_on_checks_complete() {
-  PR="$1"
+  # Submits a PR to the pr-watcher service (see services/pr-watcher) which
+  # polls the PR's checks server-side and, once they all pass, marks the
+  # PR ready for review and enables auto-merge.
+  #
+  # Usage:
+  #   mark_pr_ready_and_auto_merge_on_checks_complete <PR-number-or-URL-or-branch>
+  #
+  # Configure the service URL with PR_WATCHER_URL (default: http://localhost:8080).
 
-  RESULT_CODE="0"
-  
-  REQ_CHECKS_PASSED_COUNT=3
-  CHECKS_PASSED_COUNT=$REQ_CHECKS_PASSED_COUNT
-  while true; do
-    RESULTS=$(gh pr view --json statusCheckRollup "$PR" --template '{{range .statusCheckRollup}}{{$x := ""}}{{if eq .conclusion "SUCCESS"}}{{$x = "✓"}}{{else if eq .conclusion "NEUTRAL"}}{{$x = "-"}}{{else}}{{$x = "*"}}{{end}}{{tablerow $x .name .status .conclusion "\033[0K"}}{{end}}{{tablerender}}')
-    LENGTH=$(echo "$RESULTS" | wc -l)
-    STATUS=$(echo "$RESULTS" | \grep -v "Owner Approval" | \grep -v "Code Ownership" | \grep -v "SUCCESS" | \grep -v "NEUTRAL" | \grep -Ev "COMPLETED \s* SKIPPED" | \grep -Ev "SonarQube Code Analysis \s* COMPLETED \s* FAILURE") # We don't want the results itself, just the status code
-    RESULT_CODE=$?
-    echo "$RESULTS"
-    # If this status check passed, decrement the checks passed count; otherwise reset to 3
-    if [[ -z "$STATUS" ]]; then
-      CHECKS_PASSED_COUNT=$((CHECKS_PASSED_COUNT - 1))
-      echo "[$(date +"%Y-%m-%d %H:%M:%S")] Checks passed $((REQ_CHECKS_PASSED_COUNT - CHECKS_PASSED_COUNT)) times..."
-      LENGTH=$((LENGTH + 1))
-    else 
-      CHECKS_PASSED_COUNT=$REQ_CHECKS_PASSED_COUNT
-    fi
-    
-    # If all checks have passed 3 times in a row, break out of the loop
-    if [[ "$CHECKS_PASSED_COUNT" -eq 0 ]]; then
-      break
-    fi
-    echo "                                                                       " # lots of spaces to clear the line
-    echo "[$(date +"%Y-%m-%d %H:%M:%S")] Waiting for checks to pass on PR #$PR..."
-    sleep 5
-    tput cuu "$((LENGTH + 2))" # move the cursor up N+1 lines to overwrite the previous output
-  done
+  local PR="$1"
+  if [[ -z "$PR" ]]; then
+    echo "Usage: mark_pr_ready_and_auto_merge_on_checks_complete <PR>" >&2
+    return 1
+  fi
 
-  echo "All checks passed (confirmed $REQ_CHECKS_PASSED_COUNT times)!"
+  local SERVICE_URL="${PR_WATCHER_URL:-http://localhost:8080}"
 
-  echo "Marking PR Ready For Review & enabling Auto-Merge"
-  gh pr ready "$PR"
-  gh pr merge --auto --squash "$PR"
+  # Resolve the PR to (owner, repo, number, url, title) using the gh CLI so
+  # we can post a fully-qualified record to the service regardless of which
+  # form the user supplied.
+  local PR_JSON
+  if ! PR_JSON=$(gh pr view "$PR" --json number,url,title,headRepositoryOwner,headRepository,baseRepository 2>/dev/null); then
+    echo "Could not resolve PR '$PR' via gh." >&2
+    return 1
+  fi
+
+  local OWNER REPO NUMBER URL TITLE
+  OWNER=$(echo "$PR_JSON" | jq -r '.baseRepository.owner.login // .headRepositoryOwner.login')
+  REPO=$(echo "$PR_JSON" | jq -r '.baseRepository.name // .headRepository.name')
+  NUMBER=$(echo "$PR_JSON" | jq -r '.number')
+  URL=$(echo "$PR_JSON" | jq -r '.url')
+  TITLE=$(echo "$PR_JSON" | jq -r '.title')
+
+  if [[ -z "$OWNER" || -z "$REPO" || -z "$NUMBER" || "$OWNER" == "null" || "$REPO" == "null" ]]; then
+    # Fall back to just submitting the URL.
+    OWNER=""
+    REPO=""
+  fi
+
+  local PAYLOAD
+  PAYLOAD=$(jq -n \
+    --arg owner "$OWNER" \
+    --arg repo "$REPO" \
+    --argjson number "${NUMBER:-0}" \
+    --arg url "$URL" \
+    --arg title "$TITLE" \
+    '{owner: $owner, repo: $repo, number: $number, url: $url, title: $title}
+     | with_entries(select(.value != "" and .value != 0 and .value != null))')
+
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] Submitting PR ${URL:-$PR} to pr-watcher at ${SERVICE_URL}..."
+  if ! curl -fsS -X POST "${SERVICE_URL}/api/prs" \
+      -H 'content-type: application/json' \
+      -d "$PAYLOAD" >/dev/null; then
+    echo "Failed to submit PR to pr-watcher at ${SERVICE_URL}." >&2
+    return 1
+  fi
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] Submitted. Track it on the dashboard: ${SERVICE_URL}/"
 }
 
 is_pr_published() {
