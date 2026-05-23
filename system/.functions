@@ -479,6 +479,59 @@ is_host_ssh() {
 	echo "Done polling SSH, cancelled=$ssh_cancelled"
 }
 
+# Wait until a specific date/time, printing a status every 10 seconds.
+# Usage: wait_until <YYYY-MM-DD> <HHMM>
+# Example: wait_until 2026-05-22 2230
+wait_until() {
+  if [[ "$1" == "--help" || "$1" == "-h" || $# -ne 2 ]]; then
+    echo "Usage: wait_until <YYYY-MM-DD> <HHMM>"
+    echo "Example: wait_until 2026-05-22 2230"
+    return 1
+  fi
+
+  local target_date="$1"
+  local target_time="$2"
+  local target_epoch now_epoch remaining target_human
+
+  # Parse target date/time into epoch seconds (BSD date on macOS)
+  if ! target_epoch=$(date -j -f "%Y-%m-%d %H%M" "$target_date $target_time" "+%s" 2>/dev/null); then
+    echo "Error: Could not parse '$target_date $target_time'. Expected format: YYYY-MM-DD HHMM" >&2
+    return 1
+  fi
+
+  now_epoch=$(date "+%s")
+  if (( target_epoch <= now_epoch )); then
+    echo "Error: target time '$target_date $target_time' is in the past." >&2
+    return 1
+  fi
+
+  target_human=$(date -j -f "%s" "$target_epoch" "+%Y-%m-%d %H:%M:%S %Z")
+  echo "[$(date +'%Y-%m-%d %H:%M:%S')] Waiting until ${target_human}..."
+
+  while true; do
+    now_epoch=$(date "+%s")
+    remaining=$(( target_epoch - now_epoch ))
+    if (( remaining <= 0 )); then
+      break
+    fi
+
+    # Format remaining as HH:MM:SS
+    local h=$(( remaining / 3600 ))
+    local m=$(( (remaining % 3600) / 60 ))
+    local s=$(( remaining % 60 ))
+    printf '[%s] %02d:%02d:%02d remaining until %s\n' \
+      "$(date +'%Y-%m-%d %H:%M:%S')" "$h" "$m" "$s" "$target_human"
+
+    if (( remaining > 10 )); then
+      sleep 10
+    else
+      sleep "$remaining"
+    fi
+  done
+
+  echo "[$(date +'%Y-%m-%d %H:%M:%S')] Reached target time: ${target_human}"
+}
+
 # Got from SO -> https://stackoverflow.com/a/29655125
 perf() {
   curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
