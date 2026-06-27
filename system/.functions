@@ -610,20 +610,34 @@ genpasswd() {
 
 extract() {
   if [[ -f "$1" ]] ; then
-      case "$1" in
-          *.tar.bz2)   tar xvjf "$1"    ;;
-          *.tar.gz)    tar xvzf "$1"    ;;
-          *.bz2)       bunzip2 "$1"     ;;
-          *.rar)       rar x "$1"       ;;
-          *.gz)        gunzip "$1"      ;;
-          *.tar)       tar xvf "$1"     ;;
-          *.jar)       jar xf "$1"      ;;
-          *.tbz2)      tar xvjf "$1"    ;;
-          *.tgz)       tar xvzf "$1"    ;;
-          *.zip)       unzip "$1"       ;;
-          *.Z)         uncompress "$1"  ;;
-          *.7z)        7z x "$1"        ;;
-          *)           if ! 7z x "$1" ; then echo "[ERROR] Sorry, don't know how to extract '$1'..." ; fi ;;
+      local archive="$1"
+      local dir
+      # Always extract into a directory named after the archive (sans extension).
+      case "$archive" in
+          *.tar.bz2)   dir="${archive%.tar.bz2}"   ;;
+          *.tar.gz)    dir="${archive%.tar.gz}"    ;;
+          *.tbz2)      dir="${archive%.tbz2}"      ;;
+          *.tgz)       dir="${archive%.tgz}"       ;;
+          *.*)         dir="${archive%.*}"         ;;
+          *)           dir="${archive}_extracted"  ;;
+      esac
+      # Guard against clobbering the archive when no extension was stripped.
+      [[ -z "$dir" || "$dir" == "$archive" ]] && dir="${archive}_extracted"
+      mkdir -p "$dir"
+      case "$archive" in
+          *.tar.bz2)   tar xvjf "$archive" -C "$dir"  ;;
+          *.tar.gz)    tar xvzf "$archive" -C "$dir"  ;;
+          *.bz2)       bunzip2 -c "$archive" > "$dir/$(basename "${archive%.bz2}")"  ;;
+          *.rar)       rar x "$archive" "$dir/"  ;;
+          *.gz)        gunzip -c "$archive" > "$dir/$(basename "${archive%.gz}")"  ;;
+          *.tar)       tar xvf "$archive" -C "$dir"  ;;
+          *.jar)       ( cd "$dir" && jar xf "$(cd "$(dirname "$archive")" && pwd)/$(basename "$archive")" )  ;;
+          *.tbz2)      tar xvjf "$archive" -C "$dir"  ;;
+          *.tgz)       tar xvzf "$archive" -C "$dir"  ;;
+          *.zip)       unzip "$archive" -d "$dir"  ;;
+          *.Z)         uncompress -c "$archive" > "$dir/$(basename "${archive%.Z}")"  ;;
+          *.7z)        7z x "$archive" -o"$dir"  ;;
+          *)           if ! 7z x "$archive" -o"$dir" ; then echo "[ERROR] Sorry, don't know how to extract '$archive'..." ; fi ;;
       esac
   else
       echo "'$1' is not a valid file!"
