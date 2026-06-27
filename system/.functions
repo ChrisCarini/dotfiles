@@ -434,19 +434,72 @@ smiley() {
     fi
 }
 
+# Optional success-notification hooks. No-ops by default; `.functions.macos`
+# overrides them to fire a desktop notification when the host/SSH is ready.
+__is_host_up_notify()  { :; }
+__is_host_ssh_notify() { :; }
+
+# Poll until a readiness command succeeds, printing a heartbeat every second.
+# The loop runs as a background job with a foreground `wait`, so a single Ctrl-C
+# (SIGINT) cancels cleanly. Wrapping the launch and `wait` in `{ ...; } 2>/dev/null`
+# plus `disown` in the trap hides every job-control notification the interactive
+# shell would otherwise print ([1] PID on start, Done on finish, Terminated on cancel).
+#
+# Usage: __poll_until <label> <readiness_cmd> [args...]
+#   <label>             shown as "Still waiting for <label>..." each second
+#   <readiness_cmd>...  command/function returning 0 once ready (output suppressed)
+# Returns: 0 once ready, 1 if cancelled with Ctrl-C.
+__poll_until() {
+	local label="$1"; shift
+	local cancelled=false poll_pid
+	{ until "$@" &>/dev/null; do echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for ${label}..."; sleep 1; done & } 2>/dev/null
+	poll_pid=$!
+	trap '{ kill "$poll_pid"; disown "$poll_pid"; } 2>/dev/null; cancelled=true' SIGINT
+	wait "$poll_pid" 2>/dev/null
+	trap - SIGINT
+	[[ "$cancelled" == true ]] && return 1
+	return 0
+}
+
 # Got from SO -> https://serverfault.com/a/42382
-# See `.functions.macos` for MacOS specific (shows notification)
+# Notification (e.g. on MacOS) is handled by `__is_host_up_notify`; see `.functions.macos` for example.
 is_host_up() {
-	echo "Pinging $1 until host is up..."
-	ping_cancelled=false    # Keep track of whether the loop was cancelled, or succeeded
-	until ping -c1 "$1" &>/dev/null; do echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for $1..."; sleep 1; done &    # The "&" backgrounds it
-	trap "kill $!; ping_cancelled =true" SIGINT
-	wait $!          # Wait for the loop to exit, one way or another
-	trap - SIGINT    # Remove the trap, now we're done with it
-	echo "Done pinging, cancelled=$ping_cancelled"
+	local host="$1"
+	echo "Pinging $host until host is up..."
+	if __poll_until "$host" ping -W1 -c1 "$host"; then
+		echo "✅ Done pinging - able to ping ${host}"
+		__is_host_up_notify "$host"
+	else
+		echo "❌ Done pinging - unable to ping ${host}"
+	fi
+}
+
+# Internal helper: returns 0 if sshd on <host>:<port> is reachable (accepting
+# connections / serving the SSH protocol), 1 otherwise. Uses only `ssh` so it
+# works in environments where `nc`/`netcat` is unavailable or blocked.
+__is_host_ssh_ready() {
+	local host="$1"
+	local port="${2:-22}"
+	local out rc
+	out=$(ssh -o BatchMode=yes \
+	          -o StrictHostKeyChecking=no \
+	          -o UserKnownHostsFile=/dev/null \
+	          -o ConnectTimeout=5 \
+	          -o PreferredAuthentications=none \
+	          -p "$port" \
+	          "$host" true 2>&1)
+	rc=$?
+	# rc == 0 means we connected and ran the command (definitely up).
+	# Otherwise sshd is still "up" if ssh reached the auth/negotiation stage;
+	# OpenSSH signals this with messages like "Permission denied". Pure
+	# connection failures (refused/timeout/unreachable/DNS, or a half-ready
+	# sshd that closes during banner exchange) do NOT match, so we keep waiting.
+	[[ $rc -eq 0 ]] && return 0
+	echo "$out" | grep -qiE "Permission denied|Host key verification failed|Authentication (failed|refused)|Too many authentication failures|Unable to negotiate|no matching"
 }
 
 # Poll a host until SSH (TCP port 22 by default) is accepting connections.
+# Notification (on MacOS) is handled by `__is_host_ssh_notify`; see `.functions.macos`.
 # Usage: is_host_ssh <host> [port]
 is_host_ssh() {
 	local host="$1"
@@ -456,27 +509,12 @@ is_host_ssh() {
 		return 1
 	fi
 	echo "Polling $host:$port until SSH is ready..."
-	local ssh_cancelled=false
-	# Use ssh with BatchMode to check if the SSH banner is served / a connection can be established.
-	# Exit codes of 0 (success) or 255 with auth-related failure still indicate SSH is up; we treat
-	# any successful TCP+SSH banner exchange as "up". We use `nc -z` first for a quick TCP check,
-	# then confirm with ssh that the SSH service is actually responding.
-	until \
-		nc -z -G 2 -w 2 "$host" "$port" &>/dev/null && \
-		ssh -o BatchMode=yes \
-		    -o StrictHostKeyChecking=no \
-		    -o UserKnownHostsFile=/dev/null \
-		    -o ConnectTimeout=5 \
-		    -o PreferredAuthentications=none \
-		    -p "$port" \
-		    "$host" true 2>&1 | grep -qE "Permission denied|Host key verification|Authenticated|Connection to .* closed"; do
-		echo "[$(date +'%Y-%m-%d @ %H:%M:%S')] Still waiting for SSH on $host:$port..."
-		sleep 1
-	done &
-	trap "kill $!; ssh_cancelled=true" SIGINT
-	wait $!
-	trap - SIGINT
-	echo "Done polling SSH, cancelled=$ssh_cancelled"
+	if __poll_until "SSH on $host:$port" __is_host_ssh_ready "$host" "$port"; then
+		echo "✅ Done polling SSH - able to connect to ${host}:${port}"
+		__is_host_ssh_notify "$host" "$port"
+	else
+		echo "❌ Done polling SSH - unable to connect to ${host}:${port}"
+	fi
 }
 
 # Wait until a specific date/time, printing a status every 10 seconds.
