@@ -82,5 +82,6 @@
       },
       "autoUpdate": true
     }
-  }
+  },
+  "theme": "light"
 }
