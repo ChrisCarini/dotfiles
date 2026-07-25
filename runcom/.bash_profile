@@ -77,3 +77,5 @@ if [[ -n "$_direnv_binary" ]]; then
     [[ -r "$_direnv_hook_cache" ]] && . "$_direnv_hook_cache"
 fi
 unset _direnv_hook_cache _direnv_binary
+
+. "$HOME/.cargo/env"
