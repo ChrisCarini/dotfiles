@@ -5,4 +5,6 @@ set showmatch
 set incsearch
 set hlsearch
 set autoread
-colorscheme desert
+set termguicolors
+colorscheme evening
+
