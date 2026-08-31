@@ -8,17 +8,14 @@ If you have suggestions or advice on any of these (or anything in this repositor
 
 ## To-Do
 
-1) IntelliJ Customizations
-    1) Install work IJ
-    1) Automatically configure IJ to point to settings repository -> https://github.com/ChrisCarini/jetbrains-settings-repository
 1) Chrome Customizations
     1) Install work userscripts to Chrome + Tampermonkey
     1) Automatically install TamperMonkey for Chrome
     1) Automatically register user-scripts with Chrome
 1) OSX Customizations
     1) Show volume in menu bar
-    1) Install YubiSwitch
-1) Script SSH keygen + upload to servers
+    2) Install YubiSwitch
+    3) Finder.app - set "View as Column" as the default.
 1) Outlook / O365 Customizations
     1) Set O365 (outlook) "mark as read after x seconds" automagically
     1) Set O365 to show BCC by default
@@ -35,9 +32,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
 
 1) Outlook - Change Calendar "Default Reminder" to 5 minutes (Settings, Calendar, Calendar Options, Default Reminder)
 1) Outlook - Change Calendar "Time Scale" to 12 hours (View, Time Scale, 12 hours)
-
-
-
 
 LOOK INTO
 =========
