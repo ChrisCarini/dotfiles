@@ -174,6 +174,109 @@ gource_me() {
   open gource-*.mp4
 }
 
+gource_me_new() {
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "gource_me must be run from inside a Git repository."
+    return 1
+  fi
+  if ! command -v gource >/dev/null 2>&1; then
+    echo "gource is not installed or is not on PATH."
+    return 1
+  fi
+  if ! command -v ffmpeg >/dev/null 2>&1; then
+    echo "ffmpeg is not installed or is not on PATH."
+    return 1
+  fi
+
+  local -a image_args=()
+  if [[ -n ${1:-} ]]; then
+    if [[ ! -d $1 ]]; then
+      echo "User image directory does not exist: $1"
+      return 1
+    fi
+    # Images must be named after Git authors, for example "Chris Carini.png".
+    image_args=(--user-image-dir "$1" --colour-images --fixed-user-size)
+  fi
+
+  local main_branch
+  main_branch=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)
+  if [[ -z $main_branch ]]; then
+    main_branch=$(git branch --show-current)
+  fi
+  main_branch=${main_branch:-HEAD}
+
+  local project_name=${PWD##*/}
+  local commit_count
+  if ! commit_count=$(git rev-list --count "$main_branch"); then
+    echo "Unable to read commit history for $main_branch."
+    return 1
+  fi
+
+  echo "Render ${project_name} over ${commit_count} commits on ${main_branch}?"
+
+  local reply
+  read -p "Proceed? [y/N] " -n 1 -r reply
+  echo
+  if [[ ! $reply =~ ^[Yy]$ ]]; then
+    echo "Exiting..."
+    return 1
+  fi
+
+  local output_file="gource-${project_name}.mp4"
+
+  gource \
+    --git-branch "$main_branch" \
+    --viewport 3840x2160 \
+    --output-framerate 60 \
+    --seconds-per-day 0.01 \
+    --auto-skip-seconds 0.5 \
+    --title "$project_name" \
+    --date-format "${project_name} - %Y-%m-%dT%H:%M:%S" \
+    --background-colour 070B14 \
+    --font-colour E6EDF3 \
+    --dir-colour 7AA2F7 \
+    --highlight-colour FFCC66 \
+    --highlight-users \
+    --multi-sampling \
+    --bloom-intensity 0.65 \
+    --bloom-multiplier 1.3 \
+    --camera-mode overview \
+    --padding 1.15 \
+    --hide filenames,dirnames,root \
+    "${image_args[@]}" \
+    --output-ppm-stream - |
+  ffmpeg \
+    -y \
+    -f image2pipe \
+    -framerate 60 \
+    -vcodec ppm \
+    -i - \
+    -vf "eq=contrast=1.04:saturation=1.10,vignette=angle=PI/5" \
+    -c:v libx264 \
+    -preset slow \
+    -crf 17 \
+    -pix_fmt yuv420p \
+    -movflags +faststart \
+    "$output_file"
+  local -a render_status=("${PIPESTATUS[@]}")
+  if (( render_status[0] != 0 || render_status[1] != 0 )); then
+    rm -f "$output_file"
+    echo "Rendering failed (gource=${render_status[0]}, ffmpeg=${render_status[1]})."
+    return 1
+  fi
+
+  echo "Created:"
+  ls -lh "$output_file"
+
+  read -p "Open video? [y/N] " -n 1 -r reply
+  echo
+  if [[ ! $reply =~ ^[Yy]$ ]]; then
+    echo "Done!"
+    return 0
+  fi
+  open "$output_file"
+}
+
 remount_rw() {
     local input="$1"
     local dev mountpoint fstype
