@@ -12,6 +12,8 @@ function clone_git_repo() {
     sudo softwareupdate --install --all --restart && xcode-select --install
   fi
 
+  echo_ri "[NOTICE]: Ensure that 'Remote Login' (aka, ssh) is turned 'ON' on the remote computer before proceeding."
+
   # We need to redirect input from /dev/tty because we pipe this script into `sh` when invoking.
   read -p "Enter previous machine hostname (for SSH keys): " PREVIOUS_HOSTNAME </dev/tty
   # Export the prev hostname so that it can be used/'seen' in install.sh invocation below.
