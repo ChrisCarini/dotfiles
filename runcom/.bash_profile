@@ -52,9 +52,6 @@ unset unset_colors
 # Clean up
 unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
 
-# Bonus Path Setting... (ugh, volta, why you force-add these...)
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Set GPG_TTY for gpg-agent - https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-gpg-key
 export GPG_TTY=$(tty)
@@ -79,3 +76,6 @@ fi
 unset _direnv_hook_cache _direnv_binary
 
 . "$HOME/.cargo/env"
+# Bonus Path Setting... (ugh, volta, why you force-add these...)
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
