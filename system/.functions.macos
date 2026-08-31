@@ -127,6 +127,54 @@ gource_me() {
   open gource-*.mp4
 }
 
+remount_rw() {
+    local input="$1"
+    local dev mountpoint fstype
+
+    if [[ -z "$input" ]]; then
+        echo "Usage: remount_rw <device|mountpoint> [mountpoint]"
+        return 1
+    fi
+
+    if [[ "$input" == /Volumes/* || "$input" == /* ]]; then
+        # Input is a mount point
+        mountpoint="$input"
+        dev=$(df "$mountpoint" 2>/dev/null | awk 'NR==2 {print $1}')
+        [[ -n "$dev" ]] || {
+            echo "No filesystem mounted at '$mountpoint'"
+            return 1
+        }
+    else
+        # Input is a device
+        dev="/dev/${input#/dev/}"
+        mountpoint="${2:-$(diskutil info "$dev" | awk -F': *' '/Mount Point/ {print $2}')}"
+        [[ "$mountpoint" == "Not Mounted" || -z "$mountpoint" ]] && {
+            mountpoint="${2:-/Volumes/$(basename "$dev")}"
+        }
+    fi
+
+    fstype=$(diskutil info "$dev" | awk -F': *' '/Type \(Bundle\)/ {print tolower($2)}')
+
+    [[ -n "$fstype" ]] || {
+        echo "Could not determine filesystem type."
+        return 1
+    }
+
+    sudo diskutil unmount "$dev" || return 1
+    sudo mkdir -p "$mountpoint"
+
+    case "$fstype" in
+        apfs|hfs|msdos|exfat)
+            sudo mount -t "$fstype" -o rw "$dev" "$mountpoint" ||
+            [[ "$fstype" == exfat ]] && sudo /sbin/mount_exfat "$dev" "$mountpoint"
+            ;;
+        *)
+            echo "Unsupported filesystem: $fstype"
+            return 1
+            ;;
+    esac
+}
+
 # Borrowed from StackOverflow
 # Ref: https://stackoverflow.com/a/30029855
 listening() {
