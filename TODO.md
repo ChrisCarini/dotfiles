@@ -15,7 +15,6 @@ If you have suggestions or advice on any of these (or anything in this repositor
 1) OSX Customizations
     1) Show volume in menu bar
     2) Install YubiSwitch
-    3) Finder.app - set "View as Column" as the default.
 1) Outlook / O365 Customizations
     1) Set O365 (outlook) "mark as read after x seconds" automagically
     1) Set O365 to show BCC by default

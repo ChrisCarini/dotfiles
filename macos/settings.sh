@@ -178,6 +178,11 @@ header "-" "Finder: show path bar"
 # --------------------------------
 defaults write com.apple.finder ShowPathbar -bool true
 
+# -------------------------------------------
+header "-" "Finder: use column view by default"
+# -------------------------------------------
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
 # ---------------------------------------------------
 header "-" "Keep folders on top when sorting by name"
 # ---------------------------------------------------
