@@ -324,11 +324,6 @@ header "-" "Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
 # ------------------------------------------------------------
-header "-" "Set OSX terminal to automatically close upon exit"
-# ------------------------------------------------------------
-plutil -replace "Window Settings".Basic.shellExitAction -integer 1 ~/Library/Preferences/com.apple.Terminal.plist
-
-# ------------------------------------------------------------
 header "-" "Set OSX terminal profile"
 # ------------------------------------------------------------
 open ~/dotfiles/macos/My\ Default.terminal

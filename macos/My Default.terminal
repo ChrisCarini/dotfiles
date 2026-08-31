@@ -19,6 +19,7 @@
 	<real>2.0699999999999998</real>
 	<key>name</key>
 	<string>My Default</string>
+	<!-- Close if the shell exited cleanly. -->
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
