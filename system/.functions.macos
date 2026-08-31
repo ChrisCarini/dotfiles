@@ -19,6 +19,53 @@ markdown2pdf() {
     -o $2
 }
 
+set_terminal_title() {
+  TITLE=$1
+  printf "\e]0;${TITLE}\a"
+}
+set_terminal_color() {
+  # Yellow
+  osascript -e "tell application \"Terminal\" to set background color of front window to {65535, 65535, 0}"
+}
+flash_terminal_color() {
+  # Get the current tty name (e.g., /dev/ttys000)
+  CURRENT_TTY=$(tty)
+
+  # Use osascript to find the window ID matching the tty name
+  WINDOW_ID=$(osascript <<EOF
+  tell application "Terminal"
+  	set window_list to every window
+  	repeat with a_window in window_list
+  		try
+  			set tty_name to tty of selected tab of a_window
+  			if tty_name is equal to "$CURRENT_TTY" then
+  				return id of a_window
+  			end if
+  		end try
+  	end repeat
+  end tell
+EOF
+  )
+
+  echo "Current Terminal Window ID: ${WINDOW_ID}"
+  ORIGINAL_COLOR=$(osascript -e "tell application \"Terminal\" to get background color of window id ${WINDOW_ID}")
+  echo "Current Terminal Window Color: ${ORIGINAL_COLOR}"
+
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {65535, 0, 0}"
+  sleep 1
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {65535, 65535, 0}"
+  sleep 1
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {65535, 0, 0}"
+  sleep 1
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {65535, 65535, 0}"
+  sleep 1
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {${ORIGINAL_COLOR}}"
+
+  return
+  # Reset to white background
+  osascript -e "tell application \"Terminal\" to set background color of window id ${WINDOW_ID} to {65535, 65535, 65535}"
+}
+
 notify() {
   TITLE=$1
   SUBTITLE=$2
