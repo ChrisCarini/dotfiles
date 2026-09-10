@@ -80,7 +80,18 @@ defaults delete "Apple Global Domain" "AppleInterfaceStyle"
 # --------------------------------------
 header "-" "Show the battery percentage"
 # --------------------------------------
-defaults write com.apple.menuextra.battery ShowPercent YES
+# install.sh runs this script with sudo; these preferences belong to the user.
+battery_defaults=(defaults)
+if [[ "$(id -u)" -eq 0 && -n "${SUDO_USER:-}" ]]; then
+  battery_defaults=(sudo -H -u "$SUDO_USER" defaults)
+fi
+# Legacy menu extra (macOS Catalina and earlier).
+"${battery_defaults[@]}" write com.apple.menuextra.battery ShowPercent -string "YES"
+# Control Center (macOS Big Sur through Sequoia), including host-specific preferences.
+"${battery_defaults[@]}" write com.apple.controlcenter BatteryShowPercentage -bool true
+"${battery_defaults[@]}" -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
+# On newer macOS versions, verify Show Percentage in Menu Bar > Battery Options.
+unset battery_defaults
 
 # ----------------------------------------------------------
 header "-" "Show the Day of Week + Month + Date + 24hr time"
@@ -398,6 +409,7 @@ header "=" "Kill affected applications"
 apps=(
   "Activity Monitor"
   "cfprefsd"
+  "ControlCenter"
   "Finder"
   "Google Chrome Canary"
   "Google Chrome"
